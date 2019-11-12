@@ -13,14 +13,19 @@
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Neutra', sans-serif;
+    margin: 10px;
 }
 p {
     font-family: 'Montserrat', sans-serif;
+    margin: 10px;
 }
 body {
     margin: 0;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
+}
+#fullpage {
+    overscroll-behavior: none;
 }
  html.fp-enabled,
  .fp-enabled body {
@@ -399,11 +404,17 @@ div.section p {
         height: 18px;
         margin: -9px 0px 0px -9px;
     }
+    #fp-nav.left {
+        left: 5px;
+    }
 }
 @media screen and (max-width: 1600px) {
     #fp-nav ul li,
     .fp-slidesNav ul li {
         margin: 20px 5px;
+    }
+    #fp-nav.left {
+        left: 11px;
     }
 }
 @media screen and (max-width: 1400px) {
@@ -413,6 +424,9 @@ div.section p {
     #fp-nav ul li,
     .fp-slidesNav ul li {
         margin: 20px 5px;
+    }
+    #fp-nav.left {
+        left: 11px;
     }
 }
 
