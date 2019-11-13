@@ -45,10 +45,7 @@ $(document).ready(function() {
             circleMenuRight.style.transform = `translateY(-50%) rotate(${circleMenuRightRotation}deg)`;
         },
         loopBottom: true,
-        loopTop: true,
-        scrollBar: true,
-        autoScrolling: true,
-        css3: true
+        loopTop: true
     });
 });
 
