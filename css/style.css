@@ -13,11 +13,21 @@
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Neutra', sans-serif;
-    margin: 10px;
+    margin: 0px;
 }
 p {
     font-family: 'Montserrat', sans-serif;
-    margin: 10px;
+    margin: 0px;
+}
+/*Scroll bar*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #fff; 
+}
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(#F800FF 0%, #3100FF 100%);
 }
 body {
     margin: 0;
@@ -48,7 +58,7 @@ body {
      display: block;
  }
  .fp-slides {
-     z-index:1;
+     z-index: 1;
      height: 100%;
      overflow: hidden;
      position: relative;
@@ -247,7 +257,7 @@ section#loading {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 101;
@@ -491,3 +501,4 @@ div.section p {
         visibility: hidden;
     }
 }
+

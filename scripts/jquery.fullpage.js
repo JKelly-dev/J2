@@ -259,7 +259,7 @@
 
             }else{
                 $htmlBody.css({
-                    'overflow' : 'visible',
+                    'overflow-y' : 'visible',
                     'height' : 'initial'
                 });
 

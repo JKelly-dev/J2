@@ -46,6 +46,9 @@ $(document).ready(function() {
         },
         loopBottom: true,
         loopTop: true,
+        scrollBar: true,
+        autoScrolling: true,
+        css3: true
     });
 });
 
