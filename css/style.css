@@ -374,6 +374,7 @@ div.section p {
     left: 25px;
     top: -4px;
     font-size: 22px;
+    transition: all .1s ease-in-out;
 }
 #fp-nav ul li:nth-child(1) a::after {content: "Home";}
 #fp-nav ul li:nth-child(2) a::after {content: "About";}
@@ -438,7 +439,7 @@ div#aboutSection,div#talkSection {
 }
 @media screen and (max-width: 1400px) {
     #fp-nav ul li a::after {
-        visibility: hidden;
+        opacity: 0;
     }
     #fp-nav ul li,
     .fp-slidesNav ul li {
@@ -469,7 +470,7 @@ div#aboutSection,div#talkSection {
         left: 9px;
     }
     #fp-nav ul li a::after {
-        visibility: hidden;
+        opacity: 0;
     }
     div.section h1 {
         text-align: center;
@@ -507,7 +508,7 @@ div#aboutSection,div#talkSection {
         z-index: 1;
     }
     #fp-nav ul li a::after {
-        visibility: hidden;
+        opacity: 0;
     }
 }
 
