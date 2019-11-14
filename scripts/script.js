@@ -8,9 +8,7 @@ var circleMenuLeftRotation = 0;
 var circleMenuRightRotation = 0;
 
 window.addEventListener('load', () => {
-    console.log('Page loaded');
     loadCircle.addEventListener('animationend', () => {
-        console.log('Animation complete.')
         if (loadCircle.classList.contains('spin')) {
             loadCircle.classList.remove('spin');
             loadCircle.classList.add('fullwidth');
@@ -21,20 +19,17 @@ window.addEventListener('load', () => {
                 j2logo.style.opacity = "0";
                 j2logo.style.visibility = "hidden";
             }, 1000)
-            console.log("Contains spin class");
         } else if (loadCircle.classList.contains('fullwidth') && j2logo.classList.contains('j2hide')) {
             loadCircle.classList.remove('fullwidth');
             loadCircle.style.visibility = "hidden";
-            console.log("Contains fullwidth class");
             loadCircle.classList.remove('j2hide');
             loadingSection.style.height = "0px"; 
-            console.log("Contains j2hide class");
         }
     });
 });
 
-$(document).ready(function() {
-    $('#fullpage').fullpage({
+var myFullpage = new fullpage('#fullpage', {
+        licenseKey: '32FDC319-24F94392-ABCB0861-ECB0F5E9',
         anchors: ['home', 'about', 'work', 'talk'],
         navigation: true,
         navigationPosition: 'left',
@@ -47,6 +42,5 @@ $(document).ready(function() {
         },
         loopBottom: true,
         loopTop: true
-    });
 });
 

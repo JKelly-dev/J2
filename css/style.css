@@ -424,7 +424,7 @@ div#aboutSection,div#talkSection {
         height: 18px;
         margin: -9px 0px 0px -9px;
     }
-    #fp-nav.left {
+    #fp-nav.fp-left {
         left: 5px;
     }
 }
@@ -433,7 +433,7 @@ div#aboutSection,div#talkSection {
     .fp-slidesNav ul li {
         margin: 20px 5px;
     }
-    #fp-nav.left {
+    #fp-nav.fp-left {
         left: 11px;
     }
 }
@@ -445,7 +445,7 @@ div#aboutSection,div#talkSection {
     .fp-slidesNav ul li {
         margin: 20px 5px;
     }
-    #fp-nav.left {
+    #fp-nav.fp-left {
         left: 11px;
     }
 }
@@ -466,7 +466,7 @@ div#aboutSection,div#talkSection {
         display: block;
         margin: 3px 6px;
     }
-    #fp-nav.left {
+    #fp-nav.fp-left {
         left: 9px;
     }
     #fp-nav ul li a::after {
@@ -496,7 +496,7 @@ div#aboutSection,div#talkSection {
     .fp-slidesNav ul li {
         margin: 3px 6px;
     }
-    #fp-nav.left {
+    #fp-nav.fp-left {
         left: 0px;
     }
     #circleRightLogo {
