@@ -34,6 +34,7 @@ window.addEventListener('load', () => {
 
 $(document).ready(function() {
     $('#fullpage').fullpage({
+        anchors: ['home', 'about', 'work', 'talk'],
         navigation: true,
         navigationPosition: 'left',
         scrollingSpeed: 400,
