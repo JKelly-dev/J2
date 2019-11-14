@@ -8,8 +8,8 @@
         <meta name="robots" content="follow"/>
         <meta name="google-site-verification" content="-whaNYRhZtZi8PJDzCLH8g4C0Hc_ihpr0rfvzF8GmHI" />
         <meta name="Description" content="J2 is a Digital Agency based out of KC.">
-        <!--Icons-->
-        <link rel="stylesheet" href="css/style.css">
+        <!--Icons
+        <link rel="stylesheet" href="css/style.css">-->
         <link rel="apple-touch-icon" sizes="180x180" href="src/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="src/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16x16.png">
@@ -18,12 +18,15 @@
         <link rel="shortcut icon" href="src/favicon.ico">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-config" content="src/browserconfig.xml">
+        <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
     </head>
     <body>
+        <!--
         <section id="loading">
             <div class="circle spin"></div>
             <img src="src/j2.svg" alt="J2  Logo">
         </section>
+    -->
         <div id="fullpage">
             <div class="section" id="homeSection">
                 <h1>Home Section</h1>
@@ -42,10 +45,24 @@
                 <p>Get in contact with us below.</p>
             </div>
         </div>
+        <!--
         <img id="circleRightLogo" src="src/j2.svg" alt="J2 Logo">
         <div id="circleLeft"></div>
         <div id="circleRight"></div>
         <script type="text/javascript" src="scripts/fullpage.js"></script>
         <script type="text/javascript" src="scripts/script.js"></script>
+        -->
+        <script type="text/javascript" src="scripts/fullpage2.js"></script>
+        
+        <script type="text/javascript">
+            var myFullpage = new fullpage('#fullpage', {
+                licenseKey: '32FDC319-24F94392-ABCB0861-ECB0F5E9',
+                anchors: ['firstPage', 'secondPage', '3rdPage'],
+                sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+                navigation: true,
+                navigationPosition: 'right',
+                navigationTooltips: ['First page', 'Second page', 'Third and last page']
+            });
+        </script>
     </body> 
 </html>
