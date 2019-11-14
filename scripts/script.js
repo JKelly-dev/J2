@@ -18,6 +18,8 @@ window.addEventListener('load', () => {
             j2logo.style.opacity = "0";
             setTimeout(() => {
                 loadingSection.style.backgroundColor = "transparent";
+                j2logo.style.opacity = "0";
+                j2logo.style.visibility = "hidden";
             }, 1000)
             console.log("Contains spin class");
         } else if (loadCircle.classList.contains('fullwidth') && j2logo.classList.contains('j2hide')) {
@@ -25,7 +27,6 @@ window.addEventListener('load', () => {
             loadCircle.style.visibility = "hidden";
             console.log("Contains fullwidth class");
             loadCircle.classList.remove('j2hide');
-            j2logo.style.opacity = "0";
             loadingSection.style.height = "0px"; 
             console.log("Contains j2hide class");
         }
