@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
             loadCircle.style.visibility = "hidden";
             console.log("Contains fullwidth class");
             loadCircle.classList.remove('j2hide');
-            j2logo.style.visibility = "hidden";
+            j2logo.style.opacity = "0";
             loadingSection.style.height = "0px"; 
             console.log("Contains j2hide class");
         }
