@@ -18,7 +18,6 @@
         <link rel="shortcut icon" href="src/favicon.ico">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-config" content="src/browserconfig.xml">
-        <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
     </head>
     <body>
         <section id="loading">
@@ -35,16 +34,42 @@
                 <p>Everything you need to know about J2.</p>
             </div>
             <div class="section" id="workSection">
-                <h1>Work Section</h1>
-                <p>Checkout some of our past work below.</p>
+                <div class="slide" id="slide1" data-anchor="slide1">
+                    <h1>Work Section</h1>
+                    <p>Checkout some of our past work below.</p>
+                </div>
+                
+                <div class="slide" id="slide2" data-anchor="slide2">
+                    <h1>Slide 2</h1>
+                </div>
+
+                <div class="slide" id="slide3" data-anchor="slide3">
+                    <h1>Slide 3</h1>
+                </div>
+
+                <div class="slide" id="slide4" data-anchor="slide4">
+                    <h1>Slide 4</h1>
+                </div>
+
+                <div class="slide" id="slide4" data-anchor="slide5">
+                    <h1>Slide 5</h1>
+                </div>
+                <div id="circleBottom"></div>
             </div>
             <div class="section" id="talkSection">
                 <h1>Talk Section</h1>
                 <p>Get in contact with us below.</p>
+                <form action="" name="talkFormName" id="talkForm" netlify>
+                        <input type="text" name="name" placeholder="Name"/>
+                        <input type="email" name="email" placeholder="Email"/>
+                        <textarea type="text" name="message" placeholder="Message"></textarea>
+                        <button type="submit">Submit</button>
+                </form>
             </div>
         </div>
         <img id="circleRightLogo" src="src/j2.svg" alt="J2 Logo">
         <div id="circleLeft"></div>
+
         <div id="circleRight"></div>
         <script type="text/javascript" src="scripts/fullpage.js"></script>
         <script type="text/javascript" src="scripts/script.js"></script>

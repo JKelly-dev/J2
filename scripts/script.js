@@ -32,6 +32,7 @@ var myFullpage = new fullpage('#fullpage', {
         licenseKey: '32FDC319-24F94392-ABCB0861-ECB0F5E9',
         anchors: ['home', 'about', 'work', 'talk'],
         navigation: true,
+        slidesNavigation: true,
         navigationPosition: 'left',
         scrollingSpeed: 400,
         onLeave: function(origin, destination, direction){
@@ -43,4 +44,3 @@ var myFullpage = new fullpage('#fullpage', {
         loopBottom: true,
         loopTop: true
 });
-

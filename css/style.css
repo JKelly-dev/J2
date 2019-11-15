@@ -10,6 +10,7 @@
 * {
     box-sizing: border-box;
     transition: .3s all ease-in-out;
+    -webkit-transition: .3s all ease-in-out;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Neutra', sans-serif;
@@ -37,8 +38,8 @@ body {
 #fullpage {
     overscroll-behavior: none;
 }
- html.fp-enabled,
- .fp-enabled body {
+html.fp-enabled,
+.fp-enabled body {
      margin: 0;
      padding: 0;
      overflow:hidden;
@@ -98,15 +99,15 @@ body {
      transform: translate3d(0,0,0);
  }
  .fp-controlArrow.fp-prev {
-     left: 15px;
+     left: 140px;
      width: 0;
      border-width: 38.5px 34px 38.5px 0;
-     border-color: transparent #fff transparent transparent;
+     border-color: transparent #000 transparent transparent;
  }
  .fp-controlArrow.fp-next {
-     right: 15px;
+     right: 140px;
      border-width: 38.5px 0 38.5px 34px;
-     border-color: transparent transparent transparent #fff;
+     border-color: transparent transparent transparent #000;
  }
  .fp-scrollable {
      overflow: hidden;
@@ -137,14 +138,12 @@ body {
  }
  .fp-slidesNav{
      position: absolute;
-     z-index: 4;
+     z-index: 101;
      opacity: 1;
-     -webkit-transform: translate3d(0,0,0);
-     -ms-transform: translate3d(0,0,0);
-     transform: translate3d(0,0,0);
-     left: 0 !important;
-     right: 0;
-     margin: 0 auto !important;
+     -webkit-transform: translateX(-50%);
+     transform: translateX(-50%);
+     left: 50% !important;
+     bottom: 0;
  }
  .fp-slidesNav.bottom {
      bottom: 17px;
@@ -249,7 +248,6 @@ body {
      height: auto !important;
  }
 
-
 /*Loading Section*/
 section#loading {
     height: 100vh;
@@ -270,6 +268,7 @@ section#loading div.circle {
     width: 0vw;
     height: 0vw;
     transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
 }
 .fullwidth {animation: fullwidth 1.5s;}
 @keyframes fullwidth {
@@ -340,6 +339,7 @@ div.section p {
     height: 20vw;
     border-radius: 50%;
     transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
 }
 
 #circleRight {
@@ -352,6 +352,21 @@ div.section p {
     height: 20vw;
     border-radius: 50%;
     transition: all .5s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+#circleBottom {
+    position: absolute;
+    bottom: -25vw;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    clip: rect(0vw,30vw,5vw,0vw);
 }
 
 #circleRightLogo {
@@ -375,6 +390,7 @@ div.section p {
     top: -4px;
     font-size: 22px;
     transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
 }
 #fp-nav ul li:nth-child(1) a::after {content: "Home";}
 #fp-nav ul li:nth-child(2) a::after {content: "About";}
@@ -383,12 +399,53 @@ div.section p {
 
 /*Sections*/
 
-div#aboutSection,div#talkSection {
-    background-color: black;
+
+/*Talk Section*/
+
+#talkForm {
+    max-width: 50vw;
+    width: 50vw;
+    margin: auto;
+}
+
+#talkForm input, textarea, button {
+    background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
+    border: none;
+    border-radius: 5px;
+    min-width: 100%;
+    display: block;
+    padding: 10px;
+    margin: 10px 0px;
     color: white;
+    font-family: 'Neutra', sans-serif;
+    opacity: 1;
+    font-size: 2rem;
+    text-align: center;
+}
+#talkForm textarea {
+    height: 20vh;
+}
+#talkForm button {
+    min-width: 50%;
+    width: 50%;
+    margin: auto;
+    line-height: 2rem;
+}
+#talkForm input::placeholder, textarea::placeholder {
+    color: white;
+    font-family: 'Neutra', sans-serif;
+    opacity: 1;
+    font-size: 2rem;
+    text-align: center;
 }
 
 @media screen and (min-width: 1600px) {
+    #circleBottom {
+        bottom: -26vw;
+        width: 30vw;
+        height: 30vw;
+        clip-path: rect(0vw,30vw,4vw,0vw);
+    }
     #fp-nav ul li:nth-child(1) a::after, #fp-nav ul li:nth-child(2) a::after, #fp-nav ul li:nth-child(3) a::after, #fp-nav ul li:nth-child(4) a::after {
         font-family: 'Neutra', sans-serif;
         color: white;
@@ -397,11 +454,13 @@ div#aboutSection,div#talkSection {
         top: -4px;
         font-size: 28px;
     }
-    #fp-nav ul li,
-    .fp-slidesNav ul li {
+    #fp-nav ul li {
         width: 28px;
         height: 28px;
         margin: 15px;
+    }
+    .fp-slidesNav ul li {
+        margin: 15px 7px;
     }
     #fp-nav ul li a.active span,
     .fp-slidesNav ul li a.active span,
@@ -429,9 +488,11 @@ div#aboutSection,div#talkSection {
     }
 }
 @media screen and (max-width: 1600px) {
-    #fp-nav ul li,
-    .fp-slidesNav ul li {
+    #fp-nav ul li {
         margin: 20px 5px;
+    }
+    .fp-slidesNav ul li {
+        margin: 15px 5px;
     }
     #fp-nav.fp-left {
         left: 11px;
@@ -441,12 +502,37 @@ div#aboutSection,div#talkSection {
     #fp-nav ul li a::after {
         opacity: 0;
     }
-    #fp-nav ul li,
-    .fp-slidesNav ul li {
+    #fp-nav ul li {
         margin: 20px 5px;
+    }
+    .fp-slidesNav ul li {
+        margin: 5px 2px;
     }
     #fp-nav.fp-left {
         left: 11px;
+    }
+    #talkForm {
+        max-width: 65vw;
+        width: 65vw;
+        margin: auto;
+    }
+    #talkForm input, textarea, button {
+        max-width: 100%;
+        padding: 10px;
+        margin: 20px 0px;
+        font-size: 2rem;
+    }
+    #talkForm textarea {
+        height: 20vh;
+    }
+    #talkForm button {
+        min-width: 50%;
+        width: 50%;
+        line-height: 2rem;
+    }
+    #talkForm input::placeholder, textarea::placeholder {
+        color: white;
+        font-size: 1.5rem;
     }
 }
 
@@ -461,10 +547,17 @@ div#aboutSection,div#talkSection {
         width: 30vw;
         height: 30vw;
     }
-    #fp-nav ul li,
-    .fp-slidesNav ul li {
-        display: block;
+    #circleBottom {
+        bottom: -38vw;
+        width: 45vw;
+        height: 45vw;
+        clip: rect(0vw,45vw,7vw,0vw);
+    }
+    #fp-nav ul li {
         margin: 3px 6px;
+    }
+    .fp-slidesNav ul li {
+        margin: 3px 3px;
     }
     #fp-nav.fp-left {
         left: 9px;
@@ -474,11 +567,34 @@ div#aboutSection,div#talkSection {
     }
     div.section h1 {
         text-align: center;
-        font-size: 8vw;
+        font-size: 4vw;
     }
     div.section p {
         text-align: center;
-        font-size: 4vw;
+        font-size: 2vw;
+    }
+    #talkForm {
+        max-width: 65vw;
+        width: 65vw;
+        margin: auto;
+    }
+    #talkForm input, textarea, button {
+        max-width: 100%;
+        padding: 10px;
+        margin: 15px 0px;
+        font-size: 1rem;
+    }
+    #talkForm textarea {
+        height: 20vh;
+    }
+    #talkForm button {
+        min-width: 50%;
+        width: 50%;
+        line-height: 1rem;
+    }
+    #talkForm input::placeholder, textarea::placeholder {
+        color: white;
+        font-size: 1.5rem;
     }
 }
 @media screen and (max-width: 600px) {
@@ -492,9 +608,17 @@ div#aboutSection,div#talkSection {
         width: 45vw;
         height: 45vw;
     }
-    #fp-nav ul li,
-    .fp-slidesNav ul li {
+    #circleBottom {
+        bottom: -32vw;
+        width: 45vw;
+        height: 45vw;
+        clip: rect(0vw,45vw,13vw,0vw);
+    }
+    #fp-nav ul li {
         margin: 3px 6px;
+    }
+    .fp-slidesNav ul li {
+        margin: 0px 0px;
     }
     #fp-nav.fp-left {
         left: 0px;
@@ -509,6 +633,30 @@ div#aboutSection,div#talkSection {
     }
     #fp-nav ul li a::after {
         opacity: 0;
+    }
+    #talkForm {
+        max-width: 65vw;
+        width: 65vw;
+        margin: auto;
+    }
+    #talkForm textarea {
+        height: 20vh;
+    }
+    #talkForm input, textarea, button {
+        max-width: 100%;
+        padding: 10px;
+        margin: 15px 0px;
+        font-size: 1rem;
+    }
+    #talkForm button {
+        min-width: 50%;
+        width: 50%;
+        font-size: 1.5rem;
+        line-height: 1rem;
+    }
+    #talkForm input::placeholder, textarea::placeholder {
+        color: white;
+        font-size: 1.5rem;
     }
 }
 
