@@ -4,6 +4,7 @@ const loadCircle = document.querySelector('div.circle');
 const j2logo = document.querySelector('#loading img');
 const circleMenuLeft = document.getElementById('circleLeft');
 const circleMenuRight = document.getElementById('circleRight');
+const circleMenuBottom = document.getElementById('circleBottom');
 var circleMenuLeftRotation = 0;
 var circleMenuRightRotation = 0;
 
@@ -40,6 +41,13 @@ var myFullpage = new fullpage('#fullpage', {
             circleMenuLeft.style.transform = `translateY(-50%) rotate(${circleMenuLeftRotation}deg)`;
             circleMenuRightRotation-=90;
             circleMenuRight.style.transform = `translateY(-50%) rotate(${circleMenuRightRotation}deg)`;
+            if (origin.anchor == "work") {
+                circleMenuBottom.style.opacity = "0";
+            } else if (destination.anchor == "work") {
+                setTimeout(() => {
+                    circleMenuBottom.style.opacity = "1";
+                }, 300)
+            } 
         },
         loopBottom: true,
         loopTop: true
