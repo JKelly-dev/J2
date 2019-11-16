@@ -5,8 +5,20 @@ const j2logo = document.querySelector('#loading img');
 const circleMenuLeft = document.getElementById('circleLeft');
 const circleMenuRight = document.getElementById('circleRight');
 const circleMenuBottom = document.getElementById('circleBottom');
+const homeSectionText = document.querySelector('#homeSection p');
+const workSectionSlideText = document.querySelector('#workSection #slide1 p');
 var circleMenuLeftRotation = 0;
 var circleMenuRightRotation = 0;
+
+function contentChange () {
+    if (window.innerWidth > 600) {
+        homeSectionText.textContent = "Scroll down to get started."
+        workSectionSlideText.textContent = "Click an arrow to view our work."
+    } else {
+        homeSectionText.textContent = "Swipe up to get started."
+        workSectionSlideText.textContent = "Swipe to view our work."
+    }
+}
 
 window.addEventListener('load', () => {
     loadCircle.addEventListener('animationend', () => {
@@ -27,6 +39,7 @@ window.addEventListener('load', () => {
             loadingSection.style.height = "0px"; 
         }
     });
+    contentChange();
 });
 
 var myFullpage = new fullpage('#fullpage', {
@@ -51,4 +64,8 @@ var myFullpage = new fullpage('#fullpage', {
         },
         loopBottom: true,
         loopTop: true
+});
+
+window.addEventListener("resize", () => {
+    contentChange();
 });

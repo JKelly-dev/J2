@@ -14,11 +14,19 @@
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Neutra', sans-serif;
-    margin: 0px;
+    margin: 0px auto;
+    text-align: center;
 }
 p {
     font-family: 'Montserrat', sans-serif;
-    margin: 0px;
+    margin: 0px auto;
+    text-align: center;
+}
+#workSection #slide1 p {
+    text-align: center;
+}
+#workSection .slide p {
+    text-align: justify;
 }
 /*Scroll bar*/
 ::-webkit-scrollbar {
@@ -93,22 +101,28 @@ html.fp-enabled,
      width: 0;
      height: 0;
      border-style: solid;
-     margin-top: -38px;
-     -webkit-transform: translate3d(0,0,0);
-     -ms-transform: translate3d(0,0,0);
-     transform: translate3d(0,0,0);
- }
- .fp-controlArrow.fp-prev {
-     left: 13vw;
-     width: 0;
-     border-width: 38.5px 34px 38.5px 0;
-     border-color: transparent #000 transparent transparent;
+
  }
  .fp-controlArrow.fp-next {
-     right: 13vw;
-     border-width: 38.5px 0 38.5px 34px;
-     border-color: transparent transparent transparent #000;
+     right: 11vw;
+     border: none;
+     background-image: url('../src/arrow-left.svg');
+     width: 7.5vw;
+     height: 8.775vw;
+     -webkit-transform: translateY(-50%) rotate(180deg);
+     -ms-transform: translateY(-50%) rotate(180deg);
+     transform: translateY(-50%) rotate(180deg);
  }
+ .fp-controlArrow.fp-prev {
+    left: 11vw;
+    border: none;
+    background-image: url('../src/arrow-left.svg');
+    width: 7.5vw;
+    height: 8.775vw;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
  .fp-scrollable {
      overflow: hidden;
      position: relative;
@@ -312,19 +326,12 @@ section#loading img {
     }
 }
 
-/*Intro Section*/
 div.section h1 {
-    text-align: center;
     font-size: 4vw;
 }
 
 div.section p {
-    text-align: center;
     font-size: 2vw;
-}
-
-#spin {
-    float: right;
 }
 
 /*Navigation*/
@@ -397,10 +404,35 @@ div.section p {
 #fp-nav ul li:nth-child(3) a::after {content: "Work";}
 #fp-nav ul li:nth-child(4) a::after {content: "Talk";}
 
-/*Sections*/
+div#workSection div#slide1 img {
+    width: 20vw;
+    display: block;
+    margin: 20px auto;
+    animation: swipeRotateWork 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+}
 
+@keyframes swipeRotateWork {
+    0%, 100% {
+        transform: translateX(-10px) rotate(-5deg);
+    } 50% {
+        transform: translateX(10px) rotate(5deg);
+    }
+}
 
-/*Talk Section*/
+div#homeSection img {
+    width: 20vw;
+    display: block;
+    margin: 20px auto;
+    animation: swipeRotateHome 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+}
+
+@keyframes swipeRotateHome {
+    0%, 100% {
+        transform: translateY(-15px) rotate(105deg);
+    } 50% {
+        transform: translateY(15px) rotate(120deg);
+    }
+}
 
 #talkForm {
     max-width: 50vw;
@@ -429,7 +461,7 @@ div.section p {
     min-width: 50%;
     width: 50%;
     margin: auto;
-    line-height: 2rem;
+    font-size: 1.5rem;
 }
 #talkForm input::placeholder, textarea::placeholder {
     color: white;
@@ -440,6 +472,9 @@ div.section p {
 }
 
 @media screen and (min-width: 1600px) {
+    div#workSection div#slide1 img, div#homeSection img {
+        display: none;
+    }
     #circleBottom {
         bottom: -26vw;
         width: 30vw;
@@ -492,8 +527,19 @@ div.section p {
         margin: 25px 0px;
         font-size: 2rem;
     }
+    div.section h1 {
+        font-size: 6vw;
+        max-width: 55vw;
+    }
+    div.section p {
+        font-size: 2vw;
+        max-width: 55vw;
+    }
 }
 @media screen and (max-width: 1600px) {
+    div#workSection div#slide1 img, div#homeSection img {
+        display: none;
+    }
     #fp-nav ul li {
         margin: 20px 5px;
     }
@@ -509,8 +555,19 @@ div.section p {
         margin: 22px 0px;
         font-size: 2rem;
     }
+    div.section h1 {
+        font-size: 7vw;
+        max-width: 55vw;
+    }
+    div.section p {
+        font-size: 2.25vw;
+        max-width: 55vw;
+    }
 }
 @media screen and (max-width: 1400px) {
+    div#workSection div#slide1 img, div#homeSection img {
+        display: none;
+    }
     #fp-nav ul li a::after {
         opacity: 0;
     }
@@ -546,9 +603,19 @@ div.section p {
         color: white;
         font-size: 1.5rem;
     }
+    div.section h1 {
+        font-size: 8vw;
+        max-width: 55vw;
+    }
+    div.section p {
+        font-size: 2.75vw;
+        max-width: 55vw;
+    }
 }
-
 @media screen and (max-width: 900px) {
+    div#workSection div#slide1 img, div#homeSection img {
+        display: none;
+    }
     #circleLeft {
         left: -20vw;
         width: 30vw;
@@ -578,12 +645,12 @@ div.section p {
         opacity: 0;
     }
     div.section h1 {
-        text-align: center;
         font-size: 8vw;
+        max-width: 55vw;
     }
     div.section p {
-        text-align: center;
-        font-size: 4vw;
+        font-size: 2.75vw;
+        max-width: 55vw;
     }
     #talkForm {
         max-width: 65vw;
@@ -610,6 +677,9 @@ div.section p {
     }
 }
 @media screen and (max-width: 600px) {
+    div#workSection div#slide1 img, div#homeSection img {
+        display: block;
+    }
     #circleLeft {
         left: -33vw;
         width: 45vw;
@@ -625,7 +695,6 @@ div.section p {
         width: 55vw;
         height: 55vw;
         clip: rect(0vw,55vw,10vw,0vw);
-        
     }
     #fp-nav ul li {
         margin: 3px 6px;
@@ -676,12 +745,20 @@ div.section p {
         visibility: hidden;
     }
     div.section h1 {
-        text-align: center;
         font-size: 10vw;
+        max-width: 65vw;
     }
     div.section p {
-        text-align: center;
         font-size: 4vw;
+        max-width: 65vw;
     }
 }
 
+@media (max-height: 600px) and (min-width: 900px) {
+    #talkForm input, textarea, button {
+        max-width: 100%;
+        padding: 7.5px;
+        margin: 10px 0px;
+        font-size: 1rem;
+    }
+}
