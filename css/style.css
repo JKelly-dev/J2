@@ -6,7 +6,9 @@
     font-weight: bold;
     font-style: normal;
 }
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
 * {
     box-sizing: border-box;
     transition: .3s all ease-in-out;
@@ -19,6 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 p {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
     margin: 0px auto;
     text-align: center;
 }
@@ -42,6 +45,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 #fullpage {
     overscroll-behavior: none;
@@ -50,7 +54,7 @@ html.fp-enabled,
 .fp-enabled body {
      margin: 0;
      padding: 0;
-     overflow:hidden;
+     overflow: hidden;
      -webkit-tap-highlight-color: rgba(0,0,0,0);
  }
  .fp-section {
@@ -464,6 +468,20 @@ div#homeSection img {
     font-size: 1.5rem;
 }
 #talkForm input::placeholder, textarea::placeholder {
+    color: white;
+    font-family: 'Neutra', sans-serif;
+    opacity: 1;
+    font-size: 2rem;
+    text-align: center;
+}
+#talkForm input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: white;
+    font-family: 'Neutra', sans-serif;
+    opacity: 1;
+    font-size: 2rem;
+    text-align: center;
+}
+#talkForm input::-ms-input-placeholder, textarea::-ms-input-placeholder {
     color: white;
     font-family: 'Neutra', sans-serif;
     opacity: 1;
