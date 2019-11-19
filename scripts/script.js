@@ -16,7 +16,7 @@ function contentChange () {
         workSectionSlideText.textContent = "Click an arrow to view our work."
     } else {
         homeSectionText.textContent = "Swipe up to get started."
-        workSectionSlideText.textContent = "Swipe to view our work."
+        workSectionSlideText.textContent = "Swipe left to view our work."
     }
 }
 
