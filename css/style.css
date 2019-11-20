@@ -11,6 +11,9 @@
     box-sizing: border-box;
     transition: .3s all ease-in-out;
     -webkit-transition: .3s all ease-in-out;
+	-webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Neutra', sans-serif;
@@ -379,8 +382,6 @@ div.section p {
     position: absolute;
     bottom: -25vw;
     left: 50%;
-    backface-visibility: visible;
-	-webkit-backface-visibility: hidden;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     width: 30vw;
@@ -394,10 +395,6 @@ div.section p {
     width: 100%;
     height: 100%;
     display: block;
-    backface-visibility: visible;
-    transform: none;
-	-webkit-backface-visibility: hidden;
-	-webkit-transform: scale(1);
     background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
     border-radius: 50%;
     transition: all .3s ease-in-out;
