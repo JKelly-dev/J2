@@ -297,19 +297,19 @@ section#loading div.circle {
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
 }
-.fullwidth {animation: fullwidth 1.5s;}
+.fullwidth {animation: fullwidth 1.5s;-webkit-animation: fullwidth 1.5s;}
 @keyframes fullwidth {
     0% {width: 20vw; height: 20vw;}
     10% {width: 100vw; height: 100vh;}
     95% {width: 100vw; height: 100vh;}
     100% {width: 0vw; height: 100vh;}
 }
-.j2hide {animation: j2hide 1.5s;}
+.j2hide {animation: j2hide 1.5s; -webkit-animation: j2hide 1.5s;}
 @keyframes j2hide {
     0%, 80% {opacity: 1;}
     90%, 100% {opacity: 0;}
 }
-.spin {animation: spin 1s;}
+.spin {animation: spin 1s; -webkit-animation: spin 1.5s;}
 @keyframes spin {
     0% {transform: rotate(0deg); border-radius: 0%; width: 20vw; height: 20vw;}
     50% {border-radius: 50%;}
@@ -383,6 +383,7 @@ div.section p {
     -webkit-transform: translateX(-50%);
     width: 30vw;
     height: 30vw;
+    clip: rect(0vw,30vw,5vw,0vw);
     z-index: 100;
     overflow: hidden;
 }
@@ -392,8 +393,6 @@ div.section p {
     width: 100%;
     height: 100%;
     display: block;
-    transform: translate3d(0,0,0);
-    -webkit-transform: translate3d(0,0,0);
     background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
     border-radius: 50%;
     transition: all .3s ease-in-out;
