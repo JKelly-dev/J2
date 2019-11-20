@@ -116,9 +116,9 @@ html.fp-enabled,
  }
  .fp-controlArrow.fp-next:hover {
     transition: all 0.1s ease-out;
-    -webkit-transform: translateY(-50%) rotate(180deg) scale(1.25);
-    -ms-transform: translateY(-50%) rotate(180deg scale(1.25));
-    transform: translateY(-50%) rotate(180deg) scale(1.25);
+    -webkit-transform: translateY(-50%) rotate(180deg) scale(1.1);
+    -ms-transform: translateY(-50%) rotate(180deg scale(1.1));
+    transform: translateY(-50%) rotate(180deg) scale(1.1);
 }
  .fp-controlArrow.fp-prev {
     left: 13vw;
@@ -132,9 +132,9 @@ html.fp-enabled,
 }
 .fp-controlArrow.fp-prev:hover {
     transition: all 0.1s ease-out;
-    -webkit-transform: translateY(-50%) scale(1.25);
-    -ms-transform: translateY(-50%) scale(1.25);
-    transform: translateY(-50%) scale(1.25);
+    -webkit-transform: translateY(-50%) scale(1.1);
+    -ms-transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) scale(1.1);
 }
  .fp-scrollable {
      overflow: hidden;
@@ -531,7 +531,7 @@ div#homeSection img {
 
 .slide ul li img:hover {
     box-shadow: #00000075 0px 0px 30px;
-    transform: scale(1.25);
+    transform: scale(1.1);
     -webkit-transition: all .1s ease-in-out;
     transition: all .1s ease-in-out;
 } 
