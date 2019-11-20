@@ -56,7 +56,6 @@ var myFullpage = new fullpage('#fullpage', {
             circleMenuRight.style.transform = `translateY(-50%) rotate(${circleMenuRightRotation}deg)`;
             circleMenuBottomBackgroundRotation-=90;
             circleMenuBottomBackground.style.transform = `rotate(${circleMenuBottomBackgroundRotation}deg)`;
-            circleMenuBottomBackground.style.webkitTransform = `rotate(${circleMenuBottomBackgroundRotation}deg)`;
             if (origin.anchor == "work") {
                 circleMenuBottomBackground.style.opacity = "0";
             } else if (destination.anchor == "work") {
@@ -72,7 +71,6 @@ var myFullpage = new fullpage('#fullpage', {
             circleMenuRight.style.transform = `translateY(-50%) rotate(${circleMenuRightRotation}deg)`;
             circleMenuBottomBackgroundRotation-=90;
             circleMenuBottomBackground.style.transform = `rotate(${circleMenuBottomBackgroundRotation}deg)`;
-            circleMenuBottomBackground.style.webkitTransform = `rotate(${circleMenuBottomBackgroundRotation}deg)`;
         },
         loopBottom: true,
         loopTop: true

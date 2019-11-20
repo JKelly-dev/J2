@@ -383,9 +383,7 @@ div.section p {
     -webkit-transform: translateX(-50%);
     width: 30vw;
     height: 30vw;
-    clip: rect(0vw,30vw,5vw,0vw);
     z-index: 100;
-    overflow: hidden;
 }
 
 #circleBottomBackground {
