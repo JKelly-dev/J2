@@ -105,24 +105,36 @@ html.fp-enabled,
 
  }
  .fp-controlArrow.fp-next {
-     right: 11vw;
+     right: 13vw;
      border: none;
-     background-image: url('../src/arrow-right.svg');
-     width: 7.5vw;
+     background-image: url('../src/arrow.svg');
+     width: 5.1vw;
      height: 8.775vw;
-     -webkit-transform: translateY(-50%);
-     -ms-transform: translateY(-50%);
-     transform: translateY(-50%);
+     -webkit-transform: translateY(-50%) rotate(180deg);
+     -ms-transform: translateY(-50%) rotate(180deg);
+     transform: translateY(-50%) rotate(180deg);
  }
+ .fp-controlArrow.fp-next:hover {
+    transition: all 0.1s ease-out;
+    -webkit-transform: translateY(-50%) rotate(180deg) scale(1.25);
+    -ms-transform: translateY(-50%) rotate(180deg scale(1.25));
+    transform: translateY(-50%) rotate(180deg) scale(1.25);
+}
  .fp-controlArrow.fp-prev {
-    left: 11vw;
+    left: 13vw;
     border: none;
-    background-image: url('../src/arrow-left.svg');
-    width: 7.5vw;
+    background-image: url('../src/arrow.svg');
+    width: 5.1vw;
     height: 8.775vw;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+.fp-controlArrow.fp-prev:hover {
+    transition: all 0.1s ease-out;
+    -webkit-transform: translateY(-50%) scale(1.25);
+    -ms-transform: translateY(-50%) scale(1.25);
+    transform: translateY(-50%) scale(1.25);
 }
  .fp-scrollable {
      overflow: hidden;
@@ -367,14 +379,23 @@ div.section p {
     position: absolute;
     bottom: -25vw;
     left: 50%;
-    transform: translateX(-50%) rotate(0deg);
-    background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
+    transform: translateX(-50%);
     width: 30vw;
     height: 30vw;
-    border-radius: 50%;
-    transition: all .1s ease-in-out;
-    -webkit-transition: all .1s ease-in-out;
     clip: rect(0vw,30vw,5vw,0vw);
+    z-index: 100;
+    overflow: hidden;
+}
+
+#circleBottomBackground {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
 }
 
 #circleRightLogo {
@@ -408,7 +429,7 @@ div.section p {
 div#workSection div#slide1 img {
     width: 20vw;
     display: block;
-    margin: 20px auto;
+    margin: 20px auto -30px;
     animation: swipeRotateWork 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
 }
 
@@ -424,7 +445,7 @@ div#workSection div#slide1 img {
 div#homeSection img {
     width: 20vw;
     display: block;
-    margin: 20px auto;
+    margin: 20px auto -30px;
     animation: swipeRotateHome 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
 }
 
@@ -487,24 +508,32 @@ div#homeSection img {
     text-align: center;
 }
 
-#slide2 ul {
+.slide ul {
     max-width: 55vw;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin: 0 auto;
     padding: 0;
     list-style: none;
     flex-wrap: wrap;
 }
 
-#slide2 ul li {
+.slide ul li {
     width: 20%;
     margin-top: 20px;
 }
 
-#slide2 ul li img {
-    width: 100%
+.slide ul li img {
+    width: 100%;
+    box-shadow: #00000050 0px 0px 20px;
+    border-radius: 7px;
+} 
+
+.slide ul li img:hover {
+    box-shadow: #00000075 0px 0px 30px;
+    transform: scale(1.25);
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
 } 
 
 @media screen and (min-width: 1600px) {
@@ -711,9 +740,6 @@ div#homeSection img {
         color: white;
         font-size: 1.5rem;
     }
-    #slide2 ul li {
-        height: 20vw;
-    }
 }
 @media screen and (max-width: 600px) {
     div#workSection div#slide1 img, div#homeSection img {
@@ -791,11 +817,34 @@ div#homeSection img {
         font-size: 4vw;
         max-width: 65vw;
     }
-    #slide2 ul li {
-        width: 40%;
+    .slide ul li {
+        width: 35%;
+    }
+    .slide ul {
+        max-width: 55vw;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        flex-wrap: wrap;
     }
 }
 
+@media screen and (max-width: 475px) { 
+    .slide ul li {
+        width: 40%;
+    }
+    .slide ul {
+        max-width: 55vw;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        flex-wrap: wrap;
+    }
+}
 @media (max-height: 600px) and (min-width: 900px) {
     #talkForm input, textarea, button {
         max-width: 100%;
