@@ -380,7 +380,7 @@ div.section p {
 
 #circleBottom {
     position: absolute;
-    bottom: 25vw;
+    bottom: -25vw;
     left: 50%;
     transform: translateX(-50%);
     width: 30vw;
@@ -543,7 +543,7 @@ div#homeSection img {
         display: none;
     }
     #circleBottom {
-        bottom: 26vw;
+        bottom: -26vw;
         width: 30vw;
         height: 30vw;
     }
@@ -693,7 +693,7 @@ div#homeSection img {
         height: 30vw;
     }
     #circleBottom {
-        bottom: 38vw;
+        bottom: -38vw;
         width: 45vw;
         height: 45vw;
     }
@@ -756,7 +756,7 @@ div#homeSection img {
         height: 45vw;
     }
     #circleBottom {
-        bottom: 45vw;
+        bottom: -45vw;
         width: 55vw;
         height: 55vw;
     }
