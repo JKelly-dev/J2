@@ -380,12 +380,12 @@ div.section p {
 
 #circleBottom {
     position: absolute;
-    bottom: -10vw;
+    bottom: -25vw;
     left: 50%;
     transform: translateX(-50%);
     background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
-    width: 20vw;
-    height: 20vw;
+    width: 30vw;
+    height: 30vw;
     border-radius: 50%;
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
@@ -538,7 +538,6 @@ div#homeSection img {
         bottom: -26vw;
         width: 30vw;
         height: 30vw;
-        clip: rect(0vw,30vw,4vw,0vw);
     }
     #fp-nav ul li:nth-child(1) a::after, #fp-nav ul li:nth-child(2) a::after, #fp-nav ul li:nth-child(3) a::after, #fp-nav ul li:nth-child(4) a::after {
         font-family: 'Neutra', sans-serif;
@@ -689,7 +688,6 @@ div#homeSection img {
         bottom: -38vw;
         width: 45vw;
         height: 45vw;
-        clip: rect(0vw,45vw,7vw,0vw);
     }
     #fp-nav ul li {
         margin: 3px 6px;
@@ -753,7 +751,6 @@ div#homeSection img {
         bottom: -45vw;
         width: 55vw;
         height: 55vw;
-        clip: rect(0vw,55vw,10vw,0vw);
     }
     #fp-nav ul li {
         margin: 3px 6px;
