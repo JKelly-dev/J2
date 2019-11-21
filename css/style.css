@@ -359,9 +359,9 @@ div.section p {
     width: 20vw;
     height: 20vw;
     border-radius: 50%;
-    transition: all .5s ease-in-out;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
 }
 
 #circleRight {
@@ -373,9 +373,20 @@ div.section p {
     width: 20vw;
     height: 20vw;
     border-radius: 50%;
-    transition: all .5s ease-in-out;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+}
+
+#circleBottomBackground {
+    position: relative;
+    background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
 }
 
 #circleBottom {
@@ -385,21 +396,9 @@ div.section p {
     transform: translateX(-50%);
     width: 30vw;
     height: 30vw;
-    clip: rect(0vw,30vw,5vw,0vw);
     z-index: 101;
+    clip: rect(0vw,30vw,5vw,0vw);
 }
-
-#circleBottomBackground {
-    position: relative;
-    background-color: #000;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transition: all .5s ease-in-out;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-}
-
 
 #circleRightLogo {
     position: fixed;
