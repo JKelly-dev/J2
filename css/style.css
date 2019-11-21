@@ -386,6 +386,7 @@ div.section p {
     width: 30vw;
     height: 30vw;
     z-index: 101;
+    overflow: hidden;
 }
 
 #circleBottomBackground {
@@ -397,6 +398,7 @@ div.section p {
     transition: all .5s ease-in-out;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
+    overflow: hidden;
 }
 
 
