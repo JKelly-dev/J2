@@ -4,12 +4,12 @@ const loadCircle = document.querySelector('div.circle');
 const j2logo = document.querySelector('#loading img');
 const circleMenuLeft = document.getElementById('circleLeft');
 const circleMenuRight = document.getElementById('circleRight');
-const circleMenuBottom = document.getElementById('circleBottom');
+const circleMenuBottomBackground = document.getElementById('circleBottomBackground');
 const homeSectionText = document.querySelector('#homeSection p');
 const workSectionSlideText = document.querySelector('#workSection #slide1 p');
 var circleMenuLeftRotation = 0;
 var circleMenuRightRotation = 0;
-var circleMenuBottomRotation = 0;
+var circleMenuBottomBackgroundRotation = 0;
 function contentChange () {
     if (window.innerWidth > 600) {
         homeSectionText.textContent = "Scroll down to get started";
@@ -54,13 +54,13 @@ var myFullpage = new fullpage('#fullpage', {
             circleMenuLeft.style.transform = `translateY(-50%) rotate(${circleMenuLeftRotation}deg)`;
             circleMenuRightRotation-=90;
             circleMenuRight.style.transform = `translateY(-50%) rotate(${circleMenuRightRotation}deg)`;
-            circleMenuBottomRotation-=90;
-            circleMenuBottom.style.transform = `translateX(-50%) rotate(${circleMenuBottomRotation}deg)`;
+            circleMenuBottomBackgroundRotation-=90;
+            circleMenuBottomBackground.style.transform = `rotate(${circleMenuBottomBackgroundRotation}deg)`;
             if (origin.anchor == "work") {
-                circleMenuBottom.style.opacity = "0";
+                circleMenuBottomBackground.style.opacity = "0";
             } else if (destination.anchor == "work") {
                 setTimeout(() => {
-                    circleMenuBottom.style.opacity = "1";
+                    circleMenuBottomBackground.style.opacity = "1";
                 }, 300)
             } 
         },
@@ -69,8 +69,8 @@ var myFullpage = new fullpage('#fullpage', {
             circleMenuLeft.style.transform = `translateY(-50%) rotate(${circleMenuLeftRotation}deg)`;
             circleMenuRightRotation-=90;
             circleMenuRight.style.transform = `translateY(-50%) rotate(${circleMenuRightRotation}deg)`;
-            circleMenuBottomRotation-=90;
-            circleMenuBottom.style.transform = `translateX(-50%) rotate(${circleMenuBottomRotation}deg)`;
+            circleMenuBottomBackgroundRotation-=90;
+            circleMenuBottomBackground.style.transform = `rotate(${circleMenuBottomBackgroundRotation}deg)`;
         },
         loopBottom: true,
         loopTop: true
