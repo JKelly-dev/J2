@@ -389,6 +389,7 @@ div.section p {
     border-radius: 50%;
     transition: all .5s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
+    z-index: 101;
 }
 
 #circleRightLogo {

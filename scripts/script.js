@@ -12,11 +12,11 @@ var circleMenuRightRotation = 0;
 var circleMenuBottomRotation = 0;
 function contentChange () {
     if (window.innerWidth > 600) {
-        homeSectionText.textContent = "Scroll down to get started"
-        workSectionSlideText.textContent = "Click an arrow to view our work"
+        homeSectionText.textContent = "Scroll down to get started";
+        workSectionSlideText.textContent = "Click an arrow to view our work";
     } else {
-        homeSectionText.textContent = "Swipe up to get started"
-        workSectionSlideText.textContent = "Swipe left to view our work"
+        homeSectionText.textContent = "Swipe up to get started";
+        workSectionSlideText.textContent = "Swipe left to view our work";
     }
 }
 
