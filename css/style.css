@@ -387,6 +387,8 @@ div.section p {
     height: 30vw;
     z-index: 101;
     overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 #circleBottomBackground {
@@ -399,6 +401,8 @@ div.section p {
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 
