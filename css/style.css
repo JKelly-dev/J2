@@ -391,7 +391,7 @@ div.section p {
 
 #circleBottomBackground {
     position: relative;
-    background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
+    background-color: #000;
     width: 100%;
     height: 100%;
     border-radius: 50%;
