@@ -378,6 +378,16 @@ div.section p {
     -moz-transition: all .3s ease-in-out;
 }
 
+#circleBottom {
+    position: absolute;
+    bottom: -25vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30vw;
+    height: 30vw;
+    clip: rect(0vw,30vw,5vw,0vw);
+}
+
 #circleBottomBackground {
     position: relative;
     background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
@@ -387,17 +397,6 @@ div.section p {
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
-}
-
-#circleBottom {
-    position: absolute;
-    bottom: -25vw;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30vw;
-    height: 30vw;
-    z-index: 101;
-    clip: rect(0vw,30vw,5vw,0vw);
 }
 
 #circleRightLogo {

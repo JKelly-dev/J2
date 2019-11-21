@@ -57,7 +57,6 @@ var myFullpage = new fullpage('#fullpage', {
             circleMenuBottomBackgroundRotation-=90;
             circleMenuBottomBackground.style.transform = `rotate(${circleMenuBottomBackgroundRotation}deg)`;
             if (origin.anchor == "work") {
-                circleMenuBottomBackground.style.opacity = "0";
             } else if (destination.anchor == "work") {
                 setTimeout(() => {
                     circleMenuBottomBackground.style.opacity = "1";
