@@ -382,11 +382,8 @@ div.section p {
     position: absolute;
     bottom: -25vw;
     left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
     width: 30vw;
     height: 30vw;
-    clip: rect(0vw,30vw,5vw,0vw);
     z-index: 100;
 }
 
