@@ -380,8 +380,8 @@ div.section p {
 
 #circleBottom {
     position: absolute;
-    right: -25vw;
-    top: 50%;
+    bottom: -25vw;
+    left: 50%;
     transform: translateX(-50%) rotate(0deg);
     background-image: linear-gradient(0deg, #F800FF 0%, #3100FF 100%);
     width: 30vw;
