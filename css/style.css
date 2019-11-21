@@ -383,10 +383,8 @@ div.section p {
     bottom: -25vw;
     left: 50%;
     transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
     width: 30vw;
     height: 30vw;
-    z-index: 100;
     background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
     border-radius: 50%;
 }
