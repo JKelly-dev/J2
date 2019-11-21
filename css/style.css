@@ -380,9 +380,9 @@ div.section p {
 
 #circleBottom {
     position: absolute;
-    bottom: -25vw;
+    bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -25%);
     width: 30vw;
     height: 30vw;
     z-index: 101;
