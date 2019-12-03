@@ -276,70 +276,6 @@ html.fp-enabled,
      height: auto !important;
  }
 
-/*Loading Section*/
-section#loading {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 101;
-    background-color: white;
-}
-section#loading div.circle {
-    background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
-    width: 0vw;
-    height: 0vw;
-    transition: all .3s ease-in-out;
-    -webkit-transition: all .3s ease-in-out;
-}
-.fullwidth {animation: fullwidth 1.5s;-webkit-animation: fullwidth 1.5s;}
-@keyframes fullwidth {
-    0% {width: 20vw; height: 20vw;}
-    10% {width: 100vw; height: 100vh;}
-    95% {width: 100vw; height: 100vh;}
-    100% {width: 0vw; height: 100vh;}
-}
-.j2hide {animation: j2hide 1.5s; -webkit-animation: j2hide 1.5s;}
-@keyframes j2hide {
-    0%, 80% {opacity: 1;}
-    90%, 100% {opacity: 0;}
-}
-.spin {animation: spin 1s; -webkit-animation: spin 1.5s;}
-@keyframes spin {
-    0% {transform: rotate(0deg); border-radius: 0%; width: 20vw; height: 20vw;}
-    50% {border-radius: 50%;}
-    100% {transform: rotate(360deg); border-radius: 0%; width: 20vw; height: 20vw;}
-}
-section#loading img {
-    width: 10vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-@media screen and (max-width: 900px) {
-    @keyframes fullwidth {
-        0% {width: 30vw; height: 30vw;}
-        10% {width: 100vw; height: 100vh;}
-        95% {width: 100vw; height: 100vh;}
-        100% {width: 0vw; height: 100vh;}
-    }
-    @keyframes spin {
-        0% {transform: rotate(0deg); border-radius: 0%; width: 30vw; height: 30vw;}
-        50% {border-radius: 50%;}
-        100% {transform: rotate(360deg); border-radius: 0%; width: 30vw; height: 30vw;}
-    }
-    section#loading img {
-        width: 15vw;
-    }
-}
-
 div.section h1 {
     font-size: 4vw;
 }
@@ -372,20 +308,6 @@ div.section p {
     background-image: linear-gradient(0deg, #F800FF 0%, #3100FF 100%);
     width: 20vw;
     height: 20vw;
-    border-radius: 50%;
-    transition: all .3s ease-in-out;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-}
-
-#circleBottom {
-    position: absolute;
-    bottom: -25vw;
-    left: 50%;
-    transform: translateX(-50%);
-    background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
-    width: 30vw;
-    height: 30vw;
     border-radius: 50%;
     transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
@@ -534,11 +456,6 @@ div#homeSection img {
     div#workSection div#slide1 img, div#homeSection img {
         display: none;
     }
-    #circleBottom {
-        bottom: -26vw;
-        width: 30vw;
-        height: 30vw;
-    }
     #fp-nav ul li:nth-child(1) a::after, #fp-nav ul li:nth-child(2) a::after, #fp-nav ul li:nth-child(3) a::after, #fp-nav ul li:nth-child(4) a::after {
         font-family: 'Neutra', sans-serif;
         color: white;
@@ -684,11 +601,6 @@ div#homeSection img {
         width: 30vw;
         height: 30vw;
     }
-    #circleBottom {
-        bottom: -38vw;
-        width: 45vw;
-        height: 45vw;
-    }
     #fp-nav ul li {
         margin: 3px 6px;
     }
@@ -746,11 +658,6 @@ div#homeSection img {
         right: -33vw;
         width: 45vw;
         height: 45vw;
-    }
-    #circleBottom {
-        bottom: -45vw;
-        width: 55vw;
-        height: 55vw;
     }
     #fp-nav ul li {
         margin: 3px 6px;

@@ -20,8 +20,95 @@
         <link rel="shortcut icon" href="src/favicon.ico">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-config" content="src/browserconfig.xml">
+        <style>
+            section#loading {
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                z-index: 101;
+                background-color: white;
+            }
+            section#loading div.circle {
+                background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
+                width: 0vw;
+                height: 0vw;
+                transition: all .3s ease-in-out;
+                -webkit-transition: all .3s ease-in-out;
+            }
+            .fullwidth {animation: fullwidth 1.5s;-webkit-animation: fullwidth 1.5s;}
+            @keyframes fullwidth {
+                0% {width: 20vw; height: 20vw;}
+                10% {width: 100vw; height: 100vh;}
+                95% {width: 100vw; height: 100vh;}
+                100% {width: 0vw; height: 100vh;}
+            }
+            .j2hide {animation: j2hide 1.5s; -webkit-animation: j2hide 1.5s;}
+            @keyframes j2hide {
+                0%, 80% {opacity: 1;}
+                90%, 100% {opacity: 0;}
+            }
+            .spin {animation: spin 1s; -webkit-animation: spin 1.5s;}
+            @keyframes spin {
+                0% {transform: rotate(0deg); border-radius: 0%; width: 20vw; height: 20vw;}
+                50% {border-radius: 50%;}
+                100% {transform: rotate(360deg); border-radius: 0%; width: 20vw; height: 20vw;}
+            }
+            section#loading img {
+                width: 10vw;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            @media screen and (max-width: 900px) {
+                @keyframes fullwidth {
+                    0% {width: 30vw; height: 30vw;}
+                    10% {width: 100vw; height: 100vh;}
+                    95% {width: 100vw; height: 100vh;}
+                    100% {width: 0vw; height: 100vh;}
+                }
+                @keyframes spin {
+                    0% {transform: rotate(0deg); border-radius: 0%; width: 30vw; height: 30vw;}
+                    50% {border-radius: 50%;}
+                    100% {transform: rotate(360deg); border-radius: 0%; width: 30vw; height: 30vw;}
+                }
+                section#loading img {
+                    width: 15vw;
+                }
+            }
+        </style>
     </head>
     <body>
+    <script>
+        window.addEventListener('load', () => {
+            loadCircle.addEventListener('animationend', () => {
+                if (loadCircle.classList.contains('spin')) {
+                    loadCircle.classList.remove('spin');
+                    loadCircle.classList.add('fullwidth');
+                    j2logo.classList.add('j2hide');
+                    j2logo.style.opacity = "0";
+                    setTimeout(() => {
+                        loadingSection.style.backgroundColor = "transparent";
+                        j2logo.style.opacity = "0";
+                        j2logo.style.visibility = "hidden";
+                    }, 1000)
+                } else if (loadCircle.classList.contains('fullwidth') && j2logo.classList.contains('j2hide')) {
+                    loadCircle.classList.remove('fullwidth');
+                    loadCircle.style.visibility = "hidden";
+                    loadCircle.classList.remove('j2hide');
+                    loadingSection.style.height = "0px"; 
+                }
+            });
+            contentChange();
+        });
+        </script>    
         <section id="loading">
             <div class="circle spin"></div>
             <img src="src/j2.svg" alt="J2  Logo">
@@ -82,7 +169,6 @@
                         <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
                     </ul>
                 </div>
-                <div id="circleBottom"></div>
             </div>
             <div class="section" id="talkSection">
                 <h1>Talk Section</h1>
