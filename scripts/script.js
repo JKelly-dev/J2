@@ -1,14 +1,12 @@
-const loadingSection = document.getElementById('loading');
-const loadStop = document.getElementById('loadstop');
-const loadCircle = document.querySelector('div.circle');
-const j2logo = document.querySelector('#loading img');
 const circleMenuLeft = document.getElementById('circleLeft');
 const circleMenuRight = document.getElementById('circleRight');
 const homeSectionText = document.querySelector('#homeSection p');
 const workSectionSlideText = document.querySelector('#workSection #slide1 p');
+const formSelector = document.getElementById('talkForm');
+const emailInput = formSelector.querySelector('.email')
 var circleMenuLeftRotation = 0;
 var circleMenuRightRotation = 0;
-function contentChange () {
+var contentChange = function () {
     if (window.innerWidth > 600) {
         homeSectionText.textContent = "Scroll down to get started";
         workSectionSlideText.textContent = "Click an arrow to view our work";
@@ -17,9 +15,22 @@ function contentChange () {
         workSectionSlideText.textContent = "Swipe left to view our work";
     }
 }
+var formValidation = function (email) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+    {
+        return (true);
+    } else {
+        alert("Please enter a valid email address.");
+        return (false);
+    }
+}
 
 document.addEventListener('load', function() {
     contentChange();
+});
+
+formSelector.addEventListener('submit', function () {
+    formValidation();
 });
 
 var myFullpage = new fullpage('#fullpage', {

@@ -86,7 +86,15 @@
         </style>
     </head>
     <body>
+    <section id="loading">
+        <div class="circle spin"></div>
+        <img src="src/j2.svg" alt="J2  Logo">
+    </section>
     <script>
+        const loadingSection = document.getElementById('loading');
+        const loadStop = document.getElementById('loadstop');
+        const loadCircle = document.querySelector('div.circle');
+        const j2logo = document.querySelector('#loading img');
         window.addEventListener('load', () => {
             loadCircle.addEventListener('animationend', () => {
                 if (loadCircle.classList.contains('spin')) {
@@ -106,13 +114,8 @@
                     loadingSection.style.height = "0px"; 
                 }
             });
-            contentChange();
         });
         </script>    
-        <section id="loading">
-            <div class="circle spin"></div>
-            <img src="src/j2.svg" alt="J2  Logo">
-        </section>
         <div id="fullpage">
             <div class="section" id="homeSection">
                 <h1>Home Section</h1>
@@ -173,11 +176,11 @@
             <div class="section" id="talkSection">
                 <h1>Talk Section</h1>
                 <p>Get in contact with us below</p>
-                <form action="/success.html" name="talkFormName" id="talkForm" netlify>
-                    <input type="text" name="name" placeholder="Name"/>
-                    <input type="email" name="email" placeholder="Email"/>
-                    <textarea type="text" name="message" placeholder="Message"></textarea>
-                    <button type="submit">Submit</button>
+                <form name="talkFormName" id="talkForm" method="POST" data-netlify="true">
+                    <input type="text" name="name" class="name" placeholder="Name"/>
+                    <input type="email" name="email" class="email" placeholder="Email"/>
+                    <textarea type="text" name="message" class="message" placeholder="Message"></textarea>
+                    <button type="submit" class="submit">Submit</button>
                 </form>
             </div>
         </div>

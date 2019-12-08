@@ -400,7 +400,7 @@ div#homeSection img {
     min-width: 50%;
     width: 50%;
     margin: auto;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 }
 #talkForm input::placeholder, textarea::placeholder {
     color: white;
@@ -696,7 +696,7 @@ div#homeSection img {
     #talkForm button {
         min-width: 50%;
         width: 50%;
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         line-height: 1rem;
     }
     #talkForm input::placeholder, textarea::placeholder {
@@ -746,8 +746,8 @@ div#homeSection img {
 @media (max-height: 600px) and (min-width: 900px) {
     #talkForm input, textarea, button {
         max-width: 100%;
-        padding: 7.5px;
+        padding: 10px;
         margin: 10px 0px;
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
