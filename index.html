@@ -176,11 +176,19 @@
             <div class="section" id="talkSection">
                 <h1>Talk Section</h1>
                 <p>Get in contact with us below</p>
-                <form name="talkFormName" id="talkForm" method="POST" data-netlify="true">
-                    <input type="text" name="name" class="name" placeholder="Name"/>
-                    <input type="email" name="email" class="email" placeholder="Email"/>
-                    <textarea type="text" name="message" class="message" placeholder="Message"></textarea>
-                    <button type="submit" class="submit">Submit</button>
+                <form name="contact" method="POST" data-netlify="true">
+                    <p>
+                        <label>Name: <input type="text" name="email" /></label>
+                    </p>
+                    <p>
+                      <label>Email: <input type="text" name="email" /></label>
+                    </p>
+                    <p>
+                      <label>Message: <textarea name="message"></textarea></label>
+                    </p>
+                    <p>
+                      <button type="submit">Send</button>
+                    </p>
                 </form>
             </div>
         </div>
