@@ -2,8 +2,6 @@ const circleMenuLeft = document.getElementById('circleLeft');
 const circleMenuRight = document.getElementById('circleRight');
 const homeSectionText = document.querySelector('#homeSection p');
 const workSectionSlideText = document.querySelector('#workSection #slide1 p');
-const formSelector = document.getElementById('talkForm');
-const emailInput = formSelector.querySelector('.email')
 var circleMenuLeftRotation = 0;
 var circleMenuRightRotation = 0;
 var contentChange = function () {
@@ -15,22 +13,9 @@ var contentChange = function () {
         workSectionSlideText.textContent = "Swipe left to view our work";
     }
 }
-var formValidation = function (email) {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
-    {
-        return (true);
-    } else {
-        alert("Please enter a valid email address.");
-        return (false);
-    }
-}
 
 document.addEventListener('load', function() {
     contentChange();
-});
-
-formSelector.addEventListener('submit', function () {
-    formValidation();
 });
 
 var myFullpage = new fullpage('#fullpage', {
