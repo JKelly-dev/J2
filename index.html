@@ -9,9 +9,7 @@
         <meta name="google-site-verification" content="-whaNYRhZtZi8PJDzCLH8g4C0Hc_ihpr0rfvzF8GmHI" />
         <meta name="keywords" content="J2, JackSquared, Digital Agency, J2 Agency, J2 Business, Jack Squared, Jack Squared Digital Agency, KC, Kansas City, Kansas City Digital Agency, Web design, Graphic Design, Video Production, J2 Kansas">
         <meta name="Description" content="J2 is a Digital Agency based out of KC.">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet"> 
         <!--Icons-->
-        <link rel="stylesheet" href="css/style.css">
         <link rel="apple-touch-icon" sizes="180x180" href="src/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="src/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16x16.png">
@@ -84,6 +82,8 @@
                 }
             }
         </style>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
     <section id="loading">
@@ -176,19 +176,14 @@
             <div class="section" id="talkSection">
                 <h1>Talk Section</h1>
                 <p>Get in contact with us below</p>
-                <form name="contact" method="POST" data-netlify="true">
-                    <p>
-                        <label>Name: <input type="text" name="email" /></label>
-                    </p>
-                    <p>
-                      <label>Email: <input type="text" name="email" /></label>
-                    </p>
-                    <p>
-                      <label>Message: <textarea name="message"></textarea></label>
-                    </p>
-                    <p>
-                      <button type="submit">Send</button>
-                    </p>
+                <form id="talkForm" name="contact" method="POST" data-netlify="true">
+                    <label for="name-input">Name</label>
+                    <input type="text" id="name-input" class="required" value="" required/>
+                    <label for="email-input">Email</label>
+                    <input type="text" id="email-input" class="required" value="" required/>    
+                    <label for="message-input">Message</label>
+                    <textarea type="text" id="message-input" class="required" value="" required/></textarea> 
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </div>
@@ -196,6 +191,7 @@
         <div id="circleLeft"></div>
         <div id="circleRight"></div>
         <script type="text/javascript" src="scripts/fullpage.js"></script>
+        <script type="text/javascript" src="scripts/float-labels.min.js"></script>
         <script type="text/javascript" src="scripts/script.js"></script>
     </body> 
 </html>

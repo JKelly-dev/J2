@@ -23,7 +23,7 @@ var myFullpage = new fullpage('#fullpage', {
         anchors: ['home', 'about', 'work', 'talk'],
         navigation: true,
         navigationPosition: 'left',
-        scrollingSpeed: 400,
+        scrollingSpeed: 700,
         onLeave: function(origin, destination, direction){
             circleMenuLeftRotation+=90;
             circleMenuLeft.style.transform = `translateY(-50%) rotate(${circleMenuLeftRotation}deg)`;
@@ -38,6 +38,11 @@ var myFullpage = new fullpage('#fullpage', {
         },
         loopBottom: true,
         loopTop: true
+});
+
+var floatlabels = new FloatLabels( '#talkForm', {
+    requiredClass    : 'required',
+    style            : 2,
 });
 
 window.addEventListener("resize", () => {
