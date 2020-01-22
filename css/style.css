@@ -356,24 +356,7 @@ div#homeSection img {
         transform: translateY(15px) rotate(120deg);
     } 
 }
-#talkForm {
-    max-width: 50vw;
-    width: 50vw;
-    margin: 13px auto;
-    font-family: 'Neutra', sans-serif;
-}
-#talkForm button {
-    width: 50%;
-    margin: auto;
-    font-size: 3vw;
-    display: block;
-    padding: 10px 15px;
-    font-family: 'Neutra', sans-serif;
-    border: none;
-    border-radius: 3px;
-    background-color: white;
-    box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px  rgba(255,255,255, 0.8);
-}
+
 .slide ul {
     max-width: 55vw;
     display: flex;
@@ -633,27 +616,7 @@ FLOAT LABELS
 
 */
 
-/**
- * @return percent
- */
-/**
- * @return int
- */
-/**
- * @return unit px
- */
-/**
- * @return unit px
- */
-/**
- * @return percent
- */
-/**
- * @return unit px
- */
-/**
- * @return mixed
- */
+
  @-ms-viewport {
     width: device-width;
   }
@@ -1123,45 +1086,28 @@ FLOAT LABELS
     -moz-osx-font-smoothing: grayscale;
   }
   
-  .fl-form input.fl-input,
-  .fl-form select.fl-select,
-  .fl-form textarea.fl-textarea {
-    width: 100%;
-    outline: 0;
-    font-family: 'Neutra', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    border: none;
-    border-radius: 3px;
-    background-color: #ffffff;
-    box-sizing: border-box;
-    transition: all 0.2s ease-in-out;
-    margin-bottom: 1.4375rem;
-    box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px  rgba(255,255,255, 0.8);
-  }
-  
   .fl-form input.fl-input:-moz-placeholder,
   .fl-form select.fl-select:-moz-placeholder,
   .fl-form textarea.fl-textarea:-moz-placeholder {
-    color: #000;
+    color: #444;
   }
   
   .fl-form input.fl-input::-moz-placeholder,
   .fl-form select.fl-select::-moz-placeholder,
   .fl-form textarea.fl-textarea::-moz-placeholder {
-    color: #000;
+    color: #444;
   }
   
   .fl-form input.fl-input:-ms-input-placeholder,
   .fl-form select.fl-select:-ms-input-placeholder,
   .fl-form textarea.fl-textarea:-ms-input-placeholder {
-    color: #000;
+    color: #444;
   }
   
   .fl-form input.fl-input::-webkit-input-placeholder,
   .fl-form select.fl-select::-webkit-input-placeholder,
   .fl-form textarea.fl-textarea::-webkit-input-placeholder {
-    color: #000;
+    color: #444;
   }
   
   .fl-form select.fl-select {
@@ -1179,14 +1125,46 @@ FLOAT LABELS
   .fl-form .fl-is-active input.fl-input,
   .fl-form .fl-is-active select.fl-select,
   .fl-form .fl-is-active textarea.fl-textarea {
-    color: #444;
-    background-color: #fff;
+    color: #000;
+    background-color: #F1F3F6;
   }
   
   .fl-form .fl-has-focus input.fl-input,
   .fl-form .fl-has-focus select.fl-select,
   .fl-form .fl-has-focus textarea.fl-textarea {
-    background-color: #fff;
+    background-color: #F1F3F6;
+  }
+
+  /*
+CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES
+  */
+
+  #talkForm {
+    max-width: 50vw;
+    width: 50vw;
+    margin: 13px auto;
+    font-family: 'Neutra', sans-serif;
+  }
+
+  #talkSection div p {
+    margin: 0px auto 2vw;
+  }
+
+  #talkSection div h1 {
+    line-height: .9;
+  }
+
+  #talkForm button {
+      width: 50%;
+      margin: auto;
+      font-size: 2vw;
+      display: block;
+      padding: 15px 15px 10px;
+      font-family: 'Neutra', sans-serif;
+      border: none;
+      border-radius: 3px;
+      background-color: #F1F3F6;
+      box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.7);
   }
   
   .fl-form label.fl-label {
@@ -1197,7 +1175,7 @@ FLOAT LABELS
     top: -12px;
     font-family: 'Neutra', sans-serif;
     left: 0;
-    font-size: 12px;
+    font-size: 1vw;
     font-weight: 400;
     line-height: 1;
     color: #F800FF;
@@ -1205,7 +1183,61 @@ FLOAT LABELS
     transition: all 0.2s ease-in-out;
     z-index: 1;
   }
+
+  .fl-form input.fl-input,
+  .fl-form select.fl-select,
+  .fl-form textarea.fl-textarea {
+    width: 100%;
+    outline: 0;
+    font-family: 'Neutra', sans-serif;
+    font-size: 1.75vw;
+    line-height: 1.5;
+    border: none;
+    border-radius: 3px;
+    background-color: #F1F3F6;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 1.4375rem;
+    box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.7);
+  }
+
+  .fl-form.fl-style-2 label.fl-label {
+    top: 4px;
+    left: 10px;
+    padding: 6px 3px 3px;
+  }
   
+  .fl-form.fl-style-2 .fl-is-active input.fl-input,
+  .fl-form.fl-style-2 .fl-is-active select.fl-select,
+  .fl-form.fl-style-2 .fl-is-active textarea.fl-textarea {
+    padding: 25px 12px 6px;
+  }
+
+  .fl-form.fl-style-2 .fl-is-required:before {
+    padding-top: 12px;
+  }
+
+  .fl-form .fl-is-required:before {
+      opacity: 1;
+      content: '*';
+      display: block;
+      position: absolute;
+      top: 1px;
+      right: 15px;
+      font-size: 2vw;
+      line-height: 1.75;
+      color: #D32F2F;
+      transition: all 0.2s ease-in-out;
+      padding: 6px 0 0;
+      font-family: 'Neutra', sans-serif;
+      z-index: 1;
+  }
+
+
+  /*
+CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES
+  */
+
   body[dir=rtl] .fl-form label.fl-label {
     left: unset;
     right: 0;
@@ -1218,22 +1250,6 @@ FLOAT LABELS
   
   .fl-form .fl-has-focus label.fl-label {
     color: #3100FF;
-  }
-  
-  .fl-form .fl-is-required:before {
-    opacity: 1;
-    content: '*';
-    display: block;
-    position: absolute;
-    top: 1px;
-    right: 15px;
-    font-size: 16px;
-    line-height: 1.75;
-    color: #D32F2F;
-    transition: all 0.2s ease-in-out;
-    padding: 6px 0 0;
-    font-family: 'Neutra', sans-serif;
-    z-index: 1;
   }
   
   body[dir=rtl] .fl-form .fl-is-required:before {
@@ -1260,13 +1276,7 @@ FLOAT LABELS
   .fl-form.fl-style-1 .fl-is-active textarea.fl-textarea {
     padding: 6px 12px;
   }
-  
-  .fl-form.fl-style-1 label.fl-label {
-    top: 1px;
-    left: 10px;
-    background-color: transparent;
-    padding: 12px 3px;
-  }
+
   
   .fl-form.fl-style-1 label.fl-label:before {
     content: '';
@@ -1303,23 +1313,7 @@ FLOAT LABELS
   .fl-form.fl-style-2 select.fl-select {
     height: 50px;
   }
-  
-  .fl-form.fl-style-2 .fl-is-active input.fl-input,
-  .fl-form.fl-style-2 .fl-is-active select.fl-select,
-  .fl-form.fl-style-2 .fl-is-active textarea.fl-textarea {
-    padding: 18px 12px 6px;
-  }
-  
-  .fl-form.fl-style-2 label.fl-label {
-    top: 1px;
-    left: 10px;
-    padding: 6px 3px 3px;
-  }
-  
-  .fl-form.fl-style-2 .fl-is-required:before {
-    padding-top: 12px;
-  }
-  
+
   body[dir=rtl] .fl-form.fl-style-2 label.fl-label {
     left: unset;
     right: 10px;
