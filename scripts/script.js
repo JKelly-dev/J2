@@ -14,10 +14,6 @@ var contentChange = function () {
     }
 }
 
-document.addEventListener('load', function() {
-    contentChange();
-});
-
 var myFullpage = new fullpage('#fullpage', {
         licenseKey: '32FDC319-24F94392-ABCB0861-ECB0F5E9',
         anchors: ['home', 'about', 'work', 'talk'],
@@ -43,6 +39,10 @@ var myFullpage = new fullpage('#fullpage', {
 var floatlabels = new FloatLabels( '#talkForm', {
     requiredClass    : 'required',
     style            : 2,
+});
+
+document.addEventListener('load', function() {
+    contentChange();
 });
 
 window.addEventListener("resize", () => {

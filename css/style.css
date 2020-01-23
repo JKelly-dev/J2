@@ -1,34 +1,37 @@
-/*Fonts*/
-@font-face {
-    font-family: 'Neutra';
-    src: url('../src/Neutra.woff2') format('woff2'),
-        url('../src/Neutra.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
+  /*Fonts*/
+  @font-face {
+      font-family: 'Neutra';
+      src: url('../src/Neutra.woff2') format('woff2'),
+          url('../src/Neutra.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+  }
 
-* {
-    box-sizing: border-box;
-    transition: .3s all ease-in-out;
-    -webkit-transition: .3s all ease-in-out;
+  * {
+      box-sizing: border-box;
+      transition: .3s all ease-in-out;
+      -webkit-transition: .3s all ease-in-out;
 
-}
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Neutra', sans-serif;
-    margin: 0px auto;
-    text-align: center;
-}
-p {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0px auto;
-    text-align: center;
-}
-#workSection #slide1 p {
-    text-align: center;
-}
-#workSection .slide p {
-    text-align: justify;
-}
+  }
+  h1, h2, h3, h4, h5, h6 {
+      font-family: 'Neutra', sans-serif;
+      margin: 0px auto;
+      text-align: center;
+  }
+  p {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0px auto;
+      text-align: center;
+  }
+  #workSection #slide1 p {
+      text-align: center;
+  }
+  #workSection .slide p {
+      text-align: justify;
+  }
+  #workSection .slide p a:hover {
+    text-decoration: none;
+  }
 body {
     margin: 0;
     overflow-x: hidden;
@@ -316,7 +319,7 @@ div.section p {
     color: #EBF3FA;
     position: relative;
     left: 25px;
-    top: -4px;
+    top: 0px;
     font-size: 22px;
     transition: all .1s ease-in-out;
     -webkit-transition: all .1s ease-in-out;
@@ -374,241 +377,9 @@ div#homeSection img {
 
 .slide ul li img {
     width: 100%;
-    box-shadow: #00000050 0px 0px 20px;
+    box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.7);
     border-radius: 7px;
 } 
-
-.slide ul li img:hover {
-    box-shadow: #00000035 0px 0px 30px;
-    transform: scale(1.1);
-    -webkit-transition: all .1s ease-in-out;
-    transition: all .1s ease-in-out;
-} 
-
-@media screen and (min-width: 1600px) {
-    div#workSection div#slide1 img, div#homeSection img {
-        display: none;
-    }
-    #fp-nav ul li:nth-child(1) a::after, #fp-nav ul li:nth-child(2) a::after, #fp-nav ul li:nth-child(3) a::after, #fp-nav ul li:nth-child(4) a::after {
-        font-family: 'Neutra', sans-serif;
-        color: #EBF3FA;
-        position: relative;
-        left: 34px;
-        top: -4px;
-        font-size: 28px;
-    }
-    #fp-nav ul li {
-        width: 28px;
-        height: 28px;
-        margin: 15px;
-    }
-    .fp-slidesNav ul li {
-        margin: 15px 7px;
-    }
-    #fp-nav ul li a.active span,
-    .fp-slidesNav ul li a.active span,
-    #fp-nav ul li:hover a.active span,
-    .fp-slidesNav ul li:hover a.active span{
-        height: 24px;
-        width: 24px;
-        margin: -12px 0 0 -12px;
-        border-radius: 100%;
-     }
-    #fp-nav ul li a span,
-    .fp-slidesNav ul li a span {
-        height: 10px;
-        width: 10px;
-        margin: -5px 0 0 -5px;
-    }
-    #fp-nav ul li:hover a span,
-    .fp-slidesNav ul li:hover a span{
-        width: 18px;
-        height: 18px;
-        margin: -9px 0px 0px -9px;
-    }
-    #fp-nav.fp-left {
-        left: 5px;
-    }
-    div.section h1 {
-        font-size: 6vw;
-        max-width: 55vw;
-    }
-    div.section p {
-        font-size: 2vw;
-        max-width: 55vw;
-    }
-}
-@media screen and (max-width: 1600px) {
-    div#workSection div#slide1 img, div#homeSection img {
-        display: none;
-    }
-    #fp-nav ul li {
-        margin: 20px 5px;
-    }
-    .fp-slidesNav ul li {
-        margin: 15px 5px;
-    }
-    #fp-nav.fp-left {
-        left: 11px;
-    }
-    div.section h1 {
-        font-size: 7vw;
-        max-width: 55vw;
-    }
-    div.section p {
-        font-size: 2.25vw;
-        max-width: 55vw;
-    }
-}
-@media screen and (max-width: 1400px) {
-    div#workSection div#slide1 img, div#homeSection img {
-        display: none;
-    }
-    #fp-nav ul li a::after {
-        opacity: 0;
-    }
-    #fp-nav ul li {
-        margin: 20px 5px;
-    }
-    .fp-slidesNav ul li {
-        margin: 5px 2px;
-    }
-    #fp-nav.fp-left {
-        left: 11px;
-    }
-    div.section h1 {
-        font-size: 8vw;
-        max-width: 55vw;
-    }
-    div.section p {
-        font-size: 2.75vw;
-        max-width: 55vw;
-    }
-    #workSection .slide ul {
-        max-width: 45vw;
-    }
-    #workSection .slide p {
-        font-size: 2vw;
-        max-width: 45vw;
-    }
-    #workSection .slide h1 {
-        font-size: 7vw;
-        max-width: 45vw;
-    }
-}
-@media screen and (max-width: 900px) {
-    div#workSection div#slide1 img, div#homeSection img {
-        display: none;
-    }
-    #circleLeft {
-        left: -20vw;
-        width: 30vw;
-        height: 30vw;
-    }
-    #circleRight {
-        right: -20vw;
-        width: 30vw;
-        height: 30vw;
-    }
-    #fp-nav ul li {
-        margin: 3px 6px;
-    }
-    .fp-slidesNav ul li {
-        margin: 3px 3px;
-    }
-    #fp-nav.fp-left {
-        left: 9px;
-    }
-    #fp-nav ul li a::after {
-        opacity: 0;
-    }
-    div.section p {
-        font-size: 2.75vw;
-        max-width: 55vw;
-    }
-}
-@media screen and (max-width: 600px) {
-    div#workSection div#slide1 img, div#homeSection img {
-        display: block;
-    }
-    #circleLeft {
-        left: -33vw;
-        width: 45vw;
-        height: 45vw;
-    }
-    #circleRight {
-        right: -33vw;
-        width: 45vw;
-        height: 45vw;
-    }
-    #fp-nav ul li {
-        margin: 3px 6px;
-    }
-    .fp-slidesNav ul li {
-        margin: 0px 0px;
-    }
-    #fp-nav.fp-left {
-        left: 0px;
-    }
-    #circleRightLogo {
-        position: fixed;
-        right: 1.5vw;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 8.5vw;
-        z-index: 1;
-    }
-    #fp-nav ul li a::after {
-        opacity: 0;
-    }
-    .fp-controlArrow.fp-next, .fp-controlArrow.fp-prev {
-        opacity: 0;
-        visibility: hidden;
-    }
-    div.section h1 {
-        font-size: 10vw;
-        max-width: 65vw;
-    }
-    div.section p {
-        font-size: 4vw;
-        max-width: 65vw;
-    }
-    .slide ul li {
-        width: 35%;
-    }
-    .slide ul {
-        max-width: 55vw;
-        display: flex;
-        justify-content: space-between;
-        margin: 0 auto;
-        padding: 0;
-        list-style: none;
-        flex-wrap: wrap;
-    }
-}
-@media screen and (max-width: 475px) { 
-    .slide ul li {
-        width: 40%;
-    }
-    .slide ul {
-        max-width: 55vw;
-        display: flex;
-        justify-content: space-between;
-        margin: 0 auto;
-        padding: 0;
-        list-style: none;
-        flex-wrap: wrap;
-    }
-}
-@media (max-height: 600px) and (min-width: 900px) {
-    /*
-    #talkForm input, textarea, button {
-        max-width: 100%;
-        padding: 10px;
-        margin: 10px 0px;
-        font-size: 1.5rem;
-    }*/
-}
 
 /*
 
@@ -1089,25 +860,25 @@ FLOAT LABELS
   .fl-form input.fl-input:-moz-placeholder,
   .fl-form select.fl-select:-moz-placeholder,
   .fl-form textarea.fl-textarea:-moz-placeholder {
-    color: #444;
+    color: #000;
   }
   
   .fl-form input.fl-input::-moz-placeholder,
   .fl-form select.fl-select::-moz-placeholder,
   .fl-form textarea.fl-textarea::-moz-placeholder {
-    color: #444;
+    color: #000;
   }
   
   .fl-form input.fl-input:-ms-input-placeholder,
   .fl-form select.fl-select:-ms-input-placeholder,
   .fl-form textarea.fl-textarea:-ms-input-placeholder {
-    color: #444;
+    color: #000;
   }
   
   .fl-form input.fl-input::-webkit-input-placeholder,
   .fl-form select.fl-select::-webkit-input-placeholder,
   .fl-form textarea.fl-textarea::-webkit-input-placeholder {
-    color: #444;
+    color: #000;
   }
   
   .fl-form select.fl-select {
@@ -1125,7 +896,7 @@ FLOAT LABELS
   .fl-form .fl-is-active input.fl-input,
   .fl-form .fl-is-active select.fl-select,
   .fl-form .fl-is-active textarea.fl-textarea {
-    color: #000;
+    color: #212121;
     background-color: #F1F3F6;
   }
   
@@ -1140,14 +911,14 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
   */
 
   #talkForm {
-    max-width: 50vw;
-    width: 50vw;
+    max-width: 55vw;
+    width: 55vw;
     margin: 13px auto;
     font-family: 'Neutra', sans-serif;
   }
 
   #talkSection div p {
-    margin: 0px auto 2vw;
+    margin: 1vw auto 2vw;
   }
 
   #talkSection div h1 {
@@ -1164,7 +935,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       border: none;
       border-radius: 3px;
       background-color: #F1F3F6;
-      box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.7);
+      box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.6);
   }
   
   .fl-form label.fl-label {
@@ -1198,7 +969,8 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     box-sizing: border-box;
     transition: all 0.2s ease-in-out;
     margin-bottom: 1.4375rem;
-    box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.7);
+    -webkit-appearance: none;
+    box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.6);
   }
 
   .fl-form.fl-style-2 label.fl-label {
@@ -1631,3 +1403,278 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     margin: 0;
   }
   
+  @media screen and (min-width: 1600px) {
+    div#workSection div#slide1 img, div#homeSection img {
+        display: none;
+    }
+    #fp-nav ul li:nth-child(1) a::after, #fp-nav ul li:nth-child(2) a::after, #fp-nav ul li:nth-child(3) a::after, #fp-nav ul li:nth-child(4) a::after {
+        font-family: 'Neutra', sans-serif;
+        color: #EBF3FA;
+        position: relative;
+        left: 34px;
+        top: 0px;
+        font-size: 28px;
+    }
+    #fp-nav ul li {
+        width: 28px;
+        height: 28px;
+        margin: 15px;
+    }
+    .fp-slidesNav ul li {
+        margin: 15px 7px;
+    }
+    #fp-nav ul li a.active span,
+    .fp-slidesNav ul li a.active span,
+    #fp-nav ul li:hover a.active span,
+    .fp-slidesNav ul li:hover a.active span{
+        height: 24px;
+        width: 24px;
+        margin: -12px 0 0 -12px;
+        border-radius: 100%;
+     }
+    #fp-nav ul li a span,
+    .fp-slidesNav ul li a span {
+        height: 10px;
+        width: 10px;
+        margin: -5px 0 0 -5px;
+    }
+    #fp-nav ul li:hover a span,
+    .fp-slidesNav ul li:hover a span{
+        width: 18px;
+        height: 18px;
+        margin: -9px 0px 0px -9px;
+    }
+    #fp-nav.fp-left {
+        left: 5px;
+    }
+    div.section h1 {
+        font-size: 6vw;
+        max-width: 55vw;
+    }
+    div.section p {
+        font-size: 2vw;
+        max-width: 55vw;
+    }
+}
+@media screen and (max-width: 1600px) {
+    div#workSection div#slide1 img, div#homeSection img {
+        display: none;
+    }
+    #fp-nav ul li {
+        margin: 20px 5px;
+    }
+    .fp-slidesNav ul li {
+        margin: 15px 5px;
+    }
+    #fp-nav.fp-left {
+        left: 11px;
+    }
+    div.section h1 {
+        font-size: 7vw;
+        max-width: 55vw;
+    }
+    div.section p {
+        font-size: 2.25vw;
+        max-width: 55vw;
+    }
+}
+@media screen and (max-width: 1400px) {
+    div#workSection div#slide1 img, div#homeSection img {
+        display: none;
+    }
+    #fp-nav ul li a::after {
+        opacity: 0;
+    }
+    #fp-nav ul li {
+        margin: 20px 5px;
+    }
+    .fp-slidesNav ul li {
+        margin: 5px 2px;
+    }
+    #fp-nav.fp-left {
+        left: 11px;
+    }
+    div.section h1 {
+        font-size: 8vw;
+        max-width: 55vw;
+    }
+    div.section p {
+        font-size: 2.75vw;
+        max-width: 55vw;
+    }
+    #workSection .slide ul {
+        max-width: 45vw;
+    }
+    #workSection .slide p {
+        font-size: 3vw;
+        max-width: 45vw;
+    }
+    #workSection .slide:first-child p {
+      font-size: 3vw;
+      max-width: 45vw;
+   }
+    #workSection .slide h1 {
+        font-size: 7vw;
+        max-width: 45vw;
+    }
+}
+@media screen and (max-width: 900px) {
+    div#workSection div#slide1 img, div#homeSection img {
+        display: none;
+    }
+    #circleLeft {
+        left: -20vw;
+        width: 30vw;
+        height: 30vw;
+    }
+    #circleRight {
+        right: -20vw;
+        width: 30vw;
+        height: 30vw;
+    }
+    #fp-nav ul li {
+        margin: 3px 6px;
+    }
+    .fp-slidesNav ul li {
+        margin: 3px 3px;
+    }
+    #fp-nav.fp-left {
+        left: 9px;
+    }
+    #fp-nav ul li a::after {
+        opacity: 0;
+    }
+    div.section p {
+        font-size: 2.75vw;
+        max-width: 55vw;
+    }
+    div.section p {
+      font-size: 2.75vw;
+      max-width: 55vw;
+    }
+    .fl-form input.fl-input, .fl-form select.fl-select, .fl-form textarea.fl-textarea {
+      font-size: 3vw;
+    }
+    .fl-form label.fl-label {
+      font-size: 2vw;
+    }
+    .fl-form .fl-is-required:before {
+      font-size: 3vw;
+    }
+    #talkForm button {
+      font-size: 3vw;
+    }
+    #workSection .slide:first-child p {
+      font-size: 3vw;
+      max-width: 45vw;
+    }
+}
+@media screen and (max-width: 600px) {
+    div#workSection div#slide1 img, div#homeSection img {
+        display: block;
+    }
+    #circleLeft {
+        left: -33vw;
+        width: 45vw;
+        height: 45vw;
+    }
+    #circleRight {
+        right: -33vw;
+        width: 45vw;
+        height: 45vw;
+    }
+    #fp-nav ul li {
+        margin: 3px 6px;
+    }
+    .fp-slidesNav ul li {
+        margin: 0px 0px;
+    }
+    #fp-nav.fp-left {
+        left: 0px;
+    }
+    #circleRightLogo {
+        position: fixed;
+        right: 1.5vw;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8.5vw;
+        z-index: 1;
+    }
+    #fp-nav ul li a::after {
+        opacity: 0;
+    }
+    .fp-controlArrow.fp-next, .fp-controlArrow.fp-prev {
+        opacity: 0;
+        visibility: hidden;
+    }
+    div.section h1 {
+        font-size: 10vw;
+        max-width: 55vw;
+    }
+    div.section p {
+        font-size: 3.5vw;
+        max-width: 55vw;
+    }
+    .slide ul li {
+        width: 35%;
+    }
+    .slide ul {
+        max-width: 55vw;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 475px) { 
+    .slide ul li {
+        width: 40%;
+    }
+    .slide ul {
+        max-width: 60vw;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        flex-wrap: wrap;
+    }
+    #workSection .slide ul {
+      max-width: 60vw;
+    }
+    #workSection .slide p {
+      max-width: 60vw;
+      font-size: 3.5vw;
+    }
+    #workSection .slide h1 {
+      max-width: 60vw;
+      font-size: 10vw;
+      margin-bottom: 5px;
+    }
+    #talkForm {
+      max-width: 60vw;
+      width: 60vw;
+    }
+    #workSection .slide:first-child p {
+      max-width: 60vw;
+    }
+    div.section h1 {
+      font-size: 8vw;
+      max-width: 60vw;
+    }
+    .fl-form input.fl-input, .fl-form select.fl-select, .fl-form textarea.fl-textarea {
+      font-size: 4vw;
+    }
+    .fl-form label.fl-label {
+      font-size: 2.5vw;
+    }
+    .fl-form .fl-is-required:before {
+      font-size: 4vw;
+    }
+    #talkForm button {
+      font-size: 4vw;
+    }
+}
+
