@@ -282,9 +282,9 @@ div.section p {
     width: 20vw;
     height: 20vw;
     border-radius: 50%;
-    transition: all .3s ease-in-out;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
 }
 
 #circleRight {
@@ -296,9 +296,9 @@ div.section p {
     width: 20vw;
     height: 20vw;
     border-radius: 50%;
-    transition: all .3s ease-in-out;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
 }
 
 #circleRightLogo {
@@ -319,7 +319,7 @@ div.section p {
     color: #EBF3FA;
     position: relative;
     left: 25px;
-    top: 0px;
+    top: -4px;
     font-size: 22px;
     transition: all .1s ease-in-out;
     -webkit-transition: all .1s ease-in-out;
@@ -933,6 +933,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       padding: 15px 15px 10px;
       font-family: 'Neutra', sans-serif;
       border: none;
+      cursor: pointer;
       border-radius: 3px;
       background-color: #F1F3F6;
       box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.6);
@@ -997,7 +998,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       top: 1px;
       right: 15px;
       font-size: 2vw;
-      line-height: 1.75;
+      line-height: 1.25;
       color: #D32F2F;
       transition: all 0.2s ease-in-out;
       padding: 6px 0 0;
@@ -1412,7 +1413,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         color: #EBF3FA;
         position: relative;
         left: 34px;
-        top: 0px;
         font-size: 28px;
     }
     #fp-nav ul li {
@@ -1477,13 +1477,13 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         font-size: 2.25vw;
         max-width: 55vw;
     }
+    #fp-nav ul li a::after {
+      opacity: 1;
+    }
 }
 @media screen and (max-width: 1400px) {
     div#workSection div#slide1 img, div#homeSection img {
         display: none;
-    }
-    #fp-nav ul li a::after {
-        opacity: 0;
     }
     #fp-nav ul li {
         margin: 20px 5px;
@@ -1494,10 +1494,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     #fp-nav.fp-left {
         left: 11px;
     }
-    div.section h1 {
-        font-size: 8vw;
-        max-width: 55vw;
-    }
     div.section p {
         font-size: 2.75vw;
         max-width: 55vw;
@@ -1506,16 +1502,24 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         max-width: 45vw;
     }
     #workSection .slide p {
-        font-size: 3vw;
+        font-size: 2vw;
         max-width: 45vw;
     }
     #workSection .slide:first-child p {
       font-size: 3vw;
       max-width: 45vw;
-   }
+    }
     #workSection .slide h1 {
-        font-size: 7vw;
-        max-width: 45vw;
+      font-size: 7vw;
+      max-width: 45vw;
+    }
+    #fp-nav ul li a::after {
+      opacity: 1;
+    }
+}
+@media screen and (max-width: 1200px) {
+    #fp-nav ul li a::after {
+      opacity: 0;
     }
 }
 @media screen and (max-width: 900px) {
@@ -1626,6 +1630,10 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         padding: 0;
         list-style: none;
         flex-wrap: wrap;
+    }
+    #workSection .slide:first-child p {
+      font-size: 4vw;
+      max-width: 45vw;
     }
 }
 @media screen and (max-width: 475px) { 
