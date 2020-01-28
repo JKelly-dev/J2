@@ -7,7 +7,7 @@ var circleMenuRightRotation = 0;
 var contentChange = function () {
     if (window.innerWidth > 600) {
         homeSectionText.textContent = "Scroll down to get started";
-        workSectionSlideText.textContent = "Click an arrow to view our work";
+        workSectionSlideText.textContent = "Click the arrows to view our work";
     } else {
         homeSectionText.textContent = "Swipe up to get started";
         workSectionSlideText.textContent = "Swipe left to view our work";
@@ -19,7 +19,7 @@ var myFullpage = new fullpage('#fullpage', {
         anchors: ['home', 'about', 'work', 'talk'],
         navigation: true,
         navigationPosition: 'left',
-        scrollingSpeed: 700,
+        scrollingSpeed: 800,
         onLeave: function(origin, destination, direction){
             circleMenuLeftRotation+=90;
             circleMenuLeft.style.transform = `translateY(-50%) rotate(${circleMenuLeftRotation}deg)`;
@@ -41,10 +41,8 @@ var floatlabels = new FloatLabels( '#talkForm', {
     style            : 2,
 });
 
-document.addEventListener('load', function() {
-    contentChange();
-});
-
 window.addEventListener("resize", () => {
     contentChange();
 });
+
+contentChange();
