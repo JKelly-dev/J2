@@ -311,18 +311,24 @@ div.section p {
 }
 
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
-    background: #EBF3FA;
+    background: #F1F3F6;
+    box-shadow: 2px 2px 10px rgb(163,177,198,0.2), -2px -2px 10px  rgba(255,255,255, 0.3);
+}
+
+#circleRightLogo {
+    filter: drop-shadow(-5px -5px 10px rgba(255,255,255, 0.2)) drop-shadow(5px 5px 10px rgb(163,177,198,0.3));
 }
 
 #fp-nav ul li:nth-child(1) a::after, #fp-nav ul li:nth-child(2) a::after, #fp-nav ul li:nth-child(3) a::after, #fp-nav ul li:nth-child(4) a::after {
     font-family: 'Neutra', sans-serif;
-    color: #EBF3FA;
+    color: #F1F3F6;
     position: relative;
     left: 25px;
-    top: 0px;
+    top: 2px;
     font-size: 22px;
     transition: all .1s ease-in-out;
     -webkit-transition: all .1s ease-in-out;
+    text-shadow: 2px 2px 10px rgb(163,177,198,0.2), -2px -2px 10px  rgba(255,255,255, 0.3);
 }
 #fp-nav ul li:nth-child(1) a::after {content: "Home";}
 #fp-nav ul li:nth-child(2) a::after {content: "About";}
@@ -333,6 +339,7 @@ div#workSection div#slide1 img {
     width: 20vw;
     display: block;
     margin: 20px auto -30px;
+    filter: drop-shadow(-3px -3px 10px rgba(255,255,255, 0.2)) drop-shadow(3px 3px 10px rgb(163,177,198,.3));
     animation: swipeRotateWork 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
 }
 
@@ -350,6 +357,7 @@ div#homeSection img {
     display: block;
     margin: 20px auto -30px;
     animation: swipeRotateHome 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+    filter: drop-shadow(-3px -3px 10px rgba(255,255,255, 0.4)) drop-shadow(3px 3px 10px rgb(163,177,198,.6));
 }
 
 @keyframes swipeRotateHome {
@@ -1412,7 +1420,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         color: #EBF3FA;
         position: relative;
         left: 34px;
-        top: 0px;
+        top: 2px;
         font-size: 28px;
     }
     #fp-nav ul li {
