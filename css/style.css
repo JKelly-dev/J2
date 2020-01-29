@@ -205,13 +205,13 @@ html.fp-enabled,
      border-radius: 50%;
      position: absolute;
      z-index: 1;
-     height: 6px;
-     width: 6px;
+     height: 10px;
+     width: 10px;
      border: 0;
      background: #333;
      left: 50%;
      top: 50%;
-     margin: -2px 0 0 -2px;
+     margin: -5px 0 0 -5px;
      -webkit-transition: all 0.1s ease-in-out;
      -moz-transition: all 0.1s ease-in-out;
      -o-transition: all 0.1s ease-in-out;
@@ -858,12 +858,6 @@ FLOAT LABELS
    * @url: https://pryley.github.io/float-labels.js
    * @license: MIT
    */
-  .fl-form .fl-wrap {
-    position: relative;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
   
   .fl-form input.fl-input:-moz-placeholder,
   .fl-form select.fl-select:-moz-placeholder,
@@ -923,10 +917,13 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     width: 55vw;
     margin: 13px auto;
     font-family: 'Neutra', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   #talkSection div p {
-    margin: 1vw auto 2vw;
+    margin: .25vw auto 2vw;
   }
 
   #talkSection div h1 {
@@ -934,11 +931,11 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
   }
 
   #talkForm button {
-      width: 50%;
+      width: auto;
       margin: auto;
       font-size: 2vw;
       display: block;
-      padding: 15px 15px 10px;
+      padding: 15px 10vw 10px 10vw;
       font-family: 'Neutra', sans-serif;
       border: none;
       cursor: pointer;
@@ -967,7 +964,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
   .fl-form input.fl-input,
   .fl-form select.fl-select,
   .fl-form textarea.fl-textarea {
-    width: 100%;
     outline: 0;
     font-family: 'Neutra', sans-serif;
     font-size: 1.75vw;
@@ -982,12 +978,28 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.6);
   }
 
+  .fl-form .fl-wrap {
+    position: relative;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 47.5%;
+  }
+
   .fl-form.fl-style-2 label.fl-label {
     top: 4px;
     left: 10px;
     padding: 6px 3px 3px;
   }
-  
+
+  .fl-form .fl-wrap.fl-wrap-textarea {
+    width: 100%;
+  }
+
+  .fl-form.fl-style-2 input.fl-input, .fl-form.fl-style-2 select.fl-select, .fl-form.fl-style-2 textarea.fl-textarea {
+    padding: 15.5px 12px;
+  }
+
   .fl-form.fl-style-2 .fl-is-active input.fl-input,
   .fl-form.fl-style-2 .fl-is-active select.fl-select,
   .fl-form.fl-style-2 .fl-is-active textarea.fl-textarea {
@@ -1013,8 +1025,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       font-family: 'Neutra', sans-serif;
       z-index: 1;
   }
-
-
   /*
 CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES
   */
@@ -1083,12 +1093,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
   body[dir=rtl] .fl-form.fl-style-1 label.fl-label {
     left: unset;
     right: 10px;
-  }
-  
-  .fl-form.fl-style-2 input.fl-input,
-  .fl-form.fl-style-2 select.fl-select,
-  .fl-form.fl-style-2 textarea.fl-textarea {
-    padding: 12px;
   }
   
   .fl-form.fl-style-2 select.fl-select {
@@ -1443,15 +1447,15 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
      }
     #fp-nav ul li a span,
     .fp-slidesNav ul li a span {
-        height: 10px;
-        width: 10px;
-        margin: -5px 0 0 -5px;
+        height: 16px;
+        width: 16px;
+        margin: -8px 0 0 -8px;
     }
     #fp-nav ul li:hover a span,
     .fp-slidesNav ul li:hover a span{
-        width: 18px;
-        height: 18px;
-        margin: -9px 0px 0px -9px;
+        width: 20px;
+        height: 20px;
+        margin: -10px 0px 0px -10px;
     }
     #fp-nav.fp-left {
         left: 5px;
@@ -1463,6 +1467,23 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     div.section p {
         font-size: 2vw;
         max-width: 55vw;
+    }
+    .fl-form.fl-style-2 input.fl-input, .fl-form.fl-style-2 select.fl-select, .fl-form.fl-style-2 textarea.fl-textarea {
+      padding: 18px 12px;
+    }
+    .fl-form.fl-style-2 .fl-is-active input.fl-input,
+    .fl-form.fl-style-2 .fl-is-active select.fl-select,
+    .fl-form.fl-style-2 .fl-is-active textarea.fl-textarea {
+      padding: 30px 12px 6px;
+    }
+    #talkForm button {
+      padding: 25px 6vw 17.5px 6vw;
+    }
+    .fl-form .fl-wrap {
+      width: 47.5%;
+    }
+    .fl-form.fl-style-2 textarea.fl-textarea {
+      min-height: 200px;
     }
 }
 @media screen and (max-width: 1600px) {
@@ -1488,6 +1509,23 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
     #fp-nav ul li a::after {
       opacity: 1;
+    }
+    .fl-form.fl-style-2 input.fl-input, .fl-form.fl-style-2 select.fl-select, .fl-form.fl-style-2 textarea.fl-textarea {
+      padding: 18px 12px;
+    }
+    .fl-form.fl-style-2 .fl-is-active input.fl-input,
+    .fl-form.fl-style-2 .fl-is-active select.fl-select,
+    .fl-form.fl-style-2 .fl-is-active textarea.fl-textarea {
+      padding: 30px 12px 6px;
+    }
+    #talkForm button {
+      padding: 25px 7.5vw 17.5px 7.5vw;
+    }
+    .fl-form.fl-style-2 textarea.fl-textarea {
+      min-height: 150px;
+    }
+    .fl-form .fl-wrap {
+      width: 47.5%;
     }
 }
 @media screen and (max-width: 1400px) {
@@ -1529,6 +1567,15 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
 @media screen and (max-width: 1200px) {
     #fp-nav ul li a::after {
       opacity: 0;
+    }
+    .fl-form.fl-style-2 input.fl-input, .fl-form.fl-style-2 select.fl-select, .fl-form.fl-style-2 textarea.fl-textarea {
+      padding: 15.5px 12px;
+    }
+  
+    .fl-form.fl-style-2 .fl-is-active input.fl-input,
+    .fl-form.fl-style-2 .fl-is-active select.fl-select,
+    .fl-form.fl-style-2 .fl-is-active textarea.fl-textarea {
+      padding: 25px 12px 6px;
     }
 }
 @media screen and (max-width: 900px) {
@@ -1576,6 +1623,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
     #talkForm button {
       font-size: 3vw;
+      padding: 17.5px 10vw 12.5px 10vw;
     }
     #workSection .slide:first-child p {
       font-size: 3vw;
@@ -1644,6 +1692,12 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       font-size: 4vw;
       max-width: 45vw;
     }
+    .fl-form.fl-style-2 textarea.fl-textarea {
+      min-height: 100px;
+    }
+  .fl-form .fl-wrap {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 475px) { 
     .slide ul li {

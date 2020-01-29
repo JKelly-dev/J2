@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!--Page Settings-->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -18,179 +19,99 @@
         <link rel="shortcut icon" href="src/favicon.ico">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-config" content="src/browserconfig.xml">
-        <style>
-            section#loading {
-                height: 100vh;
-                width: 100vw;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: fixed;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                z-index: 101;
-                background-color: #F1F3F6;
-            }
-            section#loading div.circle {
-                background-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
-                width: 0vw;
-                height: 0vw;
-                transition: all .3s ease-in-out;
-                -webkit-transition: all .3s ease-in-out;
-            }
-            .fullwidth {animation: fullwidth 1.5s;-webkit-animation: fullwidth 1.5s;}
-            @keyframes fullwidth {
-                0% {width: 20vw; height: 20vw;}
-                10% {width: 100vw; height: 100vh;}
-                95% {width: 100vw; height: 100vh;}
-                100% {width: 0vw; height: 100vh;}
-            }
-            .j2hide {animation: j2hide 1.5s; -webkit-animation: j2hide 1.5s;}
-            @keyframes j2hide {
-                0%, 80% {opacity: 1;}
-                90%, 100% {opacity: 0;}
-            }
-            .spin {animation: spin 1s; -webkit-animation: spin 1.5s;}
-            @keyframes spin {
-                0% {transform: rotate(0deg); border-radius: 0%; width: 20vw; height: 20vw;}
-                50% {border-radius: 50%;}
-                100% {transform: rotate(360deg); border-radius: 0%; width: 20vw; height: 20vw;}
-            }
-            section#loading img {
-                width: 10vw;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                filter: drop-shadow(-3px -3px 10px rgba(255,255,255, 0.2)) drop-shadow(3px 3px 10px rgb(163,177,198,.3));
-            }
-            @media screen and (max-width: 900px) {
-                @keyframes fullwidth {
-                    0% {width: 30vw; height: 30vw;}
-                    10% {width: 100vw; height: 100vh;}
-                    95% {width: 100vw; height: 100vh;}
-                    100% {width: 0vw; height: 100vh;}
-                }
-                @keyframes spin {
-                    0% {transform: rotate(0deg); border-radius: 0%; width: 30vw; height: 30vw;}
-                    50% {border-radius: 50%;}
-                    100% {transform: rotate(360deg); border-radius: 0%; width: 30vw; height: 30vw;}
-                }
-                section#loading img {
-                    width: 15vw;
-                }
-            }
-        </style>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-    <section id="loading">
-        <div class="circle spin"></div>
-        <img src="src/j2.svg" alt="J2  Logo">
-    </section>
-    <script>
-        const loadingSection = document.getElementById('loading');
-        const loadStop = document.getElementById('loadstop');
-        const loadCircle = document.querySelector('div.circle');
-        const j2logo = document.querySelector('#loading img');
-        window.addEventListener('load', () => {
-            loadCircle.addEventListener('animationend', () => {
-                if (loadCircle.classList.contains('spin')) {
-                    loadCircle.classList.remove('spin');
-                    loadCircle.classList.add('fullwidth');
-                    j2logo.classList.add('j2hide');
-                    j2logo.style.opacity = "0";
-                    setTimeout(() => {
-                        loadingSection.style.backgroundColor = "transparent";
-                        j2logo.style.opacity = "0";
-                        j2logo.style.visibility = "hidden";
-                    }, 1000)
-                } else if (loadCircle.classList.contains('fullwidth') && j2logo.classList.contains('j2hide')) {
-                    loadCircle.classList.remove('fullwidth');
-                    loadCircle.style.visibility = "hidden";
-                    loadCircle.classList.remove('j2hide');
-                    loadingSection.style.height = "0px"; 
-                }
-            });
-        });
-        </script>    
-        <div id="fullpage">
-            <div class="section" id="homeSection">
-                <h1>Home Section</h1>
-                <p>Swipe up to get started</p>
-                <img src="src/swipe.svg" alt="Swipe Up">
+        <!--Loading Overlay-->
+        <link rel="stylesheet" href="css/loading.css">
+        <section id="loading">
+            <div class="circle spin"></div>
+            <img src="src/j2.svg" alt="J2 Logo">
+        </section>
+        <script src="scripts/loading.js"></script>
+        <!--Fullpage Styles-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="css/style.css">
+            <!--Fullpage Content-->
+            <div id="fullpage">
+                <div class="section" id="homeSection">
+                    <h1>Home Section</h1>
+                    <p>Swipe up to get started</p>
+                    <img src="src/swipe.svg" alt="Swipe Up">
+                </div>
+                <div class="section" id="aboutSection">
+                    <h1>About Section</h1>
+                    <p>J2 is a digital agency that specializes in web and design. J2 consists of two Jacks.</p>
+                </div>
+                <div class="section" id="workSection">
+                    <div class="slide" id="slide1" data-anchor="slide1">
+                        <h1>Work Section</h1>
+                        <p>Swipe left to view our work</p>
+                        <img src="src/swipe.svg" alt="Swipe Left">
+                    </div>
+                    <div class="slide" id="slide2" data-anchor="onwswim">
+                        <h1>ONW Swim</h1>
+                        <p>This website was built for the Olathe Northwest Swim & Dive team. The site contains a post, roster, and calendar section. This website was built with WordPress and Divi. <a href="https://onwswim.com" target="_blank">(View Site)</a></p>
+                        <ul>
+                            <li><img src="src/HomePage.jpg" alt="Home Page Screenshot"></li>  
+                            <li><img src="src/Roster.jpg" alt="Roster Screenshot"></li>
+                            <li><img src="src/UpcomingEvents.jpg" alt="Upcoming Events Screenshot"></li>
+                            <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
+                        </ul>
+                    </div>
+                    <div class="slide" id="slide3" data-anchor="slide3">
+                        <h1>ONW Swim</h1>
+                        <p>This website was built for the Olathe Northwest Swim & Dive team. The site contains a post, roster, and calendar section. This website was built with WordPress and Divi.</p>
+                        <ul>
+                            <li><img src="src/HomePage.jpg" alt="Home Page Screenshot"></li>  
+                            <li><img src="src/Roster.jpg" alt="Roster Screenshot"></li>
+                            <li><img src="src/UpcomingEvents.jpg" alt="Upcoming Events Screenshot"></li>
+                            <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
+                        </ul>
+                    </div>
+                    <div class="slide" id="slide4" data-anchor="slide4">
+                        <h1>ONW Swim</h1>
+                        <p>This website was built for the Olathe Northwest Swim & Dive team. The site contains a post, roster, and calendar section. This website was built with WordPress and Divi.</p>
+                        <ul>
+                            <li><img src="src/HomePage.jpg" alt="Home Page Screenshot"></li>  
+                            <li><img src="src/Roster.jpg" alt="Roster Screenshot"></li>
+                            <li><img src="src/UpcomingEvents.jpg" alt="Upcoming Events Screenshot"></li>
+                            <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
+                        </ul>
+                    </div>
+                    <div class="slide" id="slide4" data-anchor="slide5">
+                        <h1>ONW Swim</h1>
+                        <p>This website was built for the Olathe Northwest Swim & Dive team. The site contains a post, roster, and calendar section. This website was built with WordPress and Divi.</p>
+                        <ul>
+                            <li><img src="src/HomePage.jpg" alt="Home Page Screenshot"></li>  
+                            <li><img src="src/Roster.jpg" alt="Roster Screenshot"></li>
+                            <li><img src="src/UpcomingEvents.jpg" alt="Upcoming Events Screenshot"></li>
+                            <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="section" id="talkSection">
+                    <h1>Talk Section</h1>
+                    <p>Get in contact with us below</p>
+                    <form id="talkForm" name="contact" method="POST" data-netlify="true">
+                        <label for="name-input">Name</label>
+                        <input name="name" type="text" id="name-input" class="required" value="" autocomplete="off" required/>
+                        <label for="email-input">Email</label>
+                        <input name="email" type="email" id="email-input" class="required" value="" autocomplete="off" required/>    
+                        <label for="phone-input">Phone</label>
+                        <input name="phone" type="tel" id="phone-input" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}|[0-9]{3}-[0-9]{3}-[0-9]{4}" value="" autocomplete="off"/>
+                        <label for="company-input">Company</label>
+                        <input name="company" type="text" id="company-input" value="" autocomplete="off"/>                    
+                        <label for="message-input">Message</label>
+                        <textarea name="message" type="text" id="message-input" class="required" value="" autocomplete="off" required></textarea> 
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
             </div>
-            <div class="section" id="aboutSection">
-                <h1>About Section</h1>
-                <p>J2 is a digital agency that specializes in web and design. J2 consists of two Jacks.</p>
-            </div>
-            <div class="section" id="workSection">
-                <div class="slide" id="slide1" data-anchor="slide1">
-                    <h1>Work Section</h1>
-                    <p>Swipe left to view our work</p>
-                    <img src="src/swipe.svg" alt="Swipe Left">
-                </div>
-                <div class="slide" id="slide2" data-anchor="onwswim">
-                    <h1>ONW Swim</h1>
-                    <p>This website was built for the Olathe Northwest Swim & Dive team. The site contains a post, roster, and calendar section. This website was built with WordPress and Divi. <a href="https://onwswim.com" target="_blank">(View Site)</a></p>
-                    <ul>
-                        <li><img src="src/HomePage.jpg" alt="Home Page Screenshot"></li>  
-                        <li><img src="src/Roster.jpg" alt="Roster Screenshot"></li>
-                        <li><img src="src/UpcomingEvents.jpg" alt="Upcoming Events Screenshot"></li>
-                        <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
-                    </ul>
-                </div>
-                <div class="slide" id="slide3" data-anchor="slide3">
-                    <h1>ONW Swim</h1>
-                    <p>This website was built for the Olathe Northwest Swim & Dive team. The site contains a post, roster, and calendar section. This website was built with WordPress and Divi.</p>
-                    <ul>
-                        <li><img src="src/HomePage.jpg" alt="Home Page Screenshot"></li>  
-                        <li><img src="src/Roster.jpg" alt="Roster Screenshot"></li>
-                        <li><img src="src/UpcomingEvents.jpg" alt="Upcoming Events Screenshot"></li>
-                        <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
-                    </ul>
-                </div>
-                <div class="slide" id="slide4" data-anchor="slide4">
-                    <h1>ONW Swim</h1>
-                    <p>This website was built for the Olathe Northwest Swim & Dive team. The site contains a post, roster, and calendar section. This website was built with WordPress and Divi.</p>
-                    <ul>
-                        <li><img src="src/HomePage.jpg" alt="Home Page Screenshot"></li>  
-                        <li><img src="src/Roster.jpg" alt="Roster Screenshot"></li>
-                        <li><img src="src/UpcomingEvents.jpg" alt="Upcoming Events Screenshot"></li>
-                        <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
-                    </ul>
-                </div>
-                <div class="slide" id="slide4" data-anchor="slide5">
-                    <h1>ONW Swim</h1>
-                    <p>This website was built for the Olathe Northwest Swim & Dive team. The site contains a post, roster, and calendar section. This website was built with WordPress and Divi.</p>
-                    <ul>
-                        <li><img src="src/HomePage.jpg" alt="Home Page Screenshot"></li>  
-                        <li><img src="src/Roster.jpg" alt="Roster Screenshot"></li>
-                        <li><img src="src/UpcomingEvents.jpg" alt="Upcoming Events Screenshot"></li>
-                        <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section" id="talkSection">
-                <h1>Talk Section</h1>
-                <p>Get in contact with us below</p>
-                <form id="talkForm" name="contact" method="POST" data-netlify="true">
-                    <label for="name-input">Name</label>
-                    <input type="text" id="name-input" class="required" value="" autocomplete="off" required/>
-                    <label for="email-input">Email</label>
-                    <input type="text" id="email-input" class="required" value="" autocomplete="off" required/>    
-                    <label for="message-input">Message</label>
-                    <textarea type="text" id="message-input" class="required" value="" autocomplete="off" required/></textarea> 
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
+        <!--Menu Elements-->
         <img id="circleRightLogo" src="src/j2.svg" alt="J2 Logo">
         <div id="circleLeft"></div>
         <div id="circleRight"></div>
+        <!--Fullpage Scripts-->
         <script type="text/javascript" src="scripts/fullpage.js"></script>
         <script type="text/javascript" src="scripts/float-labels.min.js"></script>
         <script type="text/javascript" src="scripts/script.js"></script>
