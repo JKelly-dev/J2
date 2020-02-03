@@ -29,26 +29,56 @@
         </section>
         <script src="scripts/loading.js"></script>
         <!--Fullpage Styles-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="css/style.css">
+        <!--Fullpage Content-->
+        <noscript><p>Our page requires javascript to run.</p></noscript>
             <!--Fullpage Content-->
             <div id="fullpage">
+
+
+                <!-- Home Section -->
+
+                
                 <div class="section" id="homeSection">
                     <h1>Home Section</h1>
                     <p>Swipe up to get started</p>
                     <img src="src/swipe.svg" alt="Swipe Up">
                 </div>
+
+
+                <!-- About Section -->
+
+
                 <div class="section" id="aboutSection">
                     <h1>About Section</h1>
                     <p>J2 is a digital agency that specializes in web and design. J2 consists of two Jacks.</p>
                 </div>
+
+
+                <!-- Team Section -->
+
+
+                <div class="section" id="teamSection">
+                    <div class="slide" data-anchor="intro">
+                        <h1>Team Section</h1>
+                        <p>Swipe left to view our team</p>
+                    </div>
+                    <div class="slide" data-anchor="jack-kelly">
+                        <h1>Jack Kelly</h1>
+                        <p>Jack Kelly is a Front-End developer</a></p>
+                    </div>
+                </div>
+
+
+                <!-- Work Section -->
+
+
                 <div class="section" id="workSection">
-                    <div class="slide" id="slide1" data-anchor="slide1">
+                    <div class="slide" data-anchor="intro">
                         <h1>Work Section</h1>
                         <p>Swipe left to view our work</p>
-                        <img src="src/swipe.svg" alt="Swipe Left">
                     </div>
-                    <div class="slide" id="slide2" data-anchor="onwswim">
+                    <div class="slide" data-anchor="onwswim">
                         <h1>ONW Swim</h1>
                         <p>This website was built for the Olathe Northwest Swim & Dive team. The site contains a post, roster, and calendar section. This website was built with WordPress and Divi. <a href="https://onwswim.com" target="_blank">(View Site)</a></p>
                         <ul>
@@ -58,54 +88,30 @@
                             <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
                         </ul>
                     </div>
-                    <div class="slide" id="slide3" data-anchor="slide3">
-                        <h1>ONW Swim</h1>
-                        <p>This website was built for the Olathe Northwest Swim & Dive team. The site contains a post, roster, and calendar section. This website was built with WordPress and Divi.</p>
-                        <ul>
-                            <li><img src="src/HomePage.jpg" alt="Home Page Screenshot"></li>  
-                            <li><img src="src/Roster.jpg" alt="Roster Screenshot"></li>
-                            <li><img src="src/UpcomingEvents.jpg" alt="Upcoming Events Screenshot"></li>
-                            <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
-                        </ul>
-                    </div>
-                    <div class="slide" id="slide4" data-anchor="slide4">
-                        <h1>ONW Swim</h1>
-                        <p>This website was built for the Olathe Northwest Swim & Dive team. The site contains a post, roster, and calendar section. This website was built with WordPress and Divi.</p>
-                        <ul>
-                            <li><img src="src/HomePage.jpg" alt="Home Page Screenshot"></li>  
-                            <li><img src="src/Roster.jpg" alt="Roster Screenshot"></li>
-                            <li><img src="src/UpcomingEvents.jpg" alt="Upcoming Events Screenshot"></li>
-                            <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
-                        </ul>
-                    </div>
-                    <div class="slide" id="slide4" data-anchor="slide5">
-                        <h1>ONW Swim</h1>
-                        <p>This website was built for the Olathe Northwest Swim & Dive team. The site contains a post, roster, and calendar section. This website was built with WordPress and Divi.</p>
-                        <ul>
-                            <li><img src="src/HomePage.jpg" alt="Home Page Screenshot"></li>  
-                            <li><img src="src/Roster.jpg" alt="Roster Screenshot"></li>
-                            <li><img src="src/UpcomingEvents.jpg" alt="Upcoming Events Screenshot"></li>
-                            <li><img src="src/CalenderGrid.jpg" alt="Calender Grid Screenshot"></li>
-                        </ul>
-                    </div>
                 </div>
+
+                
+                <!-- Talk Section -->
+
+
                 <div class="section" id="talkSection">
                     <h1>Talk Section</h1>
                     <p>Get in contact with us below</p>
-                    <form id="talkForm" name="contact" method="POST" data-netlify="true">
+                    <form id="talkForm" name="contact" method="POST" action="/" data-netlify="true">
                         <label for="name-input">Name</label>
-                        <input name="name" type="text" id="name-input" class="required" value="" autocomplete="off" required/>
+                        <input name="name" type="text" id="name-input" class="required" value="" autocorrect="off" spellcheck="false" autocomplete="off" required/>
                         <label for="email-input">Email</label>
                         <input name="email" type="email" id="email-input" class="required" value="" autocomplete="off" required/>    
                         <label for="phone-input">Phone</label>
-                        <input name="phone" type="tel" id="phone-input" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}|[0-9]{3}-[0-9]{3}-[0-9]{4}" value="" autocomplete="off"/>
+                        <input name="phone" type="tel" id="phone-input" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}|[0-9]{3}-[0-9]{3}-[0-9]{4}" value="" spellcheck="false"/>
                         <label for="company-input">Company</label>
-                        <input name="company" type="text" id="company-input" value="" autocomplete="off"/>                    
+                        <input name="company" type="text" id="company-input" value="" spellcheck="false" autocorrect="off" autocomplete="off"/>                    
                         <label for="message-input">Message</label>
                         <textarea name="message" type="text" id="message-input" class="required" value="" autocomplete="off" required></textarea> 
                         <button type="submit">Submit</button>
                     </form>
                 </div>
+                
             </div>
         <!--Menu Elements-->
         <img id="circleRightLogo" src="src/j2.svg" alt="J2 Logo">
