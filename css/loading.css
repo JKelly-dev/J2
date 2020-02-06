@@ -43,7 +43,6 @@ section#loading img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    filter: drop-shadow(-3px -3px 10px rgba(255,255,255, 0.2)) drop-shadow(3px 3px 10px rgb(163,177,198,.3));
 }
 @media screen and (max-width: 900px) {
     @keyframes fullwidth {

@@ -3,6 +3,7 @@ const circleMenuRight = document.getElementById('circleRight');
 const homeSectionText = document.querySelector('#homeSection p');
 const workSectionSlideText = document.querySelector('#workSection div p');
 const teamSectionSlideText = document.querySelector('#teamSection div p');
+const talkForm = document.getElementById('talkForm');
 const pageOrder = ['home', 'about', 'team', 'work', 'talk'];
 var circleMenuLeftRotation = 0;
 var circleMenuRightRotation = 0;
@@ -34,15 +35,29 @@ var floatlabels = new FloatLabels( '#talkForm', {
     style: 2,
 });
 
+talkForm.addEventListener('submit', function (e){
+    let formData = new FormData(talkForm);
+    e.preventDefault()
+    fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: formData
+        })
+        .then(() => {
+            alert('worked');
+        })
+})
+
 var contentChange = function () {
     if (window.innerWidth > 600) {
+        /*
         homeSectionText.textContent = "Scroll down to get started";
         workSectionSlideText.textContent = "Click the arrows to view our work";
-        teamSectionSlideText.textContent = "Click the arrows to view our team";
-    } else {
+        teamSectionSlideText.textContent = "Click the arrows to view our team";*/
+    } else {/*
         homeSectionText.textContent = "Swipe up to get started";
         workSectionSlideText.textContent = "Swipe left to view our work";
-        teamSectionSlideText.textContent = "Swipe left to view our team";
+        teamSectionSlideText.textContent = "Swipe left to view our team";*/
     }
 }
 
