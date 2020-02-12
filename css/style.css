@@ -57,7 +57,6 @@
       font-weight: 600;
       letter-spacing: -.1vw;
   }
-
   .squared {
     font-size: 4.5vw;
     vertical-align: top;
@@ -85,6 +84,30 @@ body {
 #fullpage {
     overscroll-behavior: none;
 } 
+.notification {
+  background-image: linear-gradient(0deg, #F800FF 0%, #3100FF 100%);
+  width: 40vw;
+  height: 5vh;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+}
+.notification-text {
+  color: white;
+  text-align: left;
+  font-family: 'Neutra-Bold', sans-serif;
+  margin: 5px;
+  font-size: 24px;
+}
+.notification-image {
+  display: inline-block;
+  margin: 5px;
+  width: 30px;
+}
 html.fp-enabled,
 .fp-enabled body {
      margin: 0;
@@ -807,7 +830,7 @@ FLOAT LABELS
   textarea::-webkit-input-placeholder {
     color: #000;
   }
-  
+
   input::placeholder,
   select::placeholder,
   textarea::placeholder {

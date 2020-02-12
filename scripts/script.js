@@ -50,6 +50,7 @@ talkForm.addEventListener('submit', e => {
   .then(res => {
     if (res) {
         alert('worked');
+        talkForm.reset();
     }
   });
 });
