@@ -38,7 +38,7 @@ var floatlabels = new FloatLabels( '#talkForm', {
 talkForm.addEventListener('submit', e => {
   e.preventDefault();
 
-  const formData = new FormData(testForm);
+  const formData = new FormData(talkForm);
   fetch(testForm.getAttribute('action'), {
     method: 'POST',
     headers: {
