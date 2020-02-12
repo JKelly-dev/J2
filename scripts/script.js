@@ -37,12 +37,12 @@ var floatlabels = new FloatLabels( '#talkForm', {
 
 talkForm.addEventListener('submit', function (e){
     let formData = new FormData(talkForm);
-    console.log(e.target.action)
-    e.preventDefault()
+    e.preventDefault();
+    console.log(e);
     fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: formData
+          body: encodeURI(formData)
         })
         .then(() => {
             alert('worked');
