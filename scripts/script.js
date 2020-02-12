@@ -34,23 +34,6 @@ var floatlabels = new FloatLabels( '#talkForm', {
     requiredClass: 'required',
     style: 2,
 });
-
-talkForm.addEventListener('submit', function (e){
-    let formData = new FormData(talkForm);
-    e.preventDefault();
-    console.log(e);
-    fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encodeURI(formData)
-        })
-        .then(() => {
-            alert('worked');
-        })
-        .catch(() => {
-            alert('failed');
-        })
-})
       
 talkForm.addEventListener('submit', e => {
   e.preventDefault();
