@@ -35,6 +35,19 @@ var floatlabels = new FloatLabels( '#talkForm', {
     style: 2,
 });
 
+function param(object) {
+    var encodedString = '';
+    for (var prop in object) {
+        if (object.hasOwnProperty(prop)) {
+            if (encodedString.length > 0) {
+                encodedString += '&';
+            }
+            encodedString += encodeURI(prop + '=' + object[prop]);
+        }
+    }
+    return encodedString;
+}
+
 talkForm.addEventListener('submit', function (e){
     let formData = new FormData(talkForm);
     e.preventDefault();
@@ -42,7 +55,7 @@ talkForm.addEventListener('submit', function (e){
     fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encodeURI(formData)
+          body: param(formData)
         })
         .then(() => {
             alert('worked');
