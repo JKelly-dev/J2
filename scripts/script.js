@@ -51,6 +51,25 @@ talkForm.addEventListener('submit', function (e){
             alert('failed');
         })
 })
+      
+talkForm.addEventListener('submit', e => {
+  e.preventDefault();
+
+  const formData = new FormData(testForm);
+  fetch(testForm.getAttribute('action'), {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    },
+    body: new URLSearchParams(formData).toString()
+  })
+  .then(res => {
+    if (res) {
+        alert('worked');
+    }
+  });
+});
 
 var contentChange = function () {
     if (window.innerWidth > 600) {
