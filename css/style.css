@@ -1,33 +1,76 @@
   /*Fonts*/
   @font-face {
-      font-family: 'Neutra';
-      src: url('../src/Neutra.woff2') format('woff2'),
-          url('../src/Neutra.woff') format('woff');
-      font-weight: bold;
-      font-style: normal;
+    font-family: 'Neutra-Alt';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Neutra-Alt'), url('../src/neutra-text-alt.woff') format('woff');
+  }
+    
+    
+  @font-face {
+    font-family: 'Neutra-Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Neutra-Light'), url('../src/neutra-text-light.woff') format('woff');
+  }
+    
+    
+  @font-face {
+    font-family: 'Neutra';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Neutra'), url('../src/neutra-text.woff') format('woff');
+  }
+    
+    
+  @font-face {
+    font-family: 'Neutra-Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Neutra-Bold'), url('../src/neutra-text-bold.woff') format('woff');
+  }
+    
+    
+  @font-face {
+    font-family: 'Neutra-BoldItalic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Neutra-BoldItalic'), url('../src/neutra-text-bold-italic.woff') format('woff');
   }
 
   * {
       box-sizing: border-box;
       transition: .3s all ease-in-out;
       -webkit-transition: .3s all ease-in-out;
-
   }
   h1, h2, h3, h4, h5, h6 {
-      font-family: 'Neutra', sans-serif;
+      font-family: 'Neutra-Bold', sans-serif;
       margin: 0px auto;
       text-align: center;
+      font-weight: 500;
   }
   p {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Neutra-Light', sans-serif;
       margin: 0px auto;
       text-align: center;
+      line-height: 1.2;
+      font-weight: 600;
+      letter-spacing: -.1vw;
+  }
+
+  .squared {
+    font-size: 4.5vw;
+    vertical-align: top;
+    line-height: 2.75vw;
   }
   #workSection #slide1 p {
       text-align: center;
   }
-  #workSection .slide p {
+  #workSection .slide p, #aboutSection p {
       text-align: justify;
+  }
+  #workSection .slide:first-child p {
+    text-align: center;
   }
   #workSection .slide p a:hover {
     text-decoration: none;
@@ -35,13 +78,13 @@
 body {
     margin: 0;
     overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Neutra-Light', sans-serif;
     font-weight: 500;
     background-color: #F1F3F6;
 }
 #fullpage {
     overscroll-behavior: none;
-}
+} 
 html.fp-enabled,
 .fp-enabled body {
      margin: 0;
@@ -263,12 +306,10 @@ html.fp-enabled,
 
 div.section h1 {
     font-size: 4vw;
-    text-shadow: 0px 0px 10px #00000050;
 }
 
 div.section p {
     font-size: 2vw;
-    text-shadow: 0px 0px 10px #00000050;
 }
 
 /*Navigation*/
@@ -312,61 +353,30 @@ div.section p {
 
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
     background: #F1F3F6;
-    box-shadow: 2px 2px 10px rgb(163,177,198,0.2), -2px -2px 10px  rgba(255,255,255, 0.3);
 }
 
-#circleRightLogo {
-    filter: drop-shadow(-5px -5px 10px rgba(255,255,255, 0.2)) drop-shadow(5px 5px 10px rgb(163,177,198,0.3));
-}
-
-#fp-nav ul li:nth-child(1) a::after, #fp-nav ul li:nth-child(2) a::after, #fp-nav ul li:nth-child(3) a::after, #fp-nav ul li:nth-child(4) a::after {
-    font-family: 'Neutra', sans-serif;
+#fp-nav ul li a::after {
+    font-family: 'Neutra-Bold', sans-serif;
     color: #F1F3F6;
-    position: relative;
-    left: 25px;
-    top: 2px;
+    margin-left: 25px;
     font-size: 22px;
     transition: all .1s ease-in-out;
     -webkit-transition: all .1s ease-in-out;
-    text-shadow: 2px 2px 10px rgb(163,177,198,0.2), -2px -2px 10px  rgba(255,255,255, 0.3);
 }
+#fp-nav ul li a.active::after {
+  font-family: 'Neutra-BoldItalic', sans-serif;
+  left: 25px;
+  font-size: 26px;
+  top: -1px;
+  transition: all .1s ease-in-out;
+  -webkit-transition: all .1s ease-in-out;
+}
+
 #fp-nav ul li:nth-child(1) a::after {content: "Home";}
 #fp-nav ul li:nth-child(2) a::after {content: "About";}
-#fp-nav ul li:nth-child(3) a::after {content: "Work";}
-#fp-nav ul li:nth-child(4) a::after {content: "Talk";}
-
-div#workSection div#slide1 img {
-    width: 20vw;
-    display: block;
-    margin: 20px auto -30px;
-    filter: drop-shadow(-3px -3px 10px rgba(255,255,255, 0.2)) drop-shadow(3px 3px 10px rgb(163,177,198,.3));
-    animation: swipeRotateWork 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
-}
-
-
-@keyframes swipeRotateWork {
-    0%, 100% {
-        transform: translateX(-10px) rotate(-5deg);
-    } 50% {
-        transform: translateX(10px) rotate(5deg);
-    }
-}
-
-div#homeSection img {
-    width: 20vw;
-    display: block;
-    margin: 20px auto -30px;
-    animation: swipeRotateHome 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
-    filter: drop-shadow(-3px -3px 10px rgba(255,255,255, 0.4)) drop-shadow(3px 3px 10px rgb(163,177,198,.6));
-}
-
-@keyframes swipeRotateHome {
-    0%, 100% {
-        transform: translateY(-15px) rotate(105deg);
-    } 50% {
-        transform: translateY(15px) rotate(120deg);
-    } 
-}
+#fp-nav ul li:nth-child(3) a::after {content: "Team";}
+#fp-nav ul li:nth-child(4) a::after {content: "Work";}
+#fp-nav ul li:nth-child(5) a::after {content: "Talk";}
 
 .slide ul {
     max-width: 55vw;
@@ -385,7 +395,7 @@ div#homeSection img {
 
 .slide ul li img {
     width: 100%;
-    box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.7);
+    box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.8);
     border-radius: 7px;
 } 
 
@@ -704,6 +714,19 @@ FLOAT LABELS
     text-decoration: none;
   }
   
+  noscript {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1F3F6;
+  }
+
   .button[disabled], .button.disabled {
     opacity: 0.7;
     cursor: default;
@@ -764,25 +787,31 @@ FLOAT LABELS
   input:-moz-placeholder,
   select:-moz-placeholder,
   textarea:-moz-placeholder {
-    color: rgba(0, 0, 0, 0.5);
+    color: #000;
   }
-  
+
   input::-moz-placeholder,
   select::-moz-placeholder,
   textarea::-moz-placeholder {
-    color: rgba(0, 0, 0, 0.5);
+    color: #000;
   }
   
   input:-ms-input-placeholder,
   select:-ms-input-placeholder,
   textarea:-ms-input-placeholder {
-    color: rgba(0, 0, 0, 0.5);
+    color: #000;
   }
   
   input::-webkit-input-placeholder,
   select::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
-    color: rgba(0, 0, 0, 0.5);
+    color: #000;
+  }
+
+  input::placeholder,
+  select::placeholder,
+  textarea::placeholder {
+    color: #000;
   }
   
   input:active, input:focus,
@@ -859,9 +888,9 @@ FLOAT LABELS
    * @license: MIT
    */
   
-  .fl-form input.fl-input:-moz-placeholder,
-  .fl-form select.fl-select:-moz-placeholder,
-  .fl-form textarea.fl-textarea:-moz-placeholder {
+  .fl-form input.fl-input::placeholder,
+  .fl-form select.fl-select::placeholder,
+  .fl-form textarea.fl-textarea::placeholder {
     color: #000;
   }
   
@@ -881,6 +910,7 @@ FLOAT LABELS
   .fl-form select.fl-select::-webkit-input-placeholder,
   .fl-form textarea.fl-textarea::-webkit-input-placeholder {
     color: #000;
+    font-family: 'Neutra-Bold', sans-serif;
   }
   
   .fl-form select.fl-select {
@@ -898,14 +928,16 @@ FLOAT LABELS
   .fl-form .fl-is-active input.fl-input,
   .fl-form .fl-is-active select.fl-select,
   .fl-form .fl-is-active textarea.fl-textarea {
-    color: #212121;
+    color: #000000;
     background-color: #F1F3F6;
+    font-family: 'Neutra-Bold';
   }
   
   .fl-form .fl-has-focus input.fl-input,
   .fl-form .fl-has-focus select.fl-select,
   .fl-form .fl-has-focus textarea.fl-textarea {
     background-color: #F1F3F6;
+    color: #000000;
   }
 
   /*
@@ -916,14 +948,14 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     max-width: 55vw;
     width: 55vw;
     margin: 13px auto;
-    font-family: 'Neutra', sans-serif;
+    font-family: 'Neutra-BoldItalic', sans-serif;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
   #talkSection div p {
-    margin: .25vw auto 2vw;
+    margin: .25vw auto 1vw;
   }
 
   #talkSection div h1 {
@@ -936,12 +968,12 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       font-size: 2vw;
       display: block;
       padding: 15px 10vw 10px 10vw;
-      font-family: 'Neutra', sans-serif;
+      font-family: 'Neutra-BoldItalic', sans-serif;
       border: none;
       cursor: pointer;
       border-radius: 3px;
       background-color: #F1F3F6;
-      box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.6);
+      box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.8);
   }
   
   .fl-form label.fl-label {
@@ -950,10 +982,10 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     display: block;
     position: absolute;
     top: -12px;
-    font-family: 'Neutra', sans-serif;
+
+    font-family: 'Neutra-BoldItalic', sans-serif;
     left: 0;
     font-size: 1vw;
-    font-weight: 400;
     line-height: 1;
     color: #F800FF;
     border-top-left-radius: 3px;
@@ -965,9 +997,11 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
   .fl-form select.fl-select,
   .fl-form textarea.fl-textarea {
     outline: 0;
-    font-family: 'Neutra', sans-serif;
+    font-family: 'Neutra-BoldItalic', sans-serif;
     font-size: 1.75vw;
     line-height: 1.5;
+    font-weight: 1000;
+    letter-spacing: .4px;
     border: none;
     border-radius: 3px;
     background-color: #F1F3F6;
@@ -975,7 +1009,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     transition: all 0.2s ease-in-out;
     margin-bottom: 1.4375rem;
     -webkit-appearance: none;
-    box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.6);
+    box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px rgba(255,255,255, 0.8);
   }
 
   .fl-form .fl-wrap {
@@ -1022,7 +1056,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       color: #D32F2F;
       transition: all 0.2s ease-in-out;
       padding: 6px 0 0;
-      font-family: 'Neutra', sans-serif;
+      font-family: 'Neutra-BoldItalic', sans-serif;
       z-index: 1;
   }
   /*
@@ -1124,12 +1158,13 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
   }
   
   a {
-    color: #1565c0;
+    color: #3100FF;
     text-decoration: none;
+    transition: 200ms all ease-in-out;
+    font-family: 'Neutra';
   }
-  
   a:hover {
-    text-decoration: underline;
+    color: #F800FF;
   }
   
   blockquote {
@@ -1152,7 +1187,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     font-size: 1rem;
     border-radius: 3px;
     background-color: #eceff1;
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75);
   }
   
   pre {
@@ -1164,7 +1198,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
   pre code {
     font-size: 0.88887rem;
     color: #dcedc8;
-    text-shadow: 1px 1px 0 rgba(33, 33, 33, 0.25);
     background: none;
   }
   
@@ -1404,7 +1437,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
   :not(.button-group) > .button {
     width: 100%;
   }
-  
+
   @media screen and (min-width: 35em) {
     :not(.button-group) > .button {
       width: auto;
@@ -1416,17 +1449,21 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     margin: 0;
   }
   
-  @media screen and (min-width: 1600px) {
+  @media screen and (min-width: 1700px) {
     div#workSection div#slide1 img, div#homeSection img {
         display: none;
     }
-    #fp-nav ul li:nth-child(1) a::after, #fp-nav ul li:nth-child(2) a::after, #fp-nav ul li:nth-child(3) a::after, #fp-nav ul li:nth-child(4) a::after {
-        font-family: 'Neutra', sans-serif;
+    #fp-nav ul li a::after {
         color: #EBF3FA;
-        position: relative;
-        left: 34px;
-        top: 2px;
+        margin: 0 0 0 35px;
         font-size: 28px;
+    }
+    #fp-nav ul li a.active::after {
+      margin: 0 0 0 35px;
+      font-size: 34px;
+      top: 1px;
+      transition: all .1s ease-in-out;
+      -webkit-transition: all .1s ease-in-out;
     }
     #fp-nav ul li {
         width: 28px;
@@ -1486,12 +1523,12 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       min-height: 200px;
     }
 }
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1700px) {
     div#workSection div#slide1 img, div#homeSection img {
         display: none;
     }
     #fp-nav ul li {
-        margin: 20px 5px;
+        margin: 17px 5px;
     }
     .fp-slidesNav ul li {
         margin: 15px 5px;
@@ -1533,7 +1570,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         display: none;
     }
     #fp-nav ul li {
-        margin: 20px 5px;
+        margin: 10px 5px;
     }
     .fp-slidesNav ul li {
         margin: 5px 2px;
@@ -1564,7 +1601,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       opacity: 1;
     }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1250px) {
     #fp-nav ul li a::after {
       opacity: 0;
     }
@@ -1608,10 +1645,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         font-size: 2.75vw;
         max-width: 55vw;
     }
-    div.section p {
-      font-size: 2.75vw;
-      max-width: 55vw;
-    }
     .fl-form input.fl-input, .fl-form select.fl-select, .fl-form textarea.fl-textarea {
       font-size: 3vw;
     }
@@ -1628,6 +1661,10 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     #workSection .slide:first-child p {
       font-size: 3vw;
       max-width: 45vw;
+    }
+      div.section h1 {
+      font-size: 7vw;
+      max-width: 55vw;
     }
 }
 @media screen and (max-width: 600px) {
@@ -1669,7 +1706,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         visibility: hidden;
     }
     div.section h1 {
-        font-size: 10vw;
+        font-size: 7vw;
         max-width: 55vw;
     }
     div.section p {
@@ -1695,11 +1732,52 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     .fl-form.fl-style-2 textarea.fl-textarea {
       min-height: 100px;
     }
-  .fl-form .fl-wrap {
-    width: 100%;
-  }
+    .fl-form .fl-wrap {
+      width: 100%;
+    }
+    #fp-nav.fp-left {
+      left: 6px;
+    }
+    #talkForm button {
+      box-shadow: 4.5px 4.5px 8px rgb(163,177,198,0.5), -4.5px -4.5px 8px  rgba(255,255,255, 0.8);
+    }
+    .fl-form input.fl-input, .fl-form select.fl-select, .fl-form textarea.fl-textarea {
+      box-shadow: 4.5px 4.5px 8px rgb(163,177,198,0.5), -4.5px -4.5px 8px rgba(255,255,255, 0.8);
+    }
 }
 @media screen and (max-width: 475px) { 
+    .fl-form input.fl-input, .fl-form select.fl-select, .fl-form textarea.fl-textarea {
+      margin-bottom: 1rem;
+    }
+    div.section h1 {
+      font-size: 7vw;
+      max-width: 55vw;
+      margin-bottom: 5px;
+    }
+    #fp-nav ul li a.active span,
+    .fp-slidesNav ul li a.active span,
+    #fp-nav ul li:hover a.active span,
+    .fp-slidesNav ul li:hover a.active span{
+        height: 14px;
+        width: 14px;
+        margin: -7px 0 0 -7px;
+        border-radius: 100%;
+    }
+    #fp-nav ul li a span,
+    .fp-slidesNav ul li a span {
+        height: 10px;
+        width: 10px;
+        margin: -5px 0 0 -5px;
+    }
+    #fp-nav ul li:hover a span,
+    .fp-slidesNav ul li:hover a span{
+        width: 5px;
+        height: 5px;
+        margin: -2.5px 0px 0px -2.5px;
+    }
+    #fp-nav ul li {
+      margin: 1px 6px;
+    }
     .slide ul li {
         width: 40%;
     }
@@ -1721,7 +1799,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
     #workSection .slide h1 {
       max-width: 60vw;
-      font-size: 10vw;
       margin-bottom: 5px;
     }
     #talkForm {
@@ -1729,10 +1806,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       width: 60vw;
     }
     #workSection .slide:first-child p {
-      max-width: 60vw;
-    }
-    div.section h1 {
-      font-size: 8vw;
       max-width: 60vw;
     }
     .fl-form input.fl-input, .fl-form select.fl-select, .fl-form textarea.fl-textarea {
@@ -1747,5 +1820,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     #talkForm button {
       font-size: 4vw;
     }
+    #fp-nav.fp-left {
+      left: 0px;
+    }
 }
-

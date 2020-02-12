@@ -1,0 +1,1 @@
+J2 is a digital agency that specializes in web development. J2 was founded by two Jacks who wanted to expand their online portfolio while helping others build their business. We use advanced technologies to give our clients and users the best experience.
