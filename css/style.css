@@ -806,7 +806,8 @@ FLOAT LABELS
   select::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
     color: #000;
-
+  }
+  
   input::placeholder,
   select::placeholder,
   textarea::placeholder {
