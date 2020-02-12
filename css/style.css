@@ -806,15 +806,12 @@ FLOAT LABELS
   select::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
     color: #000;
-  }
 
   input::placeholder,
   select::placeholder,
   textarea::placeholder {
     color: #000;
   }
-  
-  input:active, input:focus,
   select:active,
   select:focus,
   textarea:active,
@@ -982,7 +979,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     display: block;
     position: absolute;
     top: -12px;
-
     font-family: 'Neutra-BoldItalic', sans-serif;
     left: 0;
     font-size: 1vw;
