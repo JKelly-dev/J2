@@ -1,76 +1,95 @@
-const circleMenuLeft = document.getElementById('circleLeft');
-const circleMenuRight = document.getElementById('circleRight');
-const homeSectionText = document.querySelector('#homeSection p');
-const workSectionSlideText = document.querySelector('#workSection div p');
-const teamSectionSlideText = document.querySelector('#teamSection div p');
-const talkForm = document.getElementById('talkForm');
-const pageOrder = ['home', 'about', 'team', 'work', 'talk'];
-var circleMenuLeftRotation = 0;
-var circleMenuRightRotation = 0;
+const domStrings = {
+    leftMenu: '#circleLeft',
+    rightMenu: '#circleRight',
+    homeSectionParagraph: '#homeSection p',
+    workSectionSlideParagraph: '#workSection div p',
+    teamSectionSlideText: '#teamSection div p',
+    talkForm: '#talkForm',
+    emailInput: '#email-input',
+    notification: '.notification',
+    notificationText: '.notification-text',
+    notificationEmail: '.notification-email',
+    notificationClose: '.notification-image',
+    homePageVideo: '.home-video'
+};
 
-var myFullpage = new fullpage('#fullpage', {
+const pageValues = {
+    leftMenuRotation: 0,
+    rightMenuRotation: 0,
+    pageOrder: ['home', 'about', 'team', 'work', 'talk'],
+};
+
+const pageMethods = {
+    spinMenu: function () {
+        pageValues.leftMenuRotation+=90;
+        document.querySelector(domStrings.leftMenu).style.transform = `translateY(-50%) rotate(${pageValues.leftMenuRotation}deg)`;
+        pageValues.rightMenuRotation-=90;
+        document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rightMenuRotation}deg)`;
+    },
+    contentChange: function () {
+        if (window.innerWidth > 600) {
+
+        } else {
+    
+        }
+    },
+    successNotification: function (email) {
+        document.querySelector(domStrings.notificationEmail).textContent = email;
+        document.querySelector(domStrings.notification).style.opacity = "1";
+        document.querySelector(domStrings.notification).style.zIndex = "100";
+    },
+    dismissNotification: function () {
+        document.querySelector(domStrings.notification).style.opacity = "0";
+        document.querySelector(domStrings.notification).style.zIndex = "-100";
+        
+    },
+    initEventListener: function () {
+        document.querySelector(domStrings.notificationClose).addEventListener('click', function () {pageMethods.dismissNotification()});
+        document.querySelector(domStrings.talkForm).addEventListener('submit', e => {
+            e.preventDefault();
+            let formData = new FormData(document.querySelector(domStrings.talkForm));
+            fetch(talkForm.getAttribute('action'), {
+                method: 'POST',
+                headers: {
+                'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(res => {
+                if (res) {
+                    pageMethods.successNotification(document.querySelector(domStrings.emailInput).value);
+                    document.querySelector(domStrings.talkForm).reset();
+                } else {
+                    alert('Error submitting form. Please try again.')
+                }
+            });
+        });
+    }
+}
+
+const myFullpage = new fullpage('#fullpage', {
     licenseKey: '32FDC319-24F94392-ABCB0861-ECB0F5E9',
-    anchors: pageOrder,
+    anchors: pageValues.pageOrder,
     navigation: true,
     navigationPosition: 'left',
     scrollingSpeed: 700,
     onLeave: function(origin, destination, direction){
-        circleMenuLeftRotation+=90;
-        circleMenuLeft.style.transform = `translateY(-50%) rotate(${circleMenuLeftRotation}deg)`;
-        circleMenuRightRotation-=90;
-        circleMenuRight.style.transform = `translateY(-50%) rotate(${circleMenuRightRotation}deg)`;
+        pageMethods.spinMenu();
+        if (destination.anchor == 'home') {
+            document.querySelector(domStrings.homePageVideo).play();
+        }
     },
     onSlideLeave: function(section, origin, destination, direction){
-        circleMenuLeftRotation+=90;
-        circleMenuLeft.style.transform = `translateY(-50%) rotate(${circleMenuLeftRotation}deg)`;
-        circleMenuRightRotation-=90;
-        circleMenuRight.style.transform = `translateY(-50%) rotate(${circleMenuRightRotation}deg)`;
+        pageMethods.spinMenu();
     },
     loopBottom: true,
     loopTop: true
 });
 
-var floatlabels = new FloatLabels( '#talkForm', {
+const floatlabels = new FloatLabels( '#talkForm', {
     requiredClass: 'required',
-    style: 2,
+    style: 2
 });
-      
-talkForm.addEventListener('submit', e => {
-  e.preventDefault();
-
-  const formData = new FormData(talkForm);
-  fetch(talkForm.getAttribute('action'), {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
-      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-    },
-    body: new URLSearchParams(formData).toString()
-  })
-  .then(res => {
-    if (res) {
-        alert('worked');
-        talkForm.reset();
-    }
-  });
-});
-
-var contentChange = function () {
-    if (window.innerWidth > 600) {
-        /*
-        homeSectionText.textContent = "Scroll down to get started";
-        workSectionSlideText.textContent = "Click the arrows to view our work";
-        teamSectionSlideText.textContent = "Click the arrows to view our team";*/
-    } else {/*
-        homeSectionText.textContent = "Swipe up to get started";
-        workSectionSlideText.textContent = "Swipe left to view our work";
-        teamSectionSlideText.textContent = "Swipe left to view our team";*/
-    }
-}
-window.addEventListener('load', function () {
-    contentChange();
-})
-
-window.addEventListener("resize", () => {
-    contentChange();
-});
+    
+pageMethods.initEventListener();

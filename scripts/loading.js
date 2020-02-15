@@ -1,8 +1,7 @@
-const loadingSection = document.getElementById('loading');
-const loadStop = document.getElementById('loadstop');
-const loadCircle = document.querySelector('div.circle');
-const j2logo = document.querySelector('#loading img');
 window.addEventListener('load', () => {
+    const loadingSection = document.getElementById('loading');
+    const loadCircle = document.querySelector('div.circle');
+    const j2logo = document.querySelector('#loading img');
     setTimeout(() => {
         loadCircle.addEventListener('animationend', () => {
             if (loadCircle.classList.contains('spin')) {

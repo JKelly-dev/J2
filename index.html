@@ -27,7 +27,7 @@
             <img src="src/j2.svg" alt="J2 Logo">
         </section>
         <link rel="stylesheet" href="css/loading.css">
-        <script type="text/javascript" src="scripts/loading.js" defer></script>
+        <script type="text/javascript" src="scripts/loading.js"></script>
         <!--All Styles-->
         <link rel="stylesheet" href="css/style.css">
         <!--No-Script Content-->
@@ -42,6 +42,13 @@
                 <div class="section" id="homeSection">
                     <h1>Jack<span class="squared">2</span></h1>
                     <p>Let's build something awesome!</p>
+                    <div class="video-container">
+                        <div class="white-overlay"></div>
+                        <video autoplay muted loop class="home-video">
+                            <source src="src/walking.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </div>
                 </div>
 
 
@@ -64,7 +71,7 @@
                     </div>
                     <div class="slide" data-anchor="jack-kelly">
                         <h1>Jack Kelly</h1>
-                        <p>Jack Kelly is a Front-End developer.</a></p>
+                        <p>Jack Kelly is a Front-End developer.</p>
                     </div>
                 </div>
 
@@ -114,7 +121,7 @@
             </div>
         <!--Notification Elements-->
         <div class="notification">
-            <p class="notification-text">You form has been received!</p>
+            <p class="notification-text">You form submission has been sent! We will contact you @ <span class="notification-email">email@email.com</span> as soon as we're available. </p>
             <img src="src/close.svg" alt="Close SVG" class="notification-image">
         </div>
         <!--Menu Elements-->
