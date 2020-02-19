@@ -21,11 +21,38 @@
         <style>
             /*Fonts*/
             @font-face {
-                font-family: 'Neutra';
-                src: url('src/Neutra.woff2') format('woff2'),
-                    url('src/Neutra.woff') format('woff');
-                font-weight: bold;
+                font-family: 'Neutra-Alt';
                 font-style: normal;
+                font-weight: normal;
+                src: local('Neutra-Alt'), url('./src/neutra-text-alt.woff') format('woff');
+            }
+                
+            @font-face {
+                font-family: 'Neutra-Light';
+                font-style: normal;
+                font-weight: normal;
+                src: local('Neutra-Light'), url('./src/neutra-text-light.woff') format('woff');
+            }
+                
+            @font-face {
+                font-family: 'Neutra';
+                font-style: normal;
+                font-weight: normal;
+                src: local('Neutra'), url('./src/neutra-text.woff') format('woff');
+            } 
+                
+            @font-face {
+                font-family: 'Neutra-Bold';
+                font-style: normal;
+                font-weight: normal;
+                src: local('Neutra-Bold'), url('./src/neutra-text-bold.woff') format('woff');
+            }
+                
+            @font-face {
+                font-family: 'Neutra-BoldItalic';
+                font-style: normal;
+                font-weight: normal;
+                src: local('Neutra-BoldItalic'), url('./src/neutra-text-bold-italic.woff') format('woff');
             }
 
             * {
@@ -36,7 +63,7 @@
             body {
                 margin: 0;
                 overflow: hidden;
-                font-family: 'Montserrat', sans-serif;
+                font-family: 'Neutra', sans-serif;
                 font-weight: 500;
             }
             section#success {
@@ -48,7 +75,7 @@
                 flex-direction: column;
             }
             section#success h1 {
-                font-family: 'Neutra', sans-serif;
+                font-family: 'Neutra-Bold', sans-serif;
                 color: black;
                 text-align: center;
                 font-size: 5vw;
@@ -56,14 +83,14 @@
                 margin: 20px auto;
             }
             section#success p {
-                font-family: 'Montserrat', sans-serif;
+                font-family: 'Neutra', sans-serif;
                 font-size: 3vw;
                 max-width: 75vw;
                 margin: 20px auto;
                 text-align: center;
             }
             section#success a {
-                font-family: 'Neutra', sans-serif;
+                font-family: 'Neutra-Bold', sans-serif;
                 font-size: 3vw;
                 display: block;
                 margin: 20px auto;
@@ -74,7 +101,7 @@
                 width: 25vw;
                 text-decoration: none;
                 text-align: center;
-                padding: 5px;
+                padding: 15px;
             }
         </style>
     </head>

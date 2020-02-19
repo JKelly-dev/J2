@@ -19,6 +19,7 @@
         <link rel="shortcut icon" href="src/favicon.ico">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-config" content="src/browserconfig.xml">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <!--Loading Overlay-->
@@ -26,18 +27,12 @@
             <div class="circle spin"></div>
             <img src="src/j2.svg" alt="J2 Logo">
         </section>
-        <link rel="stylesheet" href="css/loading.css">
-        <script type="text/javascript" src="scripts/loading.js"></script>
-        <!--All Styles-->
-        <link rel="stylesheet" href="css/style.css">
         <!--No-Script Content-->
         <noscript><p>Our page requires javascript to run.</p></noscript>
             <!--Fullpage Content-->
             <div id="fullpage">
 
-
                 <!-- Home Section -->
-
                 
                 <div class="section" id="homeSection">
                     <h1>Jack<span class="squared">2</span></h1>
@@ -51,18 +46,14 @@
                     </div>
                 </div>
 
-
                 <!-- About Section -->
-
 
                 <div class="section" id="aboutSection">
                     <h1>About J2</h1>
                     <p>J2 is a digital agency that specializes in web development. J2 was founded by two Jacks who wanted to expand their online portfolio while helping others build their business. We use advanced technologies to give our clients and users the best experience.</p>
                 </div>
 
-
                 <!-- Team Section -->
-
 
                 <div class="section" id="teamSection">
                     <div class="slide" data-anchor="intro">
@@ -75,9 +66,7 @@
                     </div>
                 </div>
 
-
                 <!-- Work Section -->
-
 
                 <div class="section" id="workSection">
                     <div class="slide" data-anchor="intro">
@@ -96,24 +85,22 @@
                     </div>
                 </div>
 
-                
                 <!-- Talk Section -->
-
 
                 <div class="section" id="talkSection">
                     <h1>Let's Talk!</h1>
                     <p>Fill out the form to get started.</p>
                     <form id="talkForm" method="POST" name="contact" action="/#talk" data-netlify="true">
                         <label for="name-input">Name</label>
-                        <input name="name" type="text" id="name-input" class="required" value="" autocorrect="off" spellcheck="false" autocomplete="off" required/>
+                        <input name="name" type="text" id="name-input" class="required" spellcheck="false" autocomplete="off" required/>
                         <label for="email-input">Email</label>
-                        <input name="email" type="email" id="email-input" class="required" value="" autocomplete="off" required/>    
+                        <input name="email" type="email" id="email-input" class="required" autocomplete="off" required/>    
                         <label for="phone-input">Phone</label>
-                        <input name="phone" type="tel" id="phone-input" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}|[0-9]{3}-[0-9]{3}-[0-9]{4}" value="" spellcheck="false"/>
+                        <input name="phone" type="tel" id="phone-input" pattern="[0-9]{3}[0-9]{3}[0-9]{4}|[0-9]{3}-[0-9]{3}-[0-9]{4}" value="" spellcheck="false"/>
                         <label for="company-input">Company</label>
-                        <input name="company" type="text" id="company-input" value="" spellcheck="false" autocorrect="off" autocomplete="off"/>                    
+                        <input name="company" type="text" id="company-input" spellcheck="false" autocomplete="off"/>                    
                         <label for="message-input">Message</label>
-                        <textarea name="message" type="text" id="message-input" class="required" value="" autocomplete="off" required></textarea> 
+                        <textarea name="message" id="message-input" class="required" autocomplete="off" required></textarea> 
                         <button type="submit">Submit</button>
                     </form>
                 </div>
@@ -129,8 +116,8 @@
         <div id="circleLeft"></div>
         <div id="circleRight"></div>
         <!--Page Scripts-->
-        <script type="text/javascript" src="scripts/fullpage.js"></script>
-        <script type="text/javascript" src="scripts/float-labels.min.js"></script>
-        <script type="text/javascript" src="scripts/script.js"></script>
+        <script src="scripts/fullpage.js"></script>
+        <script src="scripts/float-labels.min.js"></script>
+        <script src="scripts/script.js"></script>
     </body> 
 </html>
