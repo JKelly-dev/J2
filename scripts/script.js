@@ -48,7 +48,7 @@ const pageMethods = {
         
     },
     loadingAnimation: function () {
-        if (document. readyState === 'complete') { 
+        if (document.readyState === 'complete') { 
             document.querySelector(domStrings.loadingCircle).classList.remove('spin');
             document.querySelector(domStrings.loadingCircle).classList.add('fullwidth');
             setTimeout(function () {
@@ -62,8 +62,12 @@ const pageMethods = {
             })
         } else {
             document.querySelector(domStrings.loadingCircle).classList.remove('spin');
-            document.querySelector(domStrings.loadingCircle).classList.add('spin');
-            pageMethods.loadingAnimation();
+            setTimeout(function(){
+                document.querySelector(domStrings.loadingCircle).classList.add('spin');
+                setTimeout(function () {
+                    pageMethods.loadingAnimation();
+                }, 1000);
+            },1);
         }
     },
     initEventListener: function () {
