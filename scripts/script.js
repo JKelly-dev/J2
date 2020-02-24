@@ -61,7 +61,9 @@ const pageMethods = {
                 document.querySelector(domStrings.loadingSection).style.visibility = "hidden";
             })
         } else {
-            document.querySelector(domStrings.loadingLogo).style.animationPlayState = "running";
+            document.querySelector(domStrings.loadingCircle).classList.remove('spin');
+            void document.offsetWidth;
+            document.querySelector(domStrings.loadingCircle).classList.add('spin');
             setTimeout(function () {
                 pageMethods.loadingAnimation();
             }, 1000);
