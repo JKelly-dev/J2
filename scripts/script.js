@@ -62,12 +62,10 @@ const pageMethods = {
             })
         } else {
             document.querySelector(domStrings.loadingCircle).classList.remove('spin');
-            setTimeout(function(){
-                document.querySelector(domStrings.loadingCircle).classList.add('spin');
-                setTimeout(function () {
-                    pageMethods.loadingAnimation();
-                }, 1000);
-            },1);
+            document.querySelector(domStrings.loadingCircle).classList.add('spin');
+            setTimeout(function () {
+                pageMethods.loadingAnimation();
+            }, 1000);
         }
     },
     initEventListener: function () {
