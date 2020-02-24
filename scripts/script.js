@@ -47,6 +47,25 @@ const pageMethods = {
         document.querySelector(domStrings.notification).style.zIndex = "-100";
         
     },
+    loadingAnimation: function () {
+        if (document. readyState === 'complete') { 
+            document.querySelector(domStrings.loadingCircle).classList.remove('spin');
+            document.querySelector(domStrings.loadingCircle).classList.add('fullwidth');
+            setTimeout(function () {
+                document.querySelector(domStrings.loadingSection).style.background = "transparent";
+            }, 1500)
+            document.querySelector(domStrings.loadingCircle).addEventListener('animationend', function () { 
+                document.querySelector(domStrings.loadingLogo).style.opacity = '0';
+                document.querySelector(domStrings.loadingLogo).style.visibility = "hidden";
+                document.querySelector(domStrings.loadingSection).style.opacity = '0';
+                document.querySelector(domStrings.loadingSection).style.visibility = "hidden";
+            })
+        } else {
+            document.querySelector(domStrings.loadingCircle).classList.remove('spin');
+            document.querySelector(domStrings.loadingCircle).classList.add('spin');
+            pageMethods.loadingAnimation();
+        }
+    },
     initEventListener: function () {
         document.querySelector(domStrings.notificationClose).addEventListener('click', function () {pageMethods.dismissNotification()});
         document.querySelector(domStrings.talkForm).addEventListener('submit', e => {
@@ -69,6 +88,9 @@ const pageMethods = {
                 }
             });
         });
+        document.querySelector(domStrings.loadingCircle).addEventListener('animationend', function () {
+            pageMethods.loadingAnimation();
+        })
     }
 }
 
@@ -99,25 +121,6 @@ const floatlabels = new FloatLabels( '#talkForm', {
     requiredClass: 'required',
     style: 2
 });
-
-document.querySelector(domStrings.loadingCircle).addEventListener('animationend', function () {
-    if (document. readyState === 'complete') { 
-        document.querySelector(domStrings.loadingCircle).classList.remove('spin');
-        document.querySelector(domStrings.loadingCircle).classList.add('fullwidth');
-        setTimeout(function () {
-            document.querySelector(domStrings.loadingSection).style.background = "transparent";
-        }, 1500)
-        document.querySelector(domStrings.loadingCircle).addEventListener('animationend', function () { 
-            document.querySelector(domStrings.loadingLogo).style.opacity = '0';
-            document.querySelector(domStrings.loadingLogo).style.visibility = "hidden";
-            document.querySelector(domStrings.loadingSection).style.opacity = '0';
-            document.querySelector(domStrings.loadingSection).style.visibility = "hidden";
-        })
-     } else {
-        document.querySelector(domStrings.loadingCircle).classList.remove('spin');
-        document.querySelector(domStrings.loadingCircle).classList.add('spin');
-     }
-})
 
 pageMethods.initEventListener();
 document.querySelector(domStrings.homePageVideo).play();
