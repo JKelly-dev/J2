@@ -1,3 +1,16 @@
+.fullwidth {animation: fullwidth 2s;-webkit-animation: fullwidth 2s;}
+@keyframes fullwidth {
+  0% {width: 20vw; height: 20vw;}
+  10% {width: 100vw; height: 100vh;}
+  80% {width: 100vw; height: 100vh;}
+  100% {width: 0vw; height: 100vh;}
+}
+.spin {animation: spin 1s; -webkit-animation: spin 1s;}
+@keyframes spin {
+  0% {transform: rotate(0deg); border-radius: 0%; width: 20vw; height: 20vw;}
+  50% {border-radius: 50%;}
+  100% {transform: rotate(360deg); border-radius: 0%; width: 20vw; height: 20vw;}
+}
 section#loading {
   height: 100vh;
   width: 100vw;
@@ -18,24 +31,7 @@ section#loading div.circle {
   height: 0vw;
   transition: all .3s ease-in-out;
   -webkit-transition: all .3s ease-in-out;
-}
-.fullwidth {animation: fullwidth 1.5s;-webkit-animation: fullwidth 1.5s;}
-@keyframes fullwidth {
-  0% {width: 20vw; height: 20vw;}
-  10% {width: 100vw; height: 100vh;}
-  95% {width: 100vw; height: 100vh;}
-  100% {width: 0vw; height: 100vh;}
-}
-.j2hide {animation: j2hide 1.5s; -webkit-animation: j2hide 1.5s;}
-@keyframes j2hide {
-  0%, 80% {opacity: 1;}
-  90%, 100% {opacity: 0;}
-}
-.spin {animation: spin 1s; -webkit-animation: spin 1.5s;}
-@keyframes spin {
-  0% {transform: rotate(0deg); border-radius: 0%; width: 20vw; height: 20vw;}
-  50% {border-radius: 50%;}
-  100% {transform: rotate(360deg); border-radius: 0%; width: 20vw; height: 20vw;}
+  animation-fill-mode: forwards;
 }
 section#loading img {
   width: 10vw;
@@ -43,6 +39,7 @@ section#loading img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.2s ease-in-out;
 }
 @media screen and (max-width: 900px) {
   @keyframes fullwidth {
@@ -513,9 +510,8 @@ div.section p {
 
 #fp-nav ul li:nth-child(1) a::after {content: "Home";}
 #fp-nav ul li:nth-child(2) a::after {content: "About";}
-#fp-nav ul li:nth-child(3) a::after {content: "Team";}
-#fp-nav ul li:nth-child(4) a::after {content: "Work";}
-#fp-nav ul li:nth-child(5) a::after {content: "Talk";}
+#fp-nav ul li:nth-child(3) a::after {content: "Work";}
+#fp-nav ul li:nth-child(4) a::after {content: "Talk";}
 
 .slide ul {
     max-width: 55vw;

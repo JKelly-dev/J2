@@ -10,13 +10,17 @@ const domStrings = {
     notificationText: '.notification-text',
     notificationEmail: '.notification-email',
     notificationClose: '.notification-image',
-    homePageVideo: '.home-video'
+    homePageVideo: '.home-video',
+    homeSection: '#homeSection',
+    loadingSection: '#loading',
+    loadingCircle: '#loading div',
+    loadingLogo: '#loading img'
 };
 
 const pageValues = {
     leftMenuRotation: 0,
     rightMenuRotation: 0,
-    pageOrder: ['home', 'about', 'team', 'work', 'talk'],
+    pageOrder: ['home', 'about', 'work', 'talk'],
 };
 
 const pageMethods = {
@@ -78,6 +82,10 @@ const myFullpage = new fullpage('#fullpage', {
         pageMethods.spinMenu();
         if (destination.anchor == 'home') {
             document.querySelector(domStrings.homePageVideo).play();
+            document.querySelector(domStrings.homeSection).style.opacity = '1';
+        }
+        if (origin.anchor == 'home') {
+            document.querySelector(domStrings.homeSection).style.opacity = '0';
         }
     },
     onSlideLeave: function(section, origin, destination, direction){
@@ -91,32 +99,25 @@ const floatlabels = new FloatLabels( '#talkForm', {
     requiredClass: 'required',
     style: 2
 });
-    
-window.addEventListener('load', () => {
-    const loadingSection = document.getElementById('loading');
-    const loadCircle = document.querySelector('div.circle');
-    const j2logo = document.querySelector('#loading img');
-    setTimeout(() => {
-        loadCircle.addEventListener('animationend', () => {
-            if (loadCircle.classList.contains('spin')) {
-                loadCircle.classList.remove('spin');
-                loadCircle.classList.add('fullwidth');
-                j2logo.classList.add('j2hide');
-                j2logo.style.opacity = "0";
-                setTimeout(() => {
-                    loadingSection.style.backgroundColor = "transparent";
-                    j2logo.style.opacity = "0";
-                    j2logo.style.visibility = "hidden";
-                }, 1000)
-            } else if (loadCircle.classList.contains('fullwidth') && j2logo.classList.contains('j2hide')) {
-                loadCircle.classList.remove('fullwidth');
-                loadCircle.style.visibility = "hidden";
-                loadCircle.classList.remove('j2hide');
-                loadingSection.style.height = "0px"; 
-            }
-        });
-    }, 200);
-});
+
+document.querySelector(domStrings.loadingCircle).addEventListener('animationend', function () {
+    if (document. readyState === 'complete') { 
+        document.querySelector(domStrings.loadingCircle).classList.remove('spin');
+        document.querySelector(domStrings.loadingCircle).classList.add('fullwidth');
+        setTimeout(function () {
+            document.querySelector(domStrings.loadingSection).style.background = "transparent";
+        }, 1500)
+        document.querySelector(domStrings.loadingCircle).addEventListener('animationend', function () { 
+            document.querySelector(domStrings.loadingLogo).style.opacity = '0';
+            document.querySelector(domStrings.loadingLogo).style.visibility = "hidden";
+            document.querySelector(domStrings.loadingSection).style.opacity = '0';
+            document.querySelector(domStrings.loadingSection).style.visibility = "hidden";
+        })
+     } else {
+        document.querySelector(domStrings.loadingCircle).classList.remove('spin');
+        document.querySelector(domStrings.loadingCircle).classList.add('spin');
+     }
+})
 
 pageMethods.initEventListener();
 document.querySelector(domStrings.homePageVideo).play();
