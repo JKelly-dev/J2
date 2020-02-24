@@ -62,7 +62,7 @@ const pageMethods = {
             })
         } else {
             document.querySelector(domStrings.loadingCircle).classList.remove('spin');
-            void document.offsetWidth;
+            void document.querySelector(domStrings.loadingCircle).offsetWidth;
             document.querySelector(domStrings.loadingCircle).classList.add('spin');
             setTimeout(function () {
                 pageMethods.loadingAnimation();
