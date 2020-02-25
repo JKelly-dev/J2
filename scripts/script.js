@@ -1,21 +1,3 @@
-const domStrings = {
-    leftMenu: '#circleLeft',
-    rightMenu: '#circleRight',
-    homeSectionParagraph: '#homeSection p',
-    workSectionSlideParagraph: '#workSection div p',
-    teamSectionSlideText: '#teamSection div p',
-    talkForm: '#talkForm',
-    emailInput: '#email-input',
-    notification: '.notification',
-    notificationText: '.notification-text',
-    notificationEmail: '.notification-email',
-    notificationClose: '.notification-image',
-    homePageVideo: '.home-video',
-    homeSection: '#homeSection',
-    loadingSection: '#loading',
-    loadingCircle: '#loading div',
-    loadingLogo: '#loading img'
-};
 
 const pageValues = {
     leftMenuRotation: 0,
@@ -37,8 +19,7 @@ const pageMethods = {
     
         }
     },
-    successNotification: function (email) {
-        document.querySelector(domStrings.notificationEmail).textContent = email;
+    successNotification: function () {
         document.querySelector(domStrings.notification).style.opacity = "1";
         document.querySelector(domStrings.notification).style.zIndex = "100";
     },
@@ -46,28 +27,6 @@ const pageMethods = {
         document.querySelector(domStrings.notification).style.opacity = "0";
         document.querySelector(domStrings.notification).style.zIndex = "-100";
         
-    },
-    loadingAnimation: function () {
-        if (document.readyState === 'complete') { 
-            document.querySelector(domStrings.loadingCircle).classList.remove('spin');
-            document.querySelector(domStrings.loadingCircle).classList.add('fullwidth');
-            setTimeout(function () {
-                document.querySelector(domStrings.loadingSection).style.background = "transparent";
-            }, 1500)
-            document.querySelector(domStrings.loadingCircle).addEventListener('animationend', function () { 
-                document.querySelector(domStrings.loadingLogo).style.opacity = '0';
-                document.querySelector(domStrings.loadingLogo).style.visibility = "hidden";
-                document.querySelector(domStrings.loadingSection).style.opacity = '0';
-                document.querySelector(domStrings.loadingSection).style.visibility = "hidden";
-            })
-        } else {
-            document.querySelector(domStrings.loadingCircle).classList.remove('spin');
-            void document.querySelector(domStrings.loadingCircle).offsetWidth;
-            document.querySelector(domStrings.loadingCircle).classList.add('spin');
-            setTimeout(function () {
-                pageMethods.loadingAnimation();
-            }, 1000);
-        }
     },
     initEventListener: function () {
         document.querySelector(domStrings.notificationClose).addEventListener('click', function () {pageMethods.dismissNotification()});
@@ -84,16 +43,13 @@ const pageMethods = {
             })
             .then(res => {
                 if (res) {
-                    pageMethods.successNotification(document.querySelector(domStrings.emailInput).value);
+                    pageMethods.successNotification();
                     document.querySelector(domStrings.talkForm).reset();
                 } else {
                     alert('Error submitting form. Please try again.')
                 }
             });
         });
-        document.querySelector(domStrings.loadingCircle).addEventListener('animationend', function () {
-            pageMethods.loadingAnimation();
-        })
     }
 }
 
@@ -112,12 +68,11 @@ const myFullpage = new fullpage('#fullpage', {
         if (origin.anchor == 'home') {
             document.querySelector(domStrings.homeSection).style.opacity = '0';
         }
+        document.title = `${destination.anchor.charAt(0).toUpperCase() + destination.anchor.slice(1)} - Digital Agency`
     },
     onSlideLeave: function(section, origin, destination, direction){
         pageMethods.spinMenu();
-    },
-    loopBottom: true,
-    loopTop: true
+    }
 });
 
 const floatlabels = new FloatLabels( '#talkForm', {

@@ -1,14 +1,7 @@
-/*Fonts*/
-  @font-face {
-    font-family: 'Neutra-Alt';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Neutra-Alt'), url('../src/neutra-text-alt.woff') format('woff');
-  }
-    
-  @font-face {
+ @font-face {
     font-family: 'Neutra-Light';
     font-style: normal;
+    font-display: swap;
     font-weight: normal;
     src: local('Neutra-Light'), url('../src/neutra-text-light.woff') format('woff');
   }
@@ -16,6 +9,7 @@
   @font-face {
     font-family: 'Neutra';
     font-style: normal;
+    font-display: swap;
     font-weight: normal;
     src: local('Neutra'), url('../src/neutra-text.woff') format('woff');
   } 
@@ -23,15 +17,9 @@
   @font-face {
     font-family: 'Neutra-Bold';
     font-style: normal;
+    font-display: swap;
     font-weight: normal;
     src: local('Neutra-Bold'), url('../src/neutra-text-bold.woff') format('woff');
-  }
-    
-  @font-face {
-    font-family: 'Neutra-BoldItalic';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Neutra-BoldItalic'), url('../src/neutra-text-bold-italic.woff') format('woff');
   }
 
   * {
@@ -107,10 +95,6 @@
       text-align: center;
   }
 
-  #workSection .slide p, #aboutSection p {
-      text-align: justify;
-  }
-
   #workSection .slide:first-child p {
     text-align: center;
   }
@@ -124,7 +108,7 @@ body {
     overflow-x: hidden;
     font-family: 'Neutra-Light', sans-serif;
     font-weight: 500;
-    background-color: #F1F3F6;
+    background-color: #fff;
 }
 #fullpage {
     overscroll-behavior: none;
@@ -137,9 +121,6 @@ body {
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   border-radius: 5px;
-  box-shadow: 0 0 10vw #fff;
-  -webkit-box-shadow: 0 0 10vw #fff;
-  -moz-box-shadow: 0 0 10vw #fff;
   transition: .2s ease-in-out;
   opacity: 0;
   z-index: -100;
@@ -425,13 +406,20 @@ div.section p {
     z-index: 1;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 60px white inset !important;
+}
+
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
-    background: #F1F3F6;
+    background: #fff;
 }
 
 #fp-nav ul li a::after {
     font-family: 'Neutra-Bold', sans-serif;
-    color: #F1F3F6;
+    color: #fff;
     margin-left: 25px;
     font-size: 20px;
     line-height: 1;
@@ -439,7 +427,7 @@ div.section p {
     -webkit-transition: all .1s ease-in-out;
 }
 #fp-nav ul li a.active::after {
-  font-family: 'Neutra-BoldItalic', sans-serif;
+  font-family: 'Neutra-Bold', sans-serif;
   left: 25px;
   font-size: 25px;
   line-height: .8;
@@ -470,9 +458,6 @@ div.section p {
 
 .slide ul li img {
     width: 100%;
-    box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.8);
-    -webkit-box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.8);
-    -moz-box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.8);
     border-radius: 7px;
 } 
 
@@ -795,7 +780,7 @@ FLOAT LABELS
     z-index: 1001;
     justify-content: center;
     align-items: center;
-    background-color: #F1F3F6;
+    background-color: #fff;
   }
 
   .button[disabled], .button.disabled {
@@ -846,7 +831,6 @@ FLOAT LABELS
     outline: none;
     background-color: transparent;
     border: solid currentColor;
-    border-radius: 3px;
     font-size: 0.88887rem;
     line-height: 1.5rem;
     padding: 0.375rem 0.75rem;
@@ -883,6 +867,7 @@ FLOAT LABELS
   select::placeholder,
   textarea::placeholder {
     color: #000;
+    transition: .2s all ease-in-out;
   }
   select:active,
   select:focus,
@@ -978,7 +963,7 @@ FLOAT LABELS
   .fl-form select.fl-select::-webkit-input-placeholder,
   .fl-form textarea.fl-textarea::-webkit-input-placeholder {
     color: #000;
-    font-family: 'Neutra-Bold', sans-serif;
+    font-family: 'Neutra', sans-serif;
   }
   
   .fl-form select.fl-select {
@@ -997,16 +982,18 @@ FLOAT LABELS
   .fl-form .fl-is-active select.fl-select,
   .fl-form .fl-is-active textarea.fl-textarea {
     color: #000000;
-    background-color: #F1F3F6;
-    font-family: 'Neutra-Bold';
+    background-color: #fff;
+    font-family: 'Neutra';
   }
   
   .fl-form .fl-has-focus input.fl-input,
   .fl-form .fl-has-focus select.fl-select,
   .fl-form .fl-has-focus textarea.fl-textarea {
-    background-color: #F1F3F6;
+    background-color: #fff;
     color: #000000;
+    border-bottom: 3px solid;
   }
+
 
   /*
 CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES
@@ -1016,7 +1003,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     max-width: 55vw;
     width: 55vw;
     margin: 13px auto;
-    font-family: 'Neutra-BoldItalic', sans-serif;
+    font-family: 'Neutra', sans-serif;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -1032,18 +1019,16 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
 
   #talkForm button {
       width: auto;
-      margin: auto;
+      margin: 2vw auto;
       font-size: 2vw;
       display: block;
       padding: 15px 10vw 10px 10vw;
-      font-family: 'Neutra-BoldItalic', sans-serif;
+      font-family: 'Neutra-Bold', sans-serif;
       border: none;
       cursor: pointer;
       border-radius: 3px;
-      background-color: #F1F3F6;
-      box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.8);
-      -webkit-box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.8);
-      -moz-box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.8);
+      color: white;
+      background-image: linear-gradient(45deg, #F800FF 0%, #3100FF 100%);
   }
   
   .fl-form label.fl-label {
@@ -1052,7 +1037,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     display: block;
     position: absolute;
     top: -12px;
-    font-family: 'Neutra-BoldItalic', sans-serif;
+    font-family: 'Neutra-Bold', sans-serif;
     left: 0;
     font-size: 1vw;
     line-height: 1;
@@ -1066,22 +1051,22 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
   .fl-form select.fl-select,
   .fl-form textarea.fl-textarea {
     outline: 0;
-    font-family: 'Neutra-BoldItalic', sans-serif;
+    font-family: 'Neutra-Bold', sans-serif;
     font-size: 1.75vw;
     line-height: 1.5;
     font-weight: 1000;
     letter-spacing: .4px;
-    border: none;
-    border-radius: 3px;
-    background-color: #F1F3F6;
+    background-color: transparent;
     box-sizing: border-box;
     transition: all 0.2s ease-in-out;
-    margin-bottom: 1.4375rem;
+    margin-bottom: .75rem;
     -webkit-appearance: none;
-    box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px rgba(255,255,255, 0.8);
-    -webkit-box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.8);
-    -moz-box-shadow: 9px 9px 16px rgb(163,177,198,0.5), -9px -9px 16px  rgba(255,255,255, 0.8);
+    border: none;
+    border-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
+    border-image-slice: 1;
+    border-bottom: 3px solid;
   }
+
 
   .fl-form .fl-wrap {
     position: relative;
@@ -1127,7 +1112,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       color: #D32F2F;
       transition: all 0.2s ease-in-out;
       padding: 6px 0 0;
-      font-family: 'Neutra-BoldItalic', sans-serif;
+      font-family: 'Neutra-Bold', sans-serif;
       z-index: 1;
   }
   /*
@@ -1400,7 +1385,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     outline: none;
     cursor: pointer;
     border: 1px solid transparent;
-    border-radius: 3px;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
@@ -1804,16 +1788,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
     #fp-nav.fp-left {
       left: 6px;
-    }
-    #talkForm button {
-      box-shadow: 4.5px 4.5px 8px rgb(163,177,198,0.5), -4.5px -4.5px 8px  rgba(255,255,255, 0.8);
-      -webkit-box-shadow: 4.5px 4.5px 8px rgb(163,177,198,0.5), -4.5px -4.5px 8px  rgba(255,255,255, 0.8);
-      -moz-box-shadow: 4.5px 4.5px 8px rgb(163,177,198,0.5), -4.5px -4.5px 8px rgba(255,255,255, 0.8);
-    }
-    .fl-form input.fl-input, .fl-form select.fl-select, .fl-form textarea.fl-textarea {
-      box-shadow: 4.5px 4.5px 8px rgb(163,177,198,0.5), -4.5px -4.5px 8px rgba(255,255,255, 0.8);
-      -webkit-box-shadow: 4.5px 4.5px 8px rgb(163,177,198,0.5), -4.5px -4.5px 8px rgba(255,255,255, 0.8);
-      -moz-box-shadow: 4.5px 4.5px 8px rgb(163,177,198,0.5), -4.5px -4.5px 8px rgba(255,255,255, 0.8);
     }
 }
 @media screen and (max-width: 475px) { 

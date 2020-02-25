@@ -1,4 +1,4 @@
-.fullwidth {animation: fullwidth 2s;-webkit-animation: fullwidth 2s;}
+.fullwidth {animation: fullwidth 1.5s;-webkit-animation: fullwidth 1.5s;}
 @keyframes fullwidth {
   0% {width: 20vw; height: 20vw;}
   10% {width: 100vw; height: 100vh;}
