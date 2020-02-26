@@ -206,6 +206,7 @@ html.fp-enabled,
      -webkit-transform: translateY(-50%) rotate(180deg);
      -ms-transform: translateY(-50%) rotate(180deg);
      transform: translateY(-50%) rotate(180deg);
+     transition: transform .2s cubic-bezier(.175,.885,.32,1.275),-webkit-transform .2s cubic-bezier(.175,.885,.32,1.275);
  }
  .fp-controlArrow.fp-prev {
     left: 13vw;
@@ -218,7 +219,15 @@ html.fp-enabled,
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    transition: transform .2s cubic-bezier(.175,.885,.32,1.275),-webkit-transform .2s cubic-bezier(.175,.885,.32,1.275);
 }
+.fp-controlArrow.fp-prev:hover {
+  transform: translateY(-50%) translateX(-.5vw);
+}
+.fp-controlArrow.fp-next:hover {
+  transform: translateY(-50%) rotate(180deg) translateX(-.5vw);
+}
+
  .fp-scrollable {
      overflow: hidden;
      position: relative;
@@ -450,20 +459,53 @@ div.section p {
     flex-wrap: wrap;
 }
 
-.slide ul li {
+#workSection .slide ul li {
     width: 20%;
     margin-top: 20px;
 }
 
-.slide ul li img {
+#workSection .slide ul li img {
     width: 100%;
     border-radius: 7px;
     box-shadow: 0 0 2vw rgba(0,0,0,.2);
     transition: transform .2s cubic-bezier(.175,.885,.32,1.275),-webkit-transform .2s cubic-bezier(.175,.885,.32,1.275);
+    cursor: pointer;
 }
 
-.slide ul li img:hover {
+#workSection .slide ul li img:hover {
   transform: translateY(-1vh);
+}
+
+.enlarge-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  opacity: 0;
+  background-color: rgba(0,0,0,.7);
+  flex-direction: column;
+  transition: opacity .2s cubic-bezier(.175,.885,.32,1.275);
+}
+
+.enlarge-image {
+  height: 60vh;
+  border-radius: 5px;
+}
+
+.enlarge-close {
+  height: 10vh;
+  margin: 0 0 5vh 0;
+  cursor: pointer;
+  transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
+}
+
+.enlarge-close:hover {
+  transform: scale(1.1);
 }
 
 /*
@@ -1698,7 +1740,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       font-size: 7vw;
       max-width: 50vw;
     }
-    .slide ul li {
+    #workSection .slide ul li {
       width: 41%;
       margin-top: 20px;
     }
@@ -1799,10 +1841,10 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         font-size: 3.5vw;
         max-width: 55vw;
     }
-    .slide ul li {
+    #workSection .slide ul li {
         width: 35%;
     }
-    .slide ul {
+    #workSection .slide ul {
         max-width: 55vw;
         display: flex;
         justify-content: space-between;
@@ -1826,8 +1868,22 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
 }
 @media screen and (max-width: 475px) { 
+    .fl-form.fl-style-2 label.fl-label {
+      top: 4px;
+      left: 10px;
+      padding: 4px 3px 3px;
+    }
+    div.section h1 {
+      font-size: 10vw;
+      max-width: 55vw;
+    }
+    div.section p {
+      max-width: 60vw;
+      font-size: 4.5vw;
+    }
     #workSection .slide h1 {
       font-size: 10vw;
+      margin-bottom: 5px;
     }
     .notification {
       width: 65vw;
@@ -1838,11 +1894,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
     .fl-form input.fl-input, .fl-form select.fl-select, .fl-form textarea.fl-textarea {
       margin-bottom: 1rem;
-    }
-    div.section h1 {
-      font-size: 7vw;
-      max-width: 55vw;
-      margin-bottom: 5px;
     }
     #fp-nav ul li a.active span,
     .fp-slidesNav ul li a.active span,
@@ -1868,10 +1919,10 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     #fp-nav ul li {
       margin: 1px 6px;
     }
-    .slide ul li {
+    #workSection .slide ul li {
         width: 40%;
     }
-    .slide ul {
+    #workSection .slide ul {
         max-width: 60vw;
         display: flex;
         justify-content: space-between;
@@ -1902,7 +1953,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       font-size: 4vw;
     }
     .fl-form label.fl-label {
-      font-size: 2.5vw;
+      font-size: 3vw;
     }
     .fl-form .fl-is-required:before {
       font-size: 4vw;

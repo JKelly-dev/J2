@@ -4,6 +4,7 @@ const domStrings = {
     homeSectionParagraph: '#homeSection p',
     workSectionSlideParagraph: '#workSection div p',
     teamSectionSlideText: '#teamSection div p',
+    workSection: '#workSection',
     talkForm: '#talkForm',
     emailInput: '#email-input',
     notification: '.notification',
@@ -14,7 +15,11 @@ const domStrings = {
     homeSection: '#homeSection',
     loadingSection: '#loading',
     loadingCircle: '#loading div',
-    loadingLogo: '#loading img'
+    loadingLogo: '#loading img',
+    workShowcaseImage: '#workSection .slide ul li img',
+    enlargeImage: '.enlarge-image',
+    enlargeSection: '.enlarge-section',
+    enlargeClose: '.enlarge-close'
 };
 
 function loadingAnimation () {
