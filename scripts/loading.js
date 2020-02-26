@@ -35,7 +35,7 @@ function loadingAnimation () {
         void document.querySelector(domStrings.loadingCircle).offsetWidth;
         document.querySelector(domStrings.loadingCircle).classList.add('spin');
         setTimeout(function () {
-            pageMethods.loadingAnimation();
+            loadingAnimation();
         }, 1000);
     }
 }

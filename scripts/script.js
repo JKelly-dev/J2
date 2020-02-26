@@ -1,4 +1,3 @@
-
 const pageValues = {
     leftMenuRotation: 0,
     rightMenuRotation: 0,
