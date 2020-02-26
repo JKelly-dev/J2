@@ -30,6 +30,7 @@ const pageMethods = {
         document.querySelector(domStrings.notification).style.zIndex = "100";
     },
     enlargeImage: function (imageDom) {
+        console.log(imageDom.getAttribute("src"));
         document.querySelector(domStrings.enlargeImage).src = imageDom.getAttribute("src");
         document.querySelector(domStrings.enlargeSection).style.opacity = '1';
         document.querySelector(domStrings.enlargeSection).style.zIndex = '2000';
@@ -43,7 +44,7 @@ const pageMethods = {
         document.querySelector(domStrings.notification).style.zIndex = "-100";
     },
     initEventListener: function () {
-        document.addEventListener('click', function (e) {
+        document.querySelector(domStrings.workSection).addEventListener('click', function (e) {
             if (e.path[0].classList.contains('work-image') == true) {
                 pageMethods.enlargeImage(e.path[0]);
             }
