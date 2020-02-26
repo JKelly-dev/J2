@@ -131,8 +131,6 @@ body {
   text-align: left;
   font-family: 'Neutra-Bold', sans-serif;
   font-size: 3vw;
-  word-break: break-all;
-  display: inline;
 }
 .notification-image {
   display: block;
@@ -362,6 +360,14 @@ html.fp-enabled,
 div.section h1 {
     font-size: 4vw;
 }
+/*
+#aboutSection p {
+  text-align: justify;
+}
+
+#workSection .slide p {
+  text-align: justify;
+}*/
 
 div.section p {
     font-size: 2vw;
@@ -459,14 +465,17 @@ input:-webkit-autofill:active  {
 .slide ul li img {
     width: 100%;
     border-radius: 7px;
-} 
+    box-shadow: 0 0 2vw rgba(0,0,0,.2);
+    transition: transform .2s cubic-bezier(.175,.885,.32,1.275),-webkit-transform .2s cubic-bezier(.175,.885,.32,1.275);
+}
+
+.slide ul li img:hover {
+  transform: translateY(-1vh);
+}
 
 /*
-
 FLOAT LABELS
-
 */
-
 
  @-ms-viewport {
     width: device-width;
@@ -1064,9 +1073,9 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     border: none;
     border-image: linear-gradient(90deg, #F800FF 0%, #3100FF 100%);
     border-image-slice: 1;
-    border-bottom: 3px solid;
+    border-width: 0 0 3px 0;
+    border-style: solid;
   }
-
 
   .fl-form .fl-wrap {
     position: relative;
@@ -1569,7 +1578,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       padding: 30px 12px 6px;
     }
     #talkForm button {
-      padding: 25px 6vw 17.5px 6vw;
+      padding: 17.5px 6vw 17.5px 6vw;
     }
     .fl-form .fl-wrap {
       width: 47.5%;
@@ -1611,7 +1620,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       padding: 30px 12px 6px;
     }
     #talkForm button {
-      padding: 25px 7.5vw 17.5px 7.5vw;
+      padding: 17.5px 7.5vw 17.5px 7.5vw;
     }
     .fl-form.fl-style-2 textarea.fl-textarea {
       min-height: 150px;
@@ -1671,6 +1680,21 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
 }
 @media screen and (max-width: 900px) {
+    #workSection .slide ul {
+      max-width: 45vw;
+    }
+    #workSection .slide h1 {
+      font-size: 7vw;
+      max-width: 50vw;
+    }
+    .slide ul li {
+      width: 41%;
+      margin-top: 20px;
+    }
+    #workSection .slide p {
+      font-size: 3vw;
+      max-width: 50vw;
+    }
     div#workSection div#slide1 img, div#homeSection img {
         display: none;
     }
@@ -1711,7 +1735,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
     #talkForm button {
       font-size: 3vw;
-      padding: 17.5px 10vw 12.5px 10vw;
+      padding: 12.5px 10vw 12.5px 10vw;
     }
     #workSection .slide:first-child p {
       font-size: 3vw;
@@ -1791,6 +1815,16 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
 }
 @media screen and (max-width: 475px) { 
+    #workSection .slide h1 {
+      font-size: 10vw;
+    }
+    .notification {
+      width: 65vw;
+      padding: 3vw;
+    }
+    .notification-text {
+      font-size: 5vw;
+    }
     .fl-form input.fl-input, .fl-form select.fl-select, .fl-form textarea.fl-textarea {
       margin-bottom: 1rem;
     }
@@ -1836,11 +1870,11 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         flex-wrap: wrap;
     }
     #workSection .slide ul {
-      max-width: 60vw;
+      max-width: 53vw;
     }
     #workSection .slide p {
       max-width: 60vw;
-      font-size: 3.5vw;
+      font-size: 4.5vw;
     }
     #workSection .slide h1 {
       max-width: 60vw;
