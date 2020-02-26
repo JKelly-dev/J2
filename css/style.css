@@ -412,13 +412,6 @@ div.section p {
     z-index: 1;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 60px white inset !important;
-}
-
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
     background: #fff;
 }
@@ -1513,6 +1506,13 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     margin: 0;
   }
   
+  input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: white!important;
+    background-image: none !important;
+    color: rgb(0, 0, 0) !important;
+    -webkit-box-shadow: 0 0 0 60px white inset !important;
+  }
+
   @media screen and (min-width: 1700px) {
     div#workSection div#slide1 img, div#homeSection img {
         display: none;
@@ -1588,6 +1588,16 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
 }
 @media screen and (max-width: 1700px) {
+    #fp-nav ul li a::after {
+      color: #EBF3FA;
+      font-size: 24px;
+    }
+    #fp-nav ul li a.active::after {
+      font-size: 28px;
+      top: 1px;
+      transition: all .1s ease-in-out;
+      -webkit-transition: all .1s ease-in-out;
+    }
     div#workSection div#slide1 img, div#homeSection img {
         display: none;
     }
@@ -1628,6 +1638,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     .fl-form .fl-wrap {
       width: 47.5%;
     }
+
 }
 @media screen and (max-width: 1400px) {
     div#workSection div#slide1 img, div#homeSection img {

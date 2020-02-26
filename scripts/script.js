@@ -4,13 +4,12 @@ const pageValues = {
     pageOrder: ['home', 'about', 'work', 'talk'],
     logStyles: [
         'background: linear-gradient(45deg, #F800FF 0%, #3100FF 100%)'
-        , 'border: 1px solid #3E0E02'
         , 'color: white'
+        , 'border-radius: 3px'
         , 'display: block'
         , 'text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3)'
         , 'padding: 25px 50px'
         , 'font-size: 25px'
-        , 'box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 5px 3px -5px rgba(0, 0, 0, 0.5), 0 -13px 5px -10px rgba(255, 255, 255, 0.4) inset'
         , 'line-height: 40px'
         , 'text-align: center'
         , 'font-weight: bold'
