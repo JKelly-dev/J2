@@ -1,6 +1,6 @@
 const pageValues = {
-    leftMenuRotation: 0,
-    rightMenuRotation: 0,
+    rotationDegree: 0,
+    direction: 'up',
     pageOrder: ['home', 'about', 'work', 'talk'],
     logStyles: [
         'background: linear-gradient(45deg, #F800FF 0%, #3100FF 100%)'
@@ -20,10 +20,18 @@ console.log('%c Welcome to J²! ', pageValues.logStyles);
 
 const pageMethods = {
     spinMenu: function () {
-        pageValues.leftMenuRotation+=90;
-        document.querySelector(domStrings.leftMenu).style.transform = `translateY(-50%) rotate(${pageValues.leftMenuRotation}deg)`;
-        pageValues.rightMenuRotation-=90;
-        document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rightMenuRotation}deg)`;
+        if (pageValues.rotationDegree == 360) {
+            pageValues.direction = 'down';
+        } else if (pageValues.rotationDegree == 0) {
+            pageValues.direction = 'up';
+        };
+        if (pageValues.direction == 'down') {
+            pageValues.rotationDegree-=90;
+        } else if (pageValues.direction == 'up') {
+            pageValues.rotationDegree+=90;
+        };
+        document.querySelector(domStrings.leftMenu).style.transform = `translateY(-50%) rotate(-${pageValues.rotationDegree}deg)`;
+        document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rotationDegree}deg)`;
     },
     successNotification: function () {
         document.querySelector(domStrings.notification).style.opacity = "1";
@@ -38,14 +46,38 @@ const pageMethods = {
         document.querySelector(domStrings.enlargeSection).style.opacity = '0';
         document.querySelector(domStrings.enlargeSection).style.zIndex = '-1';
     },
+    openMenu: function () {
+        document.querySelector(domStrings.rightMenu).classList.add('menu-full');
+        document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rotationDegree}deg)`;
+        document.querySelector(domStrings.closeFullMenu).style.visibilty = 'visible';
+        document.querySelector(domStrings.rightMenuContent).style.zIndex = '1001';
+        document.querySelector(domStrings.rightMenuContent).style.visibilty = 'visible';
+        document.querySelector(domStrings.rightMenuContent).style.opacity = '1';
+    },
+    closeMenu: function () {
+        document.querySelector(domStrings.rightMenu).classList.remove('menu-full');
+        document.querySelector(domStrings.rightMenuContent).style.opacity = '0';
+        setTimeout(function() {
+            document.querySelector(domStrings.rightMenuContent).style.visibilty = 'hidden'
+            document.querySelector(domStrings.rightMenuContent).style.zIndex = '-1';
+        }, 200);
+        document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rotationDegree}deg)`;   
+        document.querySelector(domStrings.closeFullMenu).style.visibilty = 'hidden';
+    },
     dismissNotification: function () {
         document.querySelector(domStrings.notification).style.opacity = "0";
         document.querySelector(domStrings.notification).style.zIndex = "-100";
     },
     initEventListener: function () {
         document.addEventListener('click', function (e) {
-            if (e.path[0].classList.contains('work-image') == true) {
-                pageMethods.enlargeImage(e.path[0]);
+            if (e.target.classList.contains('work-image') == true) {
+                pageMethods.enlargeImage(e.target);
+            } else if (e.target.id == "circleRightLogo" || e.target.id == "circleRight") {
+                if (document.querySelector(domStrings.rightMenu).classList.contains('menu-full') == false) {
+                    pageMethods.openMenu();
+                }
+            } else if (e.target.classList.contains('close-fullscreen') == true) {
+                pageMethods.closeMenu();
             }
         });
         document.querySelector(domStrings.enlargeClose).addEventListener('click', function () {pageMethods.closeEnlarge()});
@@ -80,7 +112,10 @@ const myFullpage = new fullpage('#fullpage', {
     navigationPosition: 'left',
     scrollingSpeed: 700,
     onLeave: function(origin, destination, direction){
-        pageMethods.spinMenu();
+        if (document.querySelector(domStrings.rightMenu).classList.contains('menu-full') == false) {
+            pageMethods.spinMenu();
+            console.log('no menu full');
+        } 
         if (destination.anchor == 'home') {
             document.querySelector(domStrings.homePageVideo).play();
             document.querySelector(domStrings.homeSection).style.opacity = '1';
@@ -91,7 +126,9 @@ const myFullpage = new fullpage('#fullpage', {
         document.title = `${destination.anchor.charAt(0).toUpperCase() + destination.anchor.slice(1)} - Digital Agency`
     },
     onSlideLeave: function(section, origin, destination, direction){
-        pageMethods.spinMenu();
+        if (document.querySelector(domStrings.rightMenu).classList.contains('menu-full') == false) {
+            pageMethods.spinMenu();
+        } 
     }
 });
 

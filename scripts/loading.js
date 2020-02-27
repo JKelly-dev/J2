@@ -19,7 +19,9 @@ const domStrings = {
     workShowcaseImage: '#workSection .slide ul li img',
     enlargeImage: '.enlarge-image',
     enlargeSection: '.enlarge-section',
-    enlargeClose: '.enlarge-close'
+    enlargeClose: '.enlarge-close',
+    closeFullMenu: '.close-fullscreen',
+    rightMenuContent: '#circleRightMenu'
 };
 
 function loadingAnimation () {
