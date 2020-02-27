@@ -422,7 +422,7 @@ div.section p {
 #circleRight.menu-full {
     width: 100vw;
     height: 100vh;
-    top: 0;
+    top: 50%;
     right: 0;
     border-radius: 0;
     transform: none;
@@ -1921,7 +1921,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         top: 50%;
         transform: translateY(-50%);
         width: 8.5vw;
-        z-index: 1;
     }
     #fp-nav ul li a::after {
         opacity: 0;

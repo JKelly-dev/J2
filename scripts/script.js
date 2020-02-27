@@ -45,13 +45,12 @@ const pageMethods = {
     closeEnlarge: function () {
         document.querySelector(domStrings.enlargeSection).style.opacity = '0';
         document.querySelector(domStrings.enlargeSection).style.zIndex = '-1';
-        document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rotationDegree}deg)`;
     },
     openMenu: function () {
         if (pageValues.rotationDegree > 180) {
-            document.querySelector(domStrings.rightMenu).style.transform = 'rotate(360deg)';
+            document.querySelector(domStrings.rightMenu).style.transform = 'translateY(-50%) rotate(360deg)';
         } else {
-            document.querySelector(domStrings.rightMenu).style.transform = '';
+            document.querySelector(domStrings.rightMenu).style.transform = 'translateY(-50%)';
         }
         document.querySelector(domStrings.rightCircleLogo).style.opacity = '0';
         document.querySelector(domStrings.rightMenu).classList.add('menu-full');
@@ -128,7 +127,6 @@ const myFullpage = new fullpage('#fullpage', {
     onLeave: function(origin, destination, direction){
         if (document.querySelector(domStrings.rightMenu).classList.contains('menu-full') == false) {
             pageMethods.spinMenu();
-            console.log('no menu full');
         } 
         if (destination.anchor == 'home') {
             document.querySelector(domStrings.homePageVideo).play();
