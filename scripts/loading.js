@@ -21,7 +21,8 @@ const domStrings = {
     enlargeSection: '.enlarge-section',
     enlargeClose: '.enlarge-close',
     closeFullMenu: '.close-fullscreen',
-    rightMenuContent: '#circleRightMenu'
+    rightMenuContent: '#circleRightMenu',
+    rightCircleLogo: '#circleRightLogo'
 };
 
 function loadingAnimation () {

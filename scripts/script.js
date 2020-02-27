@@ -45,14 +45,23 @@ const pageMethods = {
     closeEnlarge: function () {
         document.querySelector(domStrings.enlargeSection).style.opacity = '0';
         document.querySelector(domStrings.enlargeSection).style.zIndex = '-1';
+        document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rotationDegree}deg)`;
     },
     openMenu: function () {
+        if (pageValues.rotationDegree > 180) {
+            document.querySelector(domStrings.rightMenu).style.transform = 'rotate(360deg)';
+        } else {
+            document.querySelector(domStrings.rightMenu).style.transform = '';
+        }
+        document.querySelector(domStrings.rightCircleLogo).style.opacity = '0';
         document.querySelector(domStrings.rightMenu).classList.add('menu-full');
-        document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rotationDegree}deg)`;
         document.querySelector(domStrings.closeFullMenu).style.visibilty = 'visible';
         document.querySelector(domStrings.rightMenuContent).style.zIndex = '1001';
         document.querySelector(domStrings.rightMenuContent).style.visibilty = 'visible';
-        document.querySelector(domStrings.rightMenuContent).style.opacity = '1';
+        setTimeout(function () {
+            document.querySelector(domStrings.rightMenuContent).style.opacity = '1';
+        }, 250)
+
     },
     closeMenu: function () {
         document.querySelector(domStrings.rightMenu).classList.remove('menu-full');
@@ -60,9 +69,12 @@ const pageMethods = {
         setTimeout(function() {
             document.querySelector(domStrings.rightMenuContent).style.visibilty = 'hidden'
             document.querySelector(domStrings.rightMenuContent).style.zIndex = '-1';
+            document.querySelector(domStrings.rightCircleLogo).style.opacity = '1';
         }, 200);
         document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rotationDegree}deg)`;   
         document.querySelector(domStrings.closeFullMenu).style.visibilty = 'hidden';
+
+
     },
     dismissNotification: function () {
         document.querySelector(domStrings.notification).style.opacity = "0";
@@ -77,6 +89,8 @@ const pageMethods = {
                     pageMethods.openMenu();
                 }
             } else if (e.target.classList.contains('close-fullscreen') == true) {
+                pageMethods.closeMenu();
+            } else if (e.target.classList.contains('page-link') == true) {
                 pageMethods.closeMenu();
             }
         });

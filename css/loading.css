@@ -22,7 +22,7 @@ section#loading {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 101;
+  z-index: 1000;
   background-color: #F1F3F6;
 }
 section#loading div.circle {
