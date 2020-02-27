@@ -50,7 +50,7 @@ const pageMethods = {
         if (pageValues.rotationDegree > 180) {
             document.querySelector(domStrings.rightMenu).style.transform = 'translateY(-50%) rotate(360deg)';
         } else {
-            document.querySelector(domStrings.rightMenu).style.transform = 'translateY(-50%)';
+            document.querySelector(domStrings.rightMenu).style.transform = 'translateY(-50%) rotate(0deg)';
         }
         document.querySelector(domStrings.rightCircleLogo).style.opacity = '0';
         document.querySelector(domStrings.rightMenu).classList.add('menu-full');
