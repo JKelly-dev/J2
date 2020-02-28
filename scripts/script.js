@@ -47,8 +47,6 @@ const pageMethods = {
         document.querySelector(domStrings.enlargeSection).style.zIndex = '-1';
     },
     openMenu: function () {
-        document.querySelector(domStrings.navigationMenuBackground).style.left = null;
-        document.querySelector(domStrings.navigationMenuBackground).style.right = '0';
         document.querySelector(domStrings.navigationMenuBackground).classList.add('fullscreen');
         document.querySelector(domStrings.closeFullMenu).style.visibilty = 'visible';
         document.querySelector(domStrings.navigationMenu).style.zIndex = '1000';
@@ -58,8 +56,6 @@ const pageMethods = {
         }, 250)
     },
     closeMenu: function () {
-        document.querySelector(domStrings.navigationMenuBackground).style.right = null;
-        document.querySelector(domStrings.navigationMenuBackground).style.left = '0';
         document.querySelector(domStrings.navigationMenuBackground).classList.remove('fullscreen');
         document.querySelector(domStrings.navigationMenu).style.opacity = '0';
         setTimeout(function() {

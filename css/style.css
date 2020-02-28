@@ -421,6 +421,7 @@ div.section p {
     height: 100vh;
     position: absolute;
     top: 0;
+    right: 0;
     z-index: 999;
 }
 
