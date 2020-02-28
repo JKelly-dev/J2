@@ -47,10 +47,24 @@ const pageMethods = {
         document.querySelector(domStrings.enlargeSection).style.zIndex = '-1';
     },
     openMenu: function () {
-        if (pageValues.rotationDegree > 180) {
-            document.querySelector(domStrings.rightMenu).style.transform = 'translateY(-50%) rotate(360deg)';
+        if (pageValues.rotationDegree == 90) {
+            document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) translateX(50%) rotate(${pageValues.rotationDegree}deg)`;
+            document.querySelector(domStrings.rightMenu).style.width = '100vh';  
+            document.querySelector(domStrings.rightMenu).style.height = '100vw'; 
+            document.querySelector(domStrings.rightMenu).style.right = '50%'; 
+        } else if (pageValues.rotationDegree == 180) {
+            document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rotationDegree}deg)`;
+            document.querySelector(domStrings.rightMenu).style.width = '100vw';  
+            document.querySelector(domStrings.rightMenu).style.height = '100vh'; 
+        } else if (pageValues.rotationDegree == 270) {
+            document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) translateX(50%) rotate(${pageValues.rotationDegree}deg)`;
+            document.querySelector(domStrings.rightMenu).style.width = '100vh';  
+            document.querySelector(domStrings.rightMenu).style.height = '100vw'; 
+            document.querySelector(domStrings.rightMenu).style.right = '50%'; 
         } else {
-            document.querySelector(domStrings.rightMenu).style.transform = 'translateY(-50%) rotate(0deg)';
+            document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rotationDegree}deg)`;
+            document.querySelector(domStrings.rightMenu).style.width = '100vw';  
+            document.querySelector(domStrings.rightMenu).style.height = '100vh'; 
         }
         document.querySelector(domStrings.rightCircleLogo).style.opacity = '0';
         document.querySelector(domStrings.rightMenu).classList.add('menu-full');
@@ -60,7 +74,6 @@ const pageMethods = {
         setTimeout(function () {
             document.querySelector(domStrings.rightMenuContent).style.opacity = '1';
         }, 250)
-
     },
     closeMenu: function () {
         document.querySelector(domStrings.rightMenu).classList.remove('menu-full');
@@ -72,8 +85,9 @@ const pageMethods = {
         }, 200);
         document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rotationDegree}deg)`;   
         document.querySelector(domStrings.closeFullMenu).style.visibilty = 'hidden';
-
-
+        document.querySelector(domStrings.rightMenu).style.width = null;  
+        document.querySelector(domStrings.rightMenu).style.height = null; 
+        document.querySelector(domStrings.rightMenu).style.right = null; 
     },
     dismissNotification: function () {
         document.querySelector(domStrings.notification).style.opacity = "0";
