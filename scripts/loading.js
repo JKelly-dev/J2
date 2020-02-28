@@ -21,7 +21,8 @@ const domStrings = {
     enlargeSection: '.enlarge-section',
     enlargeClose: '.enlarge-close',
     closeFullMenu: '.close-fullscreen',
-    rightMenuContent: '#circleRightMenu',
+    navigationMenu: '.navigation-menu',
+    navigationMenuBackground: '.navigation-background',
     rightCircleLogo: '#circleRightLogo'
 };
 
