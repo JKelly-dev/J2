@@ -47,33 +47,21 @@ const pageMethods = {
         document.querySelector(domStrings.enlargeSection).style.zIndex = '-1';
     },
     openMenu: function () {
-        if (pageValues.rotationDegree > 180) {
-            document.querySelector(domStrings.rightMenu).style.transform = 'translateY(-50%) rotate(360deg)';
-        } else {
-            document.querySelector(domStrings.rightMenu).style.transform = 'translateY(-50%) rotate(0deg)';
-        }
-        document.querySelector(domStrings.rightCircleLogo).style.opacity = '0';
-        document.querySelector(domStrings.rightMenu).classList.add('menu-full');
+        document.querySelector(domStrings.navigationMenuBackground).classList.add('fullscreen');
         document.querySelector(domStrings.closeFullMenu).style.visibilty = 'visible';
-        document.querySelector(domStrings.rightMenuContent).style.zIndex = '1001';
-        document.querySelector(domStrings.rightMenuContent).style.visibilty = 'visible';
+        document.querySelector(domStrings.navigationMenu).style.zIndex = '1000';
+        document.querySelector(domStrings.navigationMenu).style.visibilty = 'visible';
         setTimeout(function () {
-            document.querySelector(domStrings.rightMenuContent).style.opacity = '1';
+            document.querySelector(domStrings.navigationMenu).style.opacity = '1';
         }, 250)
-
     },
     closeMenu: function () {
-        document.querySelector(domStrings.rightMenu).classList.remove('menu-full');
-        document.querySelector(domStrings.rightMenuContent).style.opacity = '0';
+        document.querySelector(domStrings.navigationMenuBackground).classList.remove('fullscreen');
+        document.querySelector(domStrings.navigationMenu).style.opacity = '0';
         setTimeout(function() {
-            document.querySelector(domStrings.rightMenuContent).style.visibilty = 'hidden'
-            document.querySelector(domStrings.rightMenuContent).style.zIndex = '-1';
-            document.querySelector(domStrings.rightCircleLogo).style.opacity = '1';
+            document.querySelector(domStrings.navigationMenu).style.visibilty = 'hidden'
+            document.querySelector(domStrings.navigationMenu).style.zIndex = '-1';
         }, 200);
-        document.querySelector(domStrings.rightMenu).style.transform = `translateY(-50%) rotate(${pageValues.rotationDegree}deg)`;   
-        document.querySelector(domStrings.closeFullMenu).style.visibilty = 'hidden';
-
-
     },
     dismissNotification: function () {
         document.querySelector(domStrings.notification).style.opacity = "0";
@@ -84,7 +72,7 @@ const pageMethods = {
             if (e.target.classList.contains('work-image') == true) {
                 pageMethods.enlargeImage(e.target);
             } else if (e.target.id == "circleRightLogo" || e.target.id == "circleRight") {
-                if (document.querySelector(domStrings.rightMenu).classList.contains('menu-full') == false) {
+                if (document.querySelector(domStrings.navigationMenuBackground).classList.contains('menu-full') == false) {
                     pageMethods.openMenu();
                 }
             } else if (e.target.classList.contains('close-fullscreen') == true) {
