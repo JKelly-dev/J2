@@ -1035,7 +1035,8 @@
             }
 
             if(!options.loopHorizontal){
-                hide($(SLIDES_ARROW_PREV_SEL, section));
+                document.querySelector(domStrings.arrowNext).style.opacity = '0';
+                document.querySelector(domStrings.arrowPrev).style.opacity = '1';
             }
         }
 
@@ -2535,11 +2536,23 @@
             }
 
             if(!options.loopHorizontal && options.controlArrows){
-                //hidding it for the fist slide, showing for the rest
-                toggle($(SLIDES_ARROW_PREV_SEL, section), v.slideIndex!==0);
-
+                if (next(destiny) != null && v.slideIndex !== 0) {
+                    document.querySelector(domStrings.arrowNext).style.opacity = '1';
+                    document.querySelector(domStrings.arrowNext).style.right = null;
+                    document.querySelector(domStrings.arrowPrev).style.opacity = '1';
+                    document.querySelector(domStrings.arrowPrev).style.left = null;
+                } else if (v.slideIndex==0) {
+                    document.querySelector(domStrings.arrowNext).style.opacity = '1';
+                    document.querySelector(domStrings.arrowNext).style.right = null;
+                    document.querySelector(domStrings.arrowPrev).style.opacity = '0';
+                    document.querySelector(domStrings.arrowPrev).style.left = '0';
+                } else if (v.slideIndex !== 0) {
+                    document.querySelector(domStrings.arrowNext).style.opacity = '0';
+                    document.querySelector(domStrings.arrowNext).style.right = '0';
+                    document.querySelector(domStrings.arrowPrev).style.opacity = '1';
+                    document.querySelector(domStrings.arrowPrev).style.left = null;
+                }
                 //hidding it for the last slide, showing for the rest
-                toggle($(SLIDES_ARROW_NEXT_SEL, section), next(destiny) != null);
             }
 
             //only changing the URL if the slides are in the current section (not for resize re-adjusting)

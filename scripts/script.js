@@ -2,6 +2,7 @@ const pageValues = {
     rotationDegree: 0,
     direction: 'up',
     pageOrder: ['home', 'about', 'work', 'talk'],
+    playPromise: document.querySelector(domStrings.homePageVideo).play(),
     logStyles: [
         'background: linear-gradient(45deg, #F800FF 0%, #3100FF 100%)'
         , 'color: white'
@@ -111,6 +112,7 @@ const myFullpage = new fullpage('#fullpage', {
     anchors: pageValues.pageOrder,
     navigation: true,
     navigationPosition: 'left',
+    loopHorizontal: false,
     scrollingSpeed: 700,
     onLeave: function(origin, destination, direction){
         if (document.querySelector(domStrings.rightMenu).classList.contains('menu-full') == false) {
@@ -138,4 +140,9 @@ const floatlabels = new FloatLabels( '#talkForm', {
 });
 
 pageMethods.initEventListener();
-document.querySelector(domStrings.homePageVideo).play();
+if (pageValues.playPromise !== undefined) {
+    pageValues.playPromise.then(_ => {
+    })
+    .catch(error => {
+    });
+}

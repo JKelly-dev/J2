@@ -205,7 +205,7 @@ html.fp-enabled,
      -webkit-transform: translateY(-50%) rotate(180deg);
      -ms-transform: translateY(-50%) rotate(180deg);
      transform: translateY(-50%) rotate(180deg);
-     transition: transform .2s cubic-bezier(.175,.885,.32,1.275),-webkit-transform .2s cubic-bezier(.175,.885,.32,1.275);
+     transition: all .3s ease-in-out, transform .2s cubic-bezier(.175,.885,.32,1.275);
  }
  .fp-controlArrow.fp-prev {
     left: 13vw;
@@ -218,22 +218,21 @@ html.fp-enabled,
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    transition: transform .2s cubic-bezier(.175,.885,.32,1.275),-webkit-transform .2s cubic-bezier(.175,.885,.32,1.275);
-}
-.fp-controlArrow.fp-prev:hover {
-  transform: translateY(-50%) translateX(-.5vw);
-}
-.fp-controlArrow.fp-next:hover {
-  transform: translateY(-50%) rotate(180deg) translateX(-.5vw);
-}
-
- .fp-scrollable {
+    transition: all .3s ease-in-out, transform .2s cubic-bezier(.175,.885,.32,1.275);
+  }
+  .fp-controlArrow.fp-prev:hover {
+      transform: translateY(-50%) translateX(-.5vw);
+  }
+  .fp-controlArrow.fp-next:hover {
+      transform: translateY(-50%) rotate(180deg) translateX(-.5vw);
+  }
+  .fp-scrollable {
      overflow: hidden;
      position: relative;
- }
- .fp-scroller{
+  }
+  .fp-scroller{
      overflow: hidden;
- }
+  }
  .iScrollIndicator{
      border: 0 !important;
  }
@@ -294,7 +293,16 @@ html.fp-enabled,
      height: 100%;
      cursor: pointer;
      text-decoration: none;
+     transition: all .3s cubic-bezier(.175,.885,.32,1.275);
  }
+ #fp-nav ul li a:hover::after{
+    transform: scale(1.1);
+ }
+ #fp-nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+ }  
  #fp-nav ul li a.active span,
  .fp-slidesNav ul li a.active span,
  #fp-nav ul li:hover a.active span,
@@ -416,7 +424,7 @@ div.section p {
 
 .navigation-background {
     z-index: -1;
-    background-image: linear-gradient(0deg, #F800FF 0%, #3100FF 100%);
+    background-image: linear-gradient(45deg, #F800FF 0%, #3100FF 100%);
     width: 0;
     height: 100vh;
     position: absolute;
@@ -458,10 +466,10 @@ div.section p {
 }
 
 .navigation-menu img {
-  width: 14vw;
+  width: 9vw;
   cursor: pointer;
   transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
-  padding: 3vw;
+  margin: 5vw;
 }
 
 .navigation-menu img:hover {
@@ -473,11 +481,8 @@ div.section p {
   color: #fff;
   font-size: 6vw;
   display: block;
-  padding: 3vw;
-}
-
-.navigation-menu ul li a {
-  flex-grow: 2;
+  margin: 3vw;
+  transition: transform .15s ease-in-out,-webkit-transform .15s ease-in-out;
 }
 
 .navigation-menu ul li a:hover {
@@ -507,7 +512,6 @@ div.section p {
     color: #fff;
     margin-left: 25px;
     font-size: 20px;
-    line-height: 1;
     transition: all .1s ease-in-out;
     -webkit-transition: all .1s ease-in-out;
 }
@@ -515,7 +519,6 @@ div.section p {
   font-family: 'Neutra-Bold', sans-serif;
   left: 25px;
   font-size: 25px;
-  line-height: .8;
   top: -1px;
   transition: all .1s ease-in-out;
   -webkit-transition: all .1s ease-in-out;
@@ -543,7 +546,7 @@ div.section p {
 
 #workSection .slide ul li img {
     width: 100%;
-    border-radius: 7px;
+    border-radius: 4px;
     box-shadow: 0 0 2vw rgba(0,0,0,.2);
     transition: transform .2s cubic-bezier(.175,.885,.32,1.275),-webkit-transform .2s cubic-bezier(.175,.885,.32,1.275);
     cursor: pointer;
@@ -1150,6 +1153,11 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       border-radius: 3px;
       color: white;
       background-image: linear-gradient(45deg, #F800FF 0%, #3100FF 100%);
+      transition: transform .3s cubic-bezier(.175,.885,.32,1.275)
+  }
+
+  #talkForm button:hover {
+    transform: scale(1.1);
   }
   
   .fl-form label.fl-label {
@@ -1176,7 +1184,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     font-size: 1.75vw;
     line-height: 1.5;
     font-weight: 1000;
-    letter-spacing: .4px;
     background-color: transparent;
     box-sizing: border-box;
     transition: all 0.2s ease-in-out;
@@ -1187,6 +1194,11 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     border-image-slice: 1;
     border-width: 0 0 3px 0;
     border-style: solid;
+  }
+
+  .fl-form textarea.fl-textarea {
+    transition: none;
+    max-height: 50vh;
   }
 
   .fl-form .fl-wrap {
@@ -1334,6 +1346,11 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     left: 6px;
   }
   
+  ::selection {
+    background-color: #F800FF;
+    color: white;
+  }
+
   a {
     color: #3100FF;
     text-decoration: none;
@@ -1815,11 +1832,11 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
     .navigation-menu ul li a {
       font-size: 7vw;
-      padding: 3vh;
+      margin: 2vw;
     }
     .navigation-menu img {
-      width: 14vw;
-      padding: 3vw;
+      width: 9vw;
+      margin: 3vw;
     }
 }
 @media screen and (max-width: 1250px) {
@@ -1876,6 +1893,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
     #fp-nav ul li a::after {
         opacity: 0;
+        visibility: hidden;
     }
     div.section p {
         font-size: 2.75vw;
@@ -1904,11 +1922,11 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
     .navigation-menu ul li a {
       font-size: 5vw;
-      padding: 3vh;
+      margin: 3vw;
     }
     .navigation-menu img {
-      width: 12vw;
-      padding: 3vw;
+      width: 7vw;
+      margin: 3vw;
     }
 }
 @media screen and (max-width: 600px) {
@@ -1943,6 +1961,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
     }
     #fp-nav ul li a::after {
         opacity: 0;
+        visibility: hidden;
     }
     div.section h1 {
         font-size: 7vw;
@@ -2082,25 +2101,25 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
       left: 0px;
     }
     .navigation-menu ul li img {
-      width: 19vw;
+      width: 12vw;
       cursor: pointer;
       transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
-      padding: 3vw;
+      margin: 3vw;
     }
     .navigation-menu ul li a {
       font-family: 'Neutra-Bold', sans-serif;
       color: #fff;
       font-size: 10vw;
       display: block;
-      padding: 3vw;
+      margin: 3vw;
     }
     .navigation-menu ul li a {
       font-size: 10vw;
-      padding: 3vh;
+      margin: 5vw;
     }
     .navigation-menu img {
-      width: 17vw;
-      padding: 3vw;
+      width: 14vw;
+      margin: 9vw;
     }
 }
 

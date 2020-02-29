@@ -23,7 +23,10 @@ const domStrings = {
     closeFullMenu: '.close-fullscreen',
     navigationMenu: '.navigation-menu',
     navigationMenuBackground: '.navigation-background',
-    rightCircleLogo: '#circleRightLogo'
+    rightCircleLogo: '#circleRightLogo',
+    arrowPrev: '.fp-prev',
+    arrowNext: '.fp-next',
+    slideContainer: '#workSection .fp-slides .fp-slidesContainer'
 };
 
 function loadingAnimation () {
