@@ -80,6 +80,31 @@
     z-index: 2;
   }
 
+  .typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 1s infinite;
+    -moz-animation: blink 1s infinite;
+    -ms-animation: blink 1s infinite;
+    -o-animation: blink 1s infinite;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+    }
+    @-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+    }
+    @-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+    }
+
   #homeSection .scroll-hint {
     width: calc(1vw + 30px);
     position: absolute;
@@ -536,31 +561,10 @@ div.section p {
     width: 7vw;
     z-index: 1;
     cursor: pointer;
-    transition: opacity .4s ease-in-out, transform .2s ease-in-out;
-    -webkit-transition: opacity .4s ease-in-out, transform .2s ease-in-out;
-    -moz-transition: opacity .4s ease-in-out, transform .2s ease-in-out;
+    transition: opacity .4s ease-in-out;
+    -webkit-transition: opacity .4s ease-in-out;
+    -moz-transition: opacity .4s ease-in-out;
     z-index: 103;
-    transform-origin: center;
-}
-
-#circleRightHamburger {
-  position: fixed;
-  right: 1.6vw;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6vw;
-  z-index: 1;
-  cursor: pointer;
-  transition: opacity .4s ease-in-out, transform .2s ease-in-out;
-  -webkit-transition: opacity .4s ease-in-out, transform .2s ease-in-out;
-  -moz-transition: opacity .4s ease-in-out, transform .2s ease-in-out;
-  z-index: 103;
-  opacity: 0;
-  transform-origin: center;
-}
-
-#circleRightHamburger:hover, #circleRightLogo:hover  {
-  transform: scale(1.1) translateY(-50%);
 }
 
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
@@ -1203,7 +1207,7 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
 
   #talkForm button {
       width: auto;
-      margin: 2vw auto;
+      margin: 2vw auto 0;
       font-size: 2vw;
       display: block;
       padding: 15px 10vw 10px 10vw;
@@ -1851,10 +1855,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
   #circleRightMenu ul {
     height: 72.5%;
   }
-  #circleRightHamburger {
-    right: 2.15vw;
-    width: 5vw;
-  }
 }
 @media screen and (max-width: 1400px) {
     div#workSection div#slide1 img, div#homeSection img {
@@ -2023,13 +2023,6 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         transform: translateY(-50%);
         width: 8.5vw;
     }
-    #circleRightHamburger {
-      position: fixed;
-      right: 1.75vw;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 7vw;
-  }
     #fp-nav ul li a::after {
         opacity: 0;
         visibility: hidden;

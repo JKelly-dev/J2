@@ -25,7 +25,6 @@ const domStrings = {
     navigationMenu: '.navigation-menu',
     navigationMenuBackground: '.navigation-background',
     rightCircleLogo: '#circleRightLogo',
-    rightCircleHamburger: '#circleRightHamburger',
     arrowPrev: '.fp-prev',
     arrowNext: '.fp-next',
     slideContainer: '#workSection .fp-slides .fp-slidesContainer',

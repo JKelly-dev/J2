@@ -2,7 +2,6 @@ const pageValues = {
     rotationDegree: 0,
     direction: 'up',
     pageOrder: ['home', 'about', 'work', 'talk'],
-    playPromise: document.querySelector(domStrings.homePageVideo).play(),
     logStyles: [
         'background: linear-gradient(45deg, #F800FF 0%, #3100FF 100%)'
         , 'color: white'
@@ -46,33 +45,6 @@ const pageMethods = {
     closeEnlarge: function () {
         document.querySelector(domStrings.enlargeSection).style.opacity = '0';
         document.querySelector(domStrings.enlargeSection).style.zIndex = '-1';
-    },
-    swapMenuImage: function () {
-        if (document.querySelector(domStrings.rightCircleLogo).classList.contains('active-image') == true) {
-            document.querySelector(domStrings.rightCircleLogo).classList.remove('active-image');
-            document.querySelector(domStrings.rightCircleLogo).style.opacity = '0';
-            setTimeout(function() {
-                document.querySelector(domStrings.rightCircleLogo).style.visibility = 'hidden';
-                document.querySelector(domStrings.rightCircleHamburger).classList.add('active-image');
-                document.querySelector(domStrings.rightCircleHamburger).style.opacity = '1';
-                document.querySelector(domStrings.rightCircleHamburger).style.visibility = 'visible';
-            }, 200)
-        } else {
-            document.querySelector(domStrings.rightCircleHamburger).classList.remove('active-image');
-            document.querySelector(domStrings.rightCircleHamburger).style.opacity = '0';
-            setTimeout(function() {
-                document.querySelector(domStrings.rightCircleHamburger).style.visibility = 'hidden';
-                document.querySelector(domStrings.rightCircleLogo).classList.add('active-image');
-                document.querySelector(domStrings.rightCircleLogo).style.opacity = '1';
-                document.querySelector(domStrings.rightCircleLogo).style.visibility = 'visible';
-            }, 200)
-        }
-    },
-    swapMenuImageTimer: function () {
-        setTimeout(function () {
-            pageMethods.swapMenuImage();
-            pageMethods.swapMenuImageTimer();
-        }, 4000)
     },
     openMenu: function () {
         document.querySelector(domStrings.navigationMenuBackground).classList.add('fullscreen');
@@ -148,7 +120,6 @@ const myFullpage = new fullpage('#fullpage', {
             pageMethods.spinMenu();
         } 
         if (destination.anchor == 'home') {
-            document.querySelector(domStrings.homePageVideo).play();
             document.querySelector(domStrings.homeSection).style.opacity = '1';
         }
         if (origin.anchor == 'home') {
@@ -165,10 +136,10 @@ const myFullpage = new fullpage('#fullpage', {
 
 const typed = new Typed(domStrings.typedElement, {
     stringsElement: domStrings.typedContainer,
-    typeSpeed: 80,
+    typeSpeed: 60,
     loop: true,
-    backDelay: 150,
-    backSpeed: 50,
+    backDelay: 275,
+    backSpeed: 30,
     smartBackspace: true
 });
 
@@ -178,10 +149,3 @@ const floatlabels = new FloatLabels( '#talkForm', {
 });
 
 pageMethods.initEventListener();
-pageMethods.swapMenuImageTimer();
-if (pageValues.playPromise !== undefined) {
-    pageValues.playPromise.then(_ => {
-    })
-    .catch(error => {
-    });
-}  
