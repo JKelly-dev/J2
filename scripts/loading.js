@@ -1,7 +1,8 @@
 const domStrings = {
     leftMenu: '#circleLeft',
     rightMenu: '#circleRight',
-    homeSectionParagraph: '#homeSection p',
+    typedContainer: '#typed-strings',
+    typedElement: '#typed',
     workSectionSlideParagraph: '#workSection div p',
     teamSectionSlideText: '#teamSection div p',
     workSection: '#workSection',
@@ -24,9 +25,10 @@ const domStrings = {
     navigationMenu: '.navigation-menu',
     navigationMenuBackground: '.navigation-background',
     rightCircleLogo: '#circleRightLogo',
+    rightCircleHamburger: '#circleRightHamburger',
     arrowPrev: '.fp-prev',
     arrowNext: '.fp-next',
-    slideContainer: '#workSection .fp-slides .fp-slidesContainer'
+    slideContainer: '#workSection .fp-slides .fp-slidesContainer',
 };
 
 function loadingAnimation () {

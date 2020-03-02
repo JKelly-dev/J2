@@ -1050,7 +1050,9 @@
             var divUl = document.createElement('ul');
             navigation.appendChild(divUl);
 
-            appendTo(navigation, $body);
+            var menuEls = document.getElementById('menuElements');
+
+            appendTo(navigation, menuEls);
             var nav = $(SECTION_NAV_SEL)[0];
 
             addClass(nav, 'fp-' + options.navigationPosition);

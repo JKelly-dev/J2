@@ -24,6 +24,8 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <!--No-Script Content-->
+        <noscript>Our page requires javascript to run.</noscript>
         <!--Loading Overlay-->
         <section id="loading">
             <div class="circle spin"></div>
@@ -31,16 +33,23 @@
         </section>
         <!--Loading Script-->
         <script src="scripts/loading.js"></script>
-        <!--No-Script Content-->
-        <noscript><p>Our page requires javascript to run.</p></noscript>
             <!--Fullpage Content-->
             <div id="fullpage">
-
                 <!-- Home Section -->
-                
                 <div class="section" id="homeSection">
                     <h1>Jack<span class="squared">2</span></h1>
-                    <p>Let's build something awesome!</p>
+                    <div id="typed-strings">
+                        <p>We make awesome websites.</p>
+                        <p>We make outstanding videos.</p>
+                        <p>We make amazing graphics.</p>
+                    </div>
+                    <p>
+                        <span id="typed"></span>
+                    </p>
+                    <svg class="scroll-hint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 42">
+                        <path d="M11.5,42A11.51,11.51,0,0,1,0,30.5v-19a11.5,11.5,0,0,1,23,0v19A11.51,11.51,0,0,1,11.5,42Zm0-40A9.51,9.51,0,0,0,2,11.5v19a9.5,9.5,0,0,0,19,0v-19A9.51,9.51,0,0,0,11.5,2Z"/>
+                        <rect x="10" y="8" width="3" height="7" rx="1.5"/>
+                    </svg>
                     <div class="video-container">
                         <div class="white-overlay"></div>
                         <video autoplay loop autobuffer muted playsinline class="home-video">
@@ -50,16 +59,12 @@
                         </video>
                     </div>
                 </div>
-
                 <!-- About Section -->
-
                 <div class="section" id="aboutSection">
                     <h1>About Us</h1>
                     <p>J2 is a digital agency based out of KC that specializes in web development. J2 was founded by a pair of Jacks who wanted to expand their online portfolios while helping others build their business. We utilize advanced technologies to give our clients and users the best experience.</p>
                 </div>
-
                 <!-- Work Section -->
-
                 <div class="section" id="workSection">
                     <div class="slide" data-anchor="intro">
                         <h1>Our Work</h1>
@@ -96,9 +101,7 @@
                         </ul>
                     </div>
                 </div>
-
                 <!-- Talk Section -->
-
                 <div class="section" id="talkSection">
                     <h1>Let's Talk!</h1>
                     <p>Fill out the form to get in contact.</p>
@@ -116,32 +119,37 @@
                         <button type="submit">Submit</button>
                     </form>
                 </div>
-                
             </div>
-        <!--Notification Elements-->
-        <div class="notification">
-            <p class="notification-text">You form submission has been sent! We will contact you as soon as we're available. </p>
-            <img src="src/close.svg" alt="Close SVG" class="notification-image">
-        </div>
-        <div class="enlarge-section">
-            <img src="src/close.svg" class="enlarge-close" alt="Close Image Preview">
-            <img src="" class="enlarge-image" alt="Work Showcase Preview">
+        <!--Modal Elements-->
+        <div id="modalElements">
+            <div class="notification">
+                <p class="notification-text">You form submission has been sent! We will contact you as soon as we're available. </p>
+                <img src="src/close.svg" alt="Close SVG" class="notification-image">
+            </div>
+            <div class="enlarge-section">
+                <img src="src/close.svg" class="enlarge-close" alt="Close Image Preview">
+                <img src="" class="enlarge-image" alt="Work Showcase Preview">
+            </div>
         </div>
         <!--Menu Elements-->
-        <img id="circleRightLogo" src="src/j2.svg" alt="J2 Logo">
-        <div id="circleLeft"></div>
-        <div id="circleRight"></div>
-        <div class="navigation-menu">
-            <img class="close-fullscreen" src="src/close.svg" alt="Close Navigation">
-            <ul>
-                <li><a class="page-link" href="#home">Home</a></li>
-                <li><a class="page-link" href="#about">About</a></li>
-                <li><a class="page-link" href="#work">Work</a></li>
-                <li><a class="page-link" href="#talk">Talk</a></li>
-            </ul>
+        <div id="menuElements">
+            <img id="circleRightLogo" src="src/j2.svg" alt="J2 Logo" class="active-image">
+            <img id="circleRightHamburger" src="src/hamburger.svg" alt="Hamburger Icon">
+            <div id="circleLeft"></div>
+            <div id="circleRight"></div>
+            <div class="navigation-menu">
+                <img class="close-fullscreen" src="src/close.svg" alt="Close Navigation">
+                <ul>
+                    <li><a class="page-link" href="#home">Home</a></li>
+                    <li><a class="page-link" href="#about">About</a></li>
+                    <li><a class="page-link" href="#work">Work</a></li>
+                    <li><a class="page-link" href="#talk">Talk</a></li>
+                </ul>
+            </div>
+            <div class="navigation-background"></div>
         </div>
-        <div class="navigation-background"></div>
         <!--Page Scripts-->
+        <script src="scripts/typed.min.js"></script>
         <script src="scripts/fullpage.js"></script>
         <script src="scripts/float-labels.min.js"></script>
         <script src="scripts/script.js"></script>

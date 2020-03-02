@@ -80,6 +80,45 @@
     z-index: 2;
   }
 
+  #homeSection .scroll-hint {
+    width: calc(1vw + 30px);
+    position: absolute;
+    bottom: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    z-index: 5;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    transform-origin: bottom;
+  }
+
+  #homeSection .scroll-hint:hover {
+    transform: scale(1.1) translateX(-50%);
+  }
+
+
+  @keyframes scrollWheel {
+    0% {
+      opacity: 0;
+    } 10%, 40% {
+      transform: translateY(0px);
+      opacity: 1;
+    } 90%, 100% {
+      transform: translateY(6px);
+      opacity: 0;
+    }
+  } 
+
+  #homeSection .scroll-hint rect {
+    animation: scrollWheel 1.5s infinite;
+  }
+
+  .scrollWheel {
+    transform: translateY(10px);
+    display: block;
+  }
+
   .home-video {
     position: relative;
     min-width: 100%; 
@@ -497,10 +536,31 @@ div.section p {
     width: 7vw;
     z-index: 1;
     cursor: pointer;
-    transition: all .2s ease-in-out;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
+    transition: opacity .4s ease-in-out, transform .2s ease-in-out;
+    -webkit-transition: opacity .4s ease-in-out, transform .2s ease-in-out;
+    -moz-transition: opacity .4s ease-in-out, transform .2s ease-in-out;
     z-index: 103;
+    transform-origin: center;
+}
+
+#circleRightHamburger {
+  position: fixed;
+  right: 1.6vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6vw;
+  z-index: 1;
+  cursor: pointer;
+  transition: opacity .4s ease-in-out, transform .2s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out, transform .2s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out, transform .2s ease-in-out;
+  z-index: 103;
+  opacity: 0;
+  transform-origin: center;
+}
+
+#circleRightHamburger:hover, #circleRightLogo:hover  {
+  transform: scale(1.1) translateY(-50%);
 }
 
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
@@ -1791,6 +1851,10 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
   #circleRightMenu ul {
     height: 72.5%;
   }
+  #circleRightHamburger {
+    right: 2.15vw;
+    width: 5vw;
+  }
 }
 @media screen and (max-width: 1400px) {
     div#workSection div#slide1 img, div#homeSection img {
@@ -1959,6 +2023,13 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
         transform: translateY(-50%);
         width: 8.5vw;
     }
+    #circleRightHamburger {
+      position: fixed;
+      right: 1.75vw;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 7vw;
+  }
     #fp-nav ul li a::after {
         opacity: 0;
         visibility: hidden;
@@ -2125,6 +2196,10 @@ CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VALUES CHANGABLE VA
 
 @media (hover:none), (hover:on-demand) { 
   .fp-controlArrow.fp-next, .fp-controlArrow.fp-prev {
+    opacity: 0;
+    visibility: hidden;
+  }
+  #homeSection .scroll-hint {
     opacity: 0;
     visibility: hidden;
   }
