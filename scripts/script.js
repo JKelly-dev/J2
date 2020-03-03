@@ -16,8 +16,6 @@ const pageValues = {
     ].join(';')
 };
 
-console.log('%c Welcome to J²! ', pageValues.logStyles);
-
 const pageMethods = {
     spinMenu: function () {
         if (pageValues.rotationDegree == 360) {
@@ -68,18 +66,19 @@ const pageMethods = {
         document.querySelector(domStrings.notification).style.zIndex = "-100";
     },
     initEventListener: function () {
+        console.log('%c Welcome to J²! ', pageValues.logStyles);
         document.addEventListener('click', function (e) {
-            if (e.target.classList.contains('work-image') == true) {
+            if (e.target.classList.contains('work-image')) {
                 pageMethods.enlargeImage(e.target);
             } else if (e.target.id == "circleRightLogo" || e.target.id == "circleRightHamburger" || e.target.id == "circleRight") {
-                if (document.querySelector(domStrings.navigationMenuBackground).classList.contains('menu-full') == false) {
+                if (!document.querySelector(domStrings.navigationMenuBackground).classList.contains('menu-full')) {
                     pageMethods.openMenu();
                 }
-            } else if (e.target.classList.contains('close-fullscreen') == true) {
+            } else if (e.target.classList.contains('close-fullscreen')) {
                 pageMethods.closeMenu();
-            } else if (e.target.classList.contains('page-link') == true) {
+            } else if (e.target.classList.contains('page-link')) {
                 pageMethods.closeMenu();
-            } else if (e.target.classList.contains('scroll-hint') == true) {
+            } else if (e.target.classList.contains('scroll-hint')) {
                 fullpage_api.moveTo('about');
             }
         });
@@ -106,7 +105,7 @@ const pageMethods = {
             });
         });
     }
-}
+};
 
 const myFullpage = new fullpage('#fullpage', {
     licenseKey: '32FDC319-24F94392-ABCB0861-ECB0F5E9',
@@ -116,19 +115,13 @@ const myFullpage = new fullpage('#fullpage', {
     loopHorizontal: false,
     scrollingSpeed: 700,
     onLeave: function(origin, destination, direction){
-        if (document.querySelector(domStrings.rightMenu).classList.contains('menu-full') == false) {
+        if (!document.querySelector(domStrings.rightMenu).classList.contains('menu-full')) {
             pageMethods.spinMenu();
         } 
-        if (destination.anchor == 'home') {
-            document.querySelector(domStrings.homeSection).style.opacity = '1';
-        }
-        if (origin.anchor == 'home') {
-            document.querySelector(domStrings.homeSection).style.opacity = '0';
-        }
         document.title = `${destination.anchor.charAt(0).toUpperCase() + destination.anchor.slice(1)} - Digital Agency`
     },
     onSlideLeave: function(section, origin, destination, direction){
-        if (document.querySelector(domStrings.rightMenu).classList.contains('menu-full') == false) {
+        if (!document.querySelector(domStrings.rightMenu).classList.contains('menu-full')) {
             pageMethods.spinMenu();
         } 
     }
